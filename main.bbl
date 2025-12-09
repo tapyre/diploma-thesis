@@ -1,0 +1,254 @@
+\begin{thebibliography}{xx}
+
+\harvarditem{Ashish~Vaswani}{2017}{Attention-Is-All-You-Need}
+Ashish~Vaswani, Noam~Shazeer, N. P. J. U. L. J. A. N. G. L. K. I.~P.
+  \harvardyearleft 2017\harvardyearright , `Arxiv',
+  \url{https://arxiv.org/abs/1706.03762}.
+\newblock Zugriff 2025.
+
+\harvarditem[Brown et~al.]{Brown, Mann, Ryder, Subbiah
+  et~al.}{2020}{brown2020language}
+Brown, T.~B., Mann, B., Ryder, N., Subbiah, M. et~al.  \harvardyearleft
+  2020\harvardyearright , Language models are few-shot learners, {\em in}
+  `Proceedings of the 34th Conference on Neural Information Processing Systems
+  (NeurIPS)'.
+
+\harvarditem{Chen}{2023}{chen2023program}
+Chen, W.  \harvardyearleft 2023\harvardyearright , `Program of thoughts
+  prompting: Disentangling computation from reasoning for numerical reasoning
+  tasks', {\em arXiv preprint arXiv:2305.10200} .
+
+\harvarditem[Cohan et~al.]{Cohan, Feldman, Beltagy, Downey \harvardand\
+  Weld}{2020}{cohan2020specter}
+Cohan, A., Feldman, S., Beltagy, I., Downey, D. \harvardand\ Weld, D.
+  \harvardyearleft 2020\harvardyearright , `Specter: Document-level
+  representation learning for scientific papers', {\em arXiv preprint
+  arXiv:2004.07180} .
+\newline\harvardurl{https://arxiv.org/abs/2004.07180}
+
+\harvarditem{Couper}{2001}{couper2001}
+Couper, M.~P.  \harvardyearleft 2001\harvardyearright , `{Web Survey Research:
+  Challenges and Opportunities}', Proceedings of the Annual Meeting of the
+  American Statistical Association.
+
+\harvarditem[Devlin et~al.]{Devlin, Chang, Lee \harvardand\
+  Toutanova}{2018}{devlin2018bert}
+Devlin, J., Chang, M.-W., Lee, K. \harvardand\ Toutanova, K.  \harvardyearleft
+  2018\harvardyearright , `Bert: Pre-training of deep bidirectional
+  transformers for language understanding', {\em arXiv preprint
+  arXiv:1810.04805} .
+\newline\harvardurl{https://arxiv.org/abs/1810.04805}
+
+\harvarditem{Diekmann}{1999}{diekma2000}
+Diekmann, A.  \harvardyearleft 1999\harvardyearright , {\em {Empirische
+  Sozialforschung. Grundlagen, Methoden, Anwendungen}}, {fifth} edn, Rowohlts
+  Enzyklopaedie, Reinbeck bei Hamburg.
+
+\harvarditem[Dillman et~al.]{Dillman, Tortora \harvardand\
+  Bowker}{1998}{dillma1998}
+Dillman, D.~A., Tortora, R. \harvardand\ Bowker, D.  \harvardyearleft
+  1998\harvardyearright , {Principles for Constructing Web Surveys}, Technical
+  report, SESRC.
+
+\harvarditem{{Docker Inc.}}{2025}{docker2025security}
+{Docker Inc.}  \harvardyearleft 2025\harvardyearright , `Docker engine
+  security', \url{https://docs.docker.com/engine/security/}.
+\newblock Zugriff am: 05.12.2025.
+
+\harvarditem[Du et~al.]{Du, Liu, Li et~al.}{2023}{du2023ma}
+Du, N., Liu, H., Li, Y. et~al.  \harvardyearleft 2023\harvardyearright ,
+  `Improving factuality and reasoning in language models through multiagent
+  debate', {\em arXiv preprint arXiv:2305.14325} .
+
+\harvarditem{Fielding}{2000}{fielding2000rest}
+Fielding, R.~T.  \harvardyearleft 2000\harvardyearright , Architectural Styles
+  and the Design of Network-based Software Architectures, PhD thesis,
+  University of California, Irvine.
+
+\harvarditem[Gamma et~al.]{Gamma, Helm, Johnson \harvardand\
+  Vlissides}{1994}{gamma1994designpatterns}
+Gamma, E., Helm, R., Johnson, R. \harvardand\ Vlissides, J.  \harvardyearleft
+  1994\harvardyearright , {\em Design Patterns: Elements of Reusable
+  Object-Oriented Software}, Addison-Wesley.
+
+\harvarditem[Goodfellow et~al.]{Goodfellow, Bengio \harvardand\
+  Courville}{2016}{Goodfellow-et-al-2016}
+Goodfellow, I., Bengio, Y. \harvardand\ Courville, A.  \harvardyearleft
+  2016\harvardyearright , {\em Deep Learning}, MIT Press.
+\newblock \url{http://www.deeplearningbook.org}.
+
+\harvarditem{Gray \harvardand\ Reuter}{1992}{gray1992transaction}
+Gray, J. \harvardand\ Reuter, A.  \harvardyearleft 1992\harvardyearright , {\em
+  Transaction Processing: Concepts and Techniques}, Morgan Kaufmann.
+
+\harvarditem{Hochreiter \harvardand\ Schmidhuber}{1997}{long-short-term-memory}
+Hochreiter, S. \harvardand\ Schmidhuber, J.  \harvardyearleft
+  1997\harvardyearright , {\em long short-term memory}.
+\newblock \url{https://www.bioinf.jku.at/publications/older/2604.pdf}.
+
+\harvarditem[Hong et~al.]{Hong, Tang, Li et~al.}{2023}{hong2023metagpt}
+Hong, B., Tang, Y., Li, H. et~al.  \harvardyearleft 2023\harvardyearright ,
+  `Metagpt: Meta programming for multi-agent collaborative framework', {\em
+  arXiv preprint arXiv:2308.00352} .
+
+\harvarditem{Jurafsky \harvardand\ Martin}{2023}{jurafsky2023slp}
+Jurafsky, D. \harvardand\ Martin, J.~H.  \harvardyearleft 2023\harvardyearright
+  , {\em Speech and Language Processing}.
+\newblock Online version.
+\newline\harvardurl{https://web.stanford.edu/~jurafsky/slp3/}
+
+\harvarditem{LangChain}{2023}{langchain2023}
+LangChain  \harvardyearleft 2023\harvardyearright , `Langchain documentation',
+  \url{https://python.langchain.com/}.
+\newblock Accessed 2024.
+
+\harvarditem[Lecun et~al.]{Lecun, Bottou, Bengio \harvardand\
+  Haffner}{1998}{726791}
+Lecun, Y., Bottou, L., Bengio, Y. \harvardand\ Haffner, P.  \harvardyearleft
+  1998\harvardyearright , `Gradient-based learning applied to document
+  recognition', {\em Proceedings of the IEEE} {\bf 86}(11),~2278--2324.
+
+\harvarditem[Lewis et~al.]{Lewis, Perez, Piktus, Petroni, Karpukhin, Goyal
+  et~al.}{2020}{lewis2020rag}
+Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N. et~al.
+  \harvardyearleft 2020\harvardyearright , `Retrieval-augmented generation for
+  knowledge-intensive nlp tasks', {\em arXiv preprint arXiv:2005.11401} .
+\newline\harvardurl{https://arxiv.org/abs/2005.11401}
+
+\harvarditem{Loc}{2004}{lock:04}
+Loc  \harvardyearleft 2004\harvardyearright , `Corporate value statement'.
+\newblock Einstiegsseite zum Unternehmensleitbild.
+\newline\harvardurl{http://www.lockheedmartin.com/wms/findPage.do}
+
+\harvarditem{Malkov \harvardand\ Yashunin}{2020}{malkov2020hnsw}
+Malkov, Y.~A. \harvardand\ Yashunin, D.~A.  \harvardyearleft
+  2020\harvardyearright , `Efficient and robust approximate nearest neighbor
+  search using hierarchical navigable small world graphs', {\em IEEE
+  Transactions on Pattern Analysis and Machine Intelligence} {\bf
+  42}(4),~824--836.
+
+\harvarditem[Mikolov et~al.]{Mikolov, Chen, Corrado \harvardand\
+  Dean}{2013}{mikolov2013word2vec}
+Mikolov, T., Chen, K., Corrado, G. \harvardand\ Dean, J.  \harvardyearleft
+  2013\harvardyearright , `Efficient estimation of word representations in
+  vector space', {\em arXiv preprint arXiv:1301.3781} .
+\newline\harvardurl{https://arxiv.org/abs/1301.3781}
+
+\harvarditem{Nachname}{2024}{einfacher_link}
+Nachname, V.  \harvardyearleft 2024\harvardyearright , `Titel der webseite',
+  \url{https://www.beispielseite.de}.
+\newblock Zugriff am 15. November 2024.
+
+\harvarditem[Nandakumar et~al.]{Nandakumar, Cohan, Feldman, Downey \harvardand\
+  Beltagy}{2023}{nandakumar2023specter2}
+Nandakumar, K., Cohan, A., Feldman, S., Downey, D. \harvardand\ Beltagy, I.
+  \harvardyearleft 2023\harvardyearright , Specter2: Building better
+  document-level representations, {\em in} `Findings of the Association for
+  Computational Linguistics (ACL)'.
+
+\harvarditem{{NVIDIA Corporation}}{2025}{nvidia_cuda_guide}
+{NVIDIA Corporation}  \harvardyearleft 2025\harvardyearright , {\em CUDA C++
+  Programming Guide}.
+\newblock Zugriff am: 05.12.2025.
+
+\harvarditem{OpenAI}{2024}{openai2024mcp}
+OpenAI  \harvardyearleft 2024\harvardyearright , `Model context protocol',
+  \url{https://github.com/modelcontextprotocol}.
+\newblock Accessed 2024.
+
+\harvarditem{{Oracle Corporation}}{2024}{mysql_innodb_indexes}
+{Oracle Corporation}  \harvardyearleft 2024\harvardyearright , {\em MySQL 8.4
+  Reference Manual: InnoDB Index Types}.
+\newblock Zugriff am: 05.12.2025.
+\newline\harvardurl{https://dev.mysql.com/doc/refman/8.4/en/innodb-index-types.html}
+
+\harvarditem[Paszke et~al.]{Paszke, Gross, Massa
+  et~al.}{2019}{paszke2019pytorch}
+Paszke, A., Gross, S., Massa, F. et~al.  \harvardyearleft 2019\harvardyearright
+  , Pytorch: An imperative style, high-performance deep learning library, {\em
+  in} `Advances in Neural Information Processing Systems 32 (NeurIPS 2019)'.
+
+\harvarditem{Percona}{2024}{percona2024mysqlindexes}
+Percona  \harvardyearleft 2024\harvardyearright , `Understanding mysql indexes:
+  Types, benefits, and best practices'.
+\newblock Zugriff am: 05.12.2025.
+\newline\harvardurl{https://www.percona.com/blog/understanding-mysql-indexes-types-best-practices/}
+
+\harvarditem{{Qdrant Technologies}}{2024{\em a}}{qdrant_hnsw_course}
+{Qdrant Technologies}  \harvardyearleft 2024{\em a}\harvardyearright , `Hnsw
+  indexing fundamentals',
+  \url{https://qdrant.tech/course/essentials/day-2/what-is-hnsw/}.
+\newblock Zugriff am: 05.12.2025.
+
+\harvarditem{{Qdrant Technologies}}{2024{\em b}}{qdrant_collections}
+{Qdrant Technologies}  \harvardyearleft 2024{\em b}\harvardyearright , `Qdrant
+  concepts: Collections',
+  \url{https://qdrant.tech/documentation/concepts/collections/}.
+\newblock Zugriff am: 05.12.2025.
+
+\harvarditem{{Qdrant Technologies}}{2024{\em c}}{qdrant_indexing}
+{Qdrant Technologies}  \harvardyearleft 2024{\em c}\harvardyearright , `Qdrant
+  concepts: Indexing',
+  \url{https://qdrant.tech/documentation/concepts/indexing/}.
+\newblock Zugriff am: 05.12.2025.
+
+\harvarditem{{Qdrant Technologies}}{2024{\em d}}{qdrant_docs}
+{Qdrant Technologies}  \harvardyearleft 2024{\em d}\harvardyearright , `Qdrant
+  documentation', \url{https://qdrant.tech/documentation/}.
+\newblock Zugriff am: 05.12.2025.
+
+\harvarditem{{Qdrant Technologies}}{2024{\em e}}{qdrant_similarity}
+{Qdrant Technologies}  \harvardyearleft 2024{\em e}\harvardyearright ,
+  `Similarity search in qdrant',
+  \url{https://qdrant.tech/documentation/concepts/search/}.
+\newblock Zugriff am: 05.12.2025.
+
+\harvarditem{Quir{\'o}s}{2024}{container_architecture_namespaces}
+Quir{\'o}s, G.  \harvardyearleft 2024\harvardyearright , `How containers work:
+  Layers, overlayfs, namespaces \& cgroups'.
+\newblock Zugriff am: 05.12.2025.
+\newline\harvardurl{https://k8studio.io/tutorials/container-architecture-namespaces-cgroups-overlayfs/}
+
+\harvarditem{Reips}{2002}{reips2002}
+Reips, U.-D.  \harvardyearleft 2002\harvardyearright , `{Standards for
+  Internet-Based Experimenting}', {\em {Experimental Psychology}} {\bf
+  1}(4),~243--256.
+
+\harvarditem{Ronacher \harvardand\ Contributors}{2024}{flask_docs}
+Ronacher, A. \harvardand\ Contributors, F.  \harvardyearleft
+  2024\harvardyearright , `Flask documentation',
+  \url{https://flask.palletsprojects.com/}.
+\newblock Zugriff am: 05.12.2025.
+
+\harvarditem[Schick et~al.]{Schick, Dwivedi-Yu, Vu
+  et~al.}{2023}{schick2023toolformer}
+Schick, T., Dwivedi-Yu, J., Vu, T. et~al.  \harvardyearleft
+  2023\harvardyearright , `Toolformer: Language models can teach themselves to
+  use tools', {\em arXiv preprint arXiv:2302.04761} .
+\newline\harvardurl{https://arxiv.org/abs/2302.04761}
+
+\harvarditem{{\em Titel der Website}}{n.d.}{website}
+{\em Titel der Website}  \harvardyearleft n.d.\harvardyearright , Website.
+\newblock (Abgerufen am: 2017-07-11).
+\newline\harvardurl{http://www.musterseite.de}
+
+\harvarditem[Touvron et~al.]{Touvron, Lavril, Izacard, Martinet
+  et~al.}{2023}{touvron2023llama}
+Touvron, H., Lavril, T., Izacard, G., Martinet, X. et~al.  \harvardyearleft
+  2023\harvardyearright , `Llama: Open and efficient foundation language
+  models', {\em arXiv preprint arXiv:2302.13971} .
+
+\harvarditem[Wang et~al.]{Wang, Zhu, Lin \harvardand\
+  Zhou}{2024}{wang2024surveyagentic}
+Wang, Z., Zhu, C., Lin, Y. \harvardand\ Zhou, J.  \harvardyearleft
+  2024\harvardyearright , `A survey on agentic large language models', {\em
+  arXiv preprint arXiv:2401.05561} .
+
+\harvarditem[Yao et~al.]{Yao, Deng, Zhou, Wang, Lo \harvardand\
+  Goodman}{2022}{yao2022react}
+Yao, S., Deng, J.~Z., Zhou, J., Wang, A., Lo, Y. \harvardand\ Goodman, N.
+  \harvardyearleft 2022\harvardyearright , `React: Synergizing reasoning and
+  acting in language models', {\em arXiv preprint arXiv:2210.03629} .
+\newline\harvardurl{https://arxiv.org/abs/2210.03629}
+
+\end{thebibliography}

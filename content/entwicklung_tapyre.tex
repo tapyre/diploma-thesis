@@ -1,0 +1,92 @@
+\chapter{Entwicklung von Tapyre als Agentic-AI-System}
+
+In diesem Kapitel wird die Entwicklung von Tapyre als \emph{Agentic AI}-System beschrieben. Im Gegensatz zu klassischen, rein reaktiven Sprachmodellen (Input $\rightarrow$ Output) arbeitet Tapyre mit einem Agenten, der eigenständig Tools aufrufen kann, in einem ReAct-Loop (Reasoning + Acting) entscheidet und seine Funktionalität über Plugins dynamisch erweitert \cite{yao2022react, schick2023toolformer, wang2024surveyagentic}. Die Kopplung zwischen Kernsystem, LLM und Plugins ist dabei bewusst lose gehalten, um das System leicht erweiterbar und wartbar zu machen \cite{gamma1994designpatterns}.
+
+Im Folgenden werden die wichtigsten Bausteine erläutert:
+
+\begin{itemize}
+  \item abstrakte LLM-Schnittstelle und konkrete Implementation für Ollama,
+  \item der Agent auf Basis von LangChain und dem ReAct-Paradigma,
+  \item das Plugin-Konzept und die Abbildung auf LangChain-Tools,
+  \item dynamisches Laden der Plugins zur Laufzeit,
+  \item ein konkretes Beispiel-Plugin (\texttt{AppPlugin}) zum Starten von Desktop-Anwendungen,
+  \item lose Kopplung und Erweiterbarkeit.
+\end{itemize}
+
+\section{Abstraktion der LLM-Schnittstelle}
+
+Um das System unabhängig von einem konkreten Sprachmodell oder Anbieter zu halten, wird eine abstrakte LLM-Schnittstelle definiert. Jeder LLM-Typ (z.\,B. Ollama, OpenAI, etc.) muss nur diese Schnittstelle implementieren. Dadurch kann das Modell später einfach ausgetauscht werden, ohne dass der Agent oder die Plugins angepasst werden müssen. Dieses Prinzip folgt etablierten Architekturmustern wie Interface- und Factory-Abstraktionen \cite{gamma1994designpatterns}.
+
+\lstinputlisting[style=python, label={python_bsp}, caption={Abstrakte LLM-Schnittstelle}, captionpos=b]{sourcecode/tapyre/tapyre/src/abstractions/llm.py}
+
+Eine konkrete Implementierung für Ollama sieht dann wie folgt aus:
+
+\lstinputlisting[style=python, label={python_bsp}, caption={OllamaLLM als konkrete Implementierung}, captionpos=b]{sourcecode/tapyre/tapyre/src/implementations/ollama_llm.py}
+
+Der Rest des Systems kennt nur das Interface \texttt{LLM} und arbeitet mit \texttt{BaseChatModel}-Instanzen. Welches konkrete Modell dahinter steckt, ist für den Agenten und die Plugins transparent.
+
+\section{Der Agent und der ReAct-Loop}
+
+Der eigentliche Agent ist als Abstraktion definiert und besitzt lediglich eine Methode \texttt{ask}, die eine Anfrage entgegennimmt und eine Antwort zurückliefert:
+
+\lstinputlisting[style=python, label={python_bsp}, caption={Abstrakte Agent-Schnittstelle}, captionpos=b]{sourcecode/tapyre/tapyre/src/abstractions/agent.py}
+
+Die konkrete Implementation \texttt{PluginAgent} verwendet LangChain und das Agentenmodell \texttt{ZERO\_SHOT\_REACT\_DESCRIPTION}. Dieses Agentenmodell setzt das ReAct-Prinzip um: Das Modell plant in Gedanken (\emph{Reasoning}), ruft bei Bedarf Tools auf (\emph{Acting}) und verarbeitet die Ergebnisse iterativ weiter \cite{yao2022react, langchain2023}.
+
+\lstinputlisting[style=python, label={python_bsp}, caption={PluginAgent mit ReAct-Agententyp}, captionpos=b]{sourcecode/tapyre/tapyre/src/implementations/plugin_agent.py}
+
+Wichtige Aspekte:
+
+\begin{itemize}
+  \item \textbf{ReAct-Loop:} \texttt{AgentType.ZERO\_SHOT\_REACT\_DESCRIPTION} sorgt dafür, dass das LLM selbst entscheidet, wann ein Tool benutzt werden soll. Es erzeugt intern eine Folge aus \enquote{Thought}, \enquote{Action} und \enquote{Observation}.
+  \item \textbf{Tool-Auswahl:} Die Liste \texttt{tools} wird später aus den geladenen Plugins erzeugt. Das LLM sieht nur die Tool-Beschreibungen und entscheidet basierend darauf, welches Tool geeignet ist.
+  \item \textbf{max\_iterations:} Begrenzung des ReAct-Loops auf zwei Tool-Aufrufe, um Endlosschleifen zu vermeiden \cite{schick2023toolformer}.
+\end{itemize}
+
+\section{Plugins als Tools: Loose Coupling durch Interfaces}
+
+Plugins stellen die eigentliche Funktionalität des Systems dar (z.\,B. das Starten von Programmen, Suchen in Datenbanken, etc.). Sie sind über eine abstrakte Basisklasse definiert und können damit beliebig erweitert werden, ohne dass der Kern des Systems angepasst werden muss. Die Architektur folgt klassischen Prinzipien der losen Kopplung \cite{gamma1994designpatterns}.
+
+\lstinputlisting[style=python, label={python_bsp}, caption={Abstrakte Plugin-Basisklasse}, captionpos=b]{sourcecode/tapyre/tapyre/src/abstractions/plugin.py}
+
+Wesentliche Punkte:
+
+\begin{itemize}
+  \item \textbf{Interface-basiert:} Plugins müssen nur \texttt{run()} implementieren.
+  \item \textbf{Loose Coupling:} Der Agent kennt nur die LangChain-Tools, nicht die konkrete Plugin-Klasse.
+  \item \textbf{Tool-Integration:} \texttt{LCTool.from\_function} macht aus \texttt{run()} ein Tool, das im ReAct-Loop genutzt werden kann \cite{langchain2023}.
+\end{itemize}
+
+\section{Dynamisches Laden der Plugins}
+
+Damit neue Plugins hinzugefügt werden können, ohne das Hauptprogramm zu ändern, werden sie dynamisch zur Laufzeit geladen. Dieses Prinzip folgt gängigen Entwurfsmustern für modulare und erweiterbare Systeme \cite{gamma1994designpatterns}.
+
+\lstinputlisting[style=python, label={python_bsp}, caption={Dynamischer PluginLoader}, captionpos=b]{sourcecode/tapyre/tapyre/src/runtime/plugin_loader.py}
+
+Vorteile dieses Ansatzes:
+
+\begin{itemize}
+  \item \textbf{Plugin-basiertes Design:} Funktionen werden modular ergänzt.
+  \item \textbf{Keine Codeänderung im Kern:} Neue Funktionalitäten sind sofort nutzbar.
+  \item \textbf{Reflection \& Introspection:} Automatische Erkennung von Plugin-Klassen.
+\end{itemize}
+
+\section{Beispiel: AppPlugin zur Steuerung lokaler Anwendungen}
+
+Ein konkretes Plugin ist das \texttt{AppPlugin}, das installierte Desktop-Anwendungen aus \texttt{.desktop}-Dateien ausliest und auf Kommando starten kann. Es implementiert die Plugin-Schnittstelle und stellt damit ein Werkzeug bereit, das der Agent im ReAct-Loop selbstständig nutzen kann \cite{yao2022react, langchain2023}.
+
+\lstinputlisting[style=python, label={python_bsp}, caption={AppPlugin als konkretes Plugin}, captionpos=b]{sourcecode/tapyre/tapyre/src/plugins/app_plugin.py}
+
+\section{Zusammenspiel: Agent, Plugins und ReAct-Loop}
+
+Der typische Ablauf einer Anfrage kombiniert mehrere etablierte Forschungsrichtungen der Agentic AI:
+
+\begin{enumerate}
+  \item ReAct-basiertes Reasoning \cite{yao2022react},
+  \item LLM-Tool-Use \cite{schick2023toolformer},
+  \item modulare Softwarearchitekturen \cite{gamma1994designpatterns},
+  \item agentische Selbstorganisation \cite{wang2024surveyagentic},
+  \item optional: multi-agentische Koordination \cite{du2023ma, hong2023metagpt}.
+\end{enumerate}
+
+Diese Architektur macht Tapyre zu einem echten \emph{Agentic AI}-System: Das LLM dient als Steuerungsinstanz, die eigenständig Tools auswählt, Aktionen plant und iterativ Entscheidungen trifft, während die Plugin-Struktur maximale Erweiterbarkeit sicherstellt.

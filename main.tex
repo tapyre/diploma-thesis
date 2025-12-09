@@ -11,14 +11,14 @@
 %% Titelseite angezeigt
 %% ========================================================================
 
-\newcommand{\mytitle}{TITLE} 
-\newcommand{\mysubtitle}{SUBTITITLE}
+\newcommand{\mytitle}{Tapyre} 
+\newcommand{\mysubtitle}{Entwicklung eines KI-integrierten Produktivitätstools mit Plugin-System}
 \newcommand{\myinstitute}{Abteilung für Wirtschaftsingenieure/Betriebsinformatik} 
-\newcommand{\mysubmissionyear}{2022} %% Einreich - Jahr
+\newcommand{\mysubmissionyear}{2026} %% Einreich - Jahr
 \newcommand{\mysubmissionmonth}{April} %% Monat der Einreichung
-\newcommand{\myauthor}{AUTOR1\\AUTOR2}  %% Autoren. Bitte mit \\ Trennen wenn mehrere
-\newcommand{\mysupervisor}{BETREUER1\\BETREUER2}  %%Betreuer. Bitte mit \\ Trennen wenn mehrere
-\newcommand{\myprojectpartner}{Vollständige Bezeichnung der Firma}  %% Partnerfirma
+\newcommand{\myauthor}{Christian Vorhofer\\Raphael Ladinig}  %% Autoren. Bitte mit \\ Trennen wenn mehrere
+\newcommand{\mysupervisor}{GREINÖCKER Albert, Mag. Dr. DI}  %%Betreuer. Bitte mit \\ Trennen wenn mehrere
+%\newcommand{\myprojectpartner}{TO REMOVE}  %% Partnerfirma
 
 \newcommand{\mysubject}{SUBJECT}  %% also used for PDF metadata (hyperref)
 \newcommand{\mykeywords}{KEYWORDS}  %% also used for PDF metadata (hyperref)
@@ -93,7 +93,7 @@
 %% Choose your desired title page:
 \input{\mytitlepage}            %% include title page
 
-\input{template/lock_flag} % Wenn kein Sperrvermerk gemacht werden soll, dann diesen Import einfach auskommentieren
+% \input{template/lock_flag} % Wenn kein Sperrvermerk gemacht werden soll, dann diesen Import einfach auskommentieren
 
 %%\input{template/declaration_TU_Graz}  %% Statutory Declaration
 % \input{thanks}                %% this is a suggestion: you have to create this file on demand
@@ -121,9 +121,16 @@
 
 
 %% HIER DIE EIGENEN KAPITEL EINFÜGEN
-\input{content/einleitung}  
-\input{content/latex_beispiele} % Einfach auskommentieren für die tatsächliche Arbeit
-\input{content/mathematik}
+%\input{content/einleitung}  
+%\input{content/latex_beispiele} % Einfach auskommentieren für die tatsächliche Arbeit
+%\input{content/mathematik}
+
+\input{content/einfuehrung_neuronale_netzwerke}
+\input{content/einfuehrung_nlp}
+\input{content/einfuerung_agentic_ai}
+\input{content/verwendeten_technologien}
+\input{content/entwicklung_tapyre}
+
 \appendix                       %% closes main document, appendix follows until end; only available in book-classes
 
 \addpart*{Appendix}             %% adding Appendix to tableofcontents

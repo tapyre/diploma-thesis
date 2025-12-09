@@ -1,0 +1,1017 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2025.10.24)  27 NOV 2025 08:15
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex
+(/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-01-16>
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:22: Undefined control sequence.
+<argument> fontsize=\myfontsize 
+                                ,paper=\mypapersize ,
+l.22 
+     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:22: Undefined control sequence.
+<argument> ...ize=\myfontsize ,paper=\mypapersize 
+                                                  ,
+l.22 
+     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:22: Undefined control sequence.
+<argument> parskip=\myparskip 
+                              ,
+l.22 
+     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:22: Undefined control sequence.
+<argument> draft=\mydraft 
+                          ,
+l.22 
+     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:22: Undefined control sequence.
+<argument> BCOR=\myBCOR 
+                        ,
+l.22 
+     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:22: Undefined control sequence.
+<argument> fontsize=\myfontsize 
+                                ,paper=\mypapersize ,
+l.22 
+     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:22: Undefined control sequence.
+<argument> ...ize=\myfontsize ,paper=\mypapersize 
+                                                  ,
+l.22 
+     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:22: Undefined control sequence.
+<argument> parskip=\myparskip 
+                              ,
+l.22 
+     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:22: Undefined control sequence.
+<argument> draft=\mydraft 
+                          ,
+l.22 
+     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:22: Undefined control sequence.
+<argument> BCOR=\myBCOR 
+                        ,
+l.22 
+     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbook.cls
+Document Class: scrbook 2022/10/12 v3.38 KOMA-Script document class (book)
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrkbase.sty
+Package: scrkbase 2022/10/12 v3.38 KOMA-Script package (KOMA-Script-dependent basics and keyval usage)
+ (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbase.sty
+Package: scrbase 2022/10/12 v3.38 KOMA-Script package (KOMA-Script-independent basics and keyval usage)
+ (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlfile.sty
+Package: scrlfile 2022/10/12 v3.38 KOMA-Script package (file load hooks)
+ (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+Package: scrlfile-hook 2022/10/12 v3.38 KOMA-Script package (using LaTeX hooks)
+ (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlogo.sty
+Package: scrlogo 2022/10/12 v3.38 KOMA-Script package (logo)
+))) (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+Applying: [2021/05/01] Usage of raw or classic option list on input line 252.
+Already applied: [0000/00/00] Usage of raw or classic option list on input line 368.
+
+/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbase.sty:611: Undefined control sequence.
+\CurrentOption ->fontsize=\myfontsize 
+                                      
+l.611 \FamilyProcessOptions{KOMA}
+                                 \relax
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbase.sty:611: Undefined control sequence.
+\CurrentOption ->paper=\mypapersize 
+                                    
+l.611 \FamilyProcessOptions{KOMA}
+                                 \relax
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbase.sty:611: Undefined control sequence.
+\CurrentOption ->parskip=\myparskip 
+                                    
+l.611 \FamilyProcessOptions{KOMA}
+                                 \relax
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbase.sty:611: Undefined control sequence.
+\CurrentOption ->draft=\mydraft 
+                                
+l.611 \FamilyProcessOptions{KOMA}
+                                 \relax
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbase.sty:611: Undefined control sequence.
+\CurrentOption ->BCOR=\myBCOR 
+                              
+l.611 \FamilyProcessOptions{KOMA}
+                                 \relax
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+)
+/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrkbase.sty:247: Undefined control sequence.
+\CurrentOption ->fontsize=\myfontsize 
+                                      
+l.247 \KOMAProcessOptions
+                         \relax
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrkbase.sty:247: Undefined control sequence.
+\CurrentOption ->paper=\mypapersize 
+                                    
+l.247 \KOMAProcessOptions
+                         \relax
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrkbase.sty:247: Undefined control sequence.
+\CurrentOption ->parskip=\myparskip 
+                                    
+l.247 \KOMAProcessOptions
+                         \relax
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrkbase.sty:247: Undefined control sequence.
+\CurrentOption ->draft=\mydraft 
+                                
+l.247 \KOMAProcessOptions
+                         \relax
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrkbase.sty:247: Undefined control sequence.
+\CurrentOption ->BCOR=\myBCOR 
+                              
+l.247 \KOMAProcessOptions
+                         \relax
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+) (/usr/share/texlive/texmf-dist/tex/latex/koma-script/tocbasic.sty
+Package: tocbasic 2022/10/12 v3.38 KOMA-Script package (handling toc-files)
+\scr@dte@tocline@numberwidth=\skip48
+\scr@dte@tocline@numbox=\box51
+)
+Package tocbasic Info: omitting babel extension for `toc'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `toc' on input line 137.
+
+
+Class scrbook Warning: deprecated option `enabledeprecatedfontcommands'.
+(scrbook)              Note, that this option was already depreacted when
+(scrbook)              it has been defined. Support for old font commands
+(scrbook)              has been removed from KOMA-Script more than one
+(scrbook)              decade ago. It is not recommended to use them any
+(scrbook)              longer. Therefore usage of this class option also
+(scrbook)              is not recommended.
+
+/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbook.cls:2151: Undefined control sequence.
+\CurrentOption ->fontsize=\myfontsize 
+                                      
+l.2151 \KOMAProcessOptions
+                          \relax
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbook.cls:2151: Undefined control sequence.
+\CurrentOption ->fontsize=\myfontsize 
+                                      
+l.2151 \KOMAProcessOptions
+                          \relax
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbook.cls:2151: Undefined control sequence.
+\CurrentOption ->fontsize=\myfontsize 
+                                      
+l.2151 \KOMAProcessOptions
+                          \relax
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbook.cls:2151: Missing number, treated as zero.
+<to be read again> 
+                   p
+l.2151 \KOMAProcessOptions
+                          \relax
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbook.cls:2151: Undefined control sequence.
+\CurrentOption ->paper=\mypapersize 
+                                    
+l.2151 \KOMAProcessOptions
+                          \relax
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbook.cls:2151: Undefined control sequence.
+<argument> paper=\mypapersize 
+                              
+l.2151 \KOMAProcessOptions
+                          \relax
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbook.cls:2151: Undefined control sequence.
+<argument> paper=\mypapersize 
+                              
+l.2151 \KOMAProcessOptions
+                          \relax
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbook.cls:2151: Undefined control sequence.
+\CurrentOption ->parskip=\myparskip 
+                                    
+l.2151 \KOMAProcessOptions
+                          \relax
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbook.cls:2151: Undefined control sequence.
+\CurrentOption ->parskip=\myparskip 
+                                    
+l.2151 \KOMAProcessOptions
+                          \relax
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbook.cls:2151: Undefined control sequence.
+\CurrentOption ->parskip=\myparskip 
+                                    
+l.2151 \KOMAProcessOptions
+                          \relax
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbook.cls:2151: Undefined control sequence.
+\CurrentOption ->draft=\mydraft 
+                                
+l.2151 \KOMAProcessOptions
+                          \relax
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbook.cls:2151: Undefined control sequence.
+\CurrentOption ->draft=\mydraft 
+                                
+l.2151 \KOMAProcessOptions
+                          \relax
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbook.cls:2151: Undefined control sequence.
+\CurrentOption ->draft=\mydraft 
+                                
+l.2151 \KOMAProcessOptions
+                          \relax
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbook.cls:2151: Undefined control sequence.
+\CurrentOption ->BCOR=\myBCOR 
+                              
+l.2151 \KOMAProcessOptions
+                          \relax
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbook.cls:2151: Undefined control sequence.
+<argument> BCOR=\myBCOR 
+                        
+l.2151 \KOMAProcessOptions
+                          \relax
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbook.cls:2151: Undefined control sequence.
+<argument> =\myBCOR 
+                    
+l.2151 \KOMAProcessOptions
+                          \relax
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbook.cls:2151: Undefined control sequence.
+<argument> ...oexpand \Ifdimen {\@gobble =\myBCOR 
+                                                  }}\reserved@a {\PassOption...
+l.2151 \KOMAProcessOptions
+                          \relax
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbook.cls:2925: Undefined control sequence.
+<argument> \@listi 
+                   
+l.2925   \l@addto@macro{\@listi}{\@list@extra}
+                                              %
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbook.cls:2927: Undefined control sequence.
+<argument> \@listii 
+                    
+l.2927   \l@addto@macro{\@listii}{\@list@extra}
+                                               %
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbook.cls:2928: Undefined control sequence.
+<argument> \@listiii 
+                     
+l.2928   \l@addto@macro{\@listiii}{\@list@extra}
+                                                %
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbook.cls:2929: Undefined control sequence.
+<argument> \footnotesize 
+                         
+l.2929 ...otesize}{\protect\add@extra@listi{ftns}}
+                                                  %
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbook.cls:2930: Undefined control sequence.
+<argument> \small 
+                  
+l.2930 ...o{\small}{\protect\add@extra@listi{sml}}
+                                                  %
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+\c@part=\count185
+\c@chapter=\count186
+\c@section=\count187
+\c@subsection=\count188
+\c@subsubsection=\count189
+\c@paragraph=\count190
+\c@subparagraph=\count191
+\scr@dte@chapter@maxnumwidth=\skip49
+Class scrbook Info: using compatibility default `afterindent=bysign'
+(scrbook)           for `\chapter on input line 5898.
+\scr@dte@section@maxnumwidth=\skip50
+Class scrbook Info: using compatibility default `runin=bysign'
+(scrbook)           for `\section on input line 5909.
+Class scrbook Info: using compatibility default `afterindent=bysign'
+(scrbook)           for `\section on input line 5909.
+\scr@dte@part@maxnumwidth=\skip51
+Class scrbook Info: using compatibility default `afterindent=true'
+(scrbook)           for `\part on input line 5918.
+\scr@dte@subsection@maxnumwidth=\skip52
+Class scrbook Info: using compatibility default `runin=bysign'
+(scrbook)           for `\subsection on input line 5928.
+Class scrbook Info: using compatibility default `afterindent=bysign'
+(scrbook)           for `\subsection on input line 5928.
+\scr@dte@subsubsection@maxnumwidth=\skip53
+Class scrbook Info: using compatibility default `runin=bysign'
+(scrbook)           for `\subsubsection on input line 5938.
+Class scrbook Info: using compatibility default `afterindent=bysign'
+(scrbook)           for `\subsubsection on input line 5938.
+\scr@dte@paragraph@maxnumwidth=\skip54
+Class scrbook Info: using compatibility default `runin=bysign'
+(scrbook)           for `\paragraph on input line 5949.
+Class scrbook Info: using compatibility default `afterindent=bysign'
+(scrbook)           for `\paragraph on input line 5949.
+\scr@dte@subparagraph@maxnumwidth=\skip55
+Class scrbook Info: using compatibility default `runin=bysign'
+(scrbook)           for `\subparagraph on input line 5959.
+Class scrbook Info: using compatibility default `afterindent=bysign'
+(scrbook)           for `\subparagraph on input line 5959.
+\abovecaptionskip=\skip56
+\belowcaptionskip=\skip57
+\c@pti@nb@sid@b@x=\box52
+Package tocbasic Info: omitting babel extension for `lof'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `lof' on input line 7142.
+\scr@dte@figure@maxnumwidth=\skip58
+\c@figure=\count192
+Package tocbasic Info: omitting babel extension for `lot'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `lot' on input line 7159.
+\scr@dte@table@maxnumwidth=\skip59
+\c@table=\count193
+Missing character: There is no 0 in font nullfont!
+Class scrbook Info: Redefining `\numberline' on input line 7330.
+\bibindent=\dimen140
+
+/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbook.cls:7774: LaTeX Error: \RequirePackage or \LoadClass in Options Section.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7774 \endinput
+                
+The document class `scrbook' is defective.
+It attempts to load `scrlogo' in the options section, i.e.,
+between \DeclareOption and \ProcessOptions.
+
+)
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:24: LaTeX Error: \RequirePackage or \LoadClass in Options Section.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.24 \usepackage
+                {ifthen}
+The package `' is defective.
+It attempts to load `float' in the options section, i.e.,
+between \DeclareOption and \ProcessOptions.
+
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:25: LaTeX Error: \RequirePackage or \LoadClass in Options Section.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.25 \usepackage
+                [T1]{fontenc}
+The package `' is defective.
+It attempts to load `ifthen' in the options section, i.e.,
+between \DeclareOption and \ProcessOptions.
+
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:26: LaTeX Error: \RequirePackage or \LoadClass in Options Section.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.26 \usepackage
+                {lmodern}
+The package `' is defective.
+It attempts to load `fontenc' in the options section, i.e.,
+between \DeclareOption and \ProcessOptions.
+
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:27: LaTeX Error: \RequirePackage or \LoadClass in Options Section.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.27 \usepackage
+                [utf8]{inputenc} %% UTF8 as input characters
+The package `' is defective.
+It attempts to load `lmodern' in the options section, i.e.,
+between \DeclareOption and \ProcessOptions.
+
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:28: LaTeX Error: \RequirePackage or \LoadClass in Options Section.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.28 \usepackage
+                {textcomp}
+The package `' is defective.
+It attempts to load `inputenc' in the options section, i.e.,
+between \DeclareOption and \ProcessOptions.
+
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:29: LaTeX Error: \RequirePackage or \LoadClass in Options Section.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.29 \usepackage
+                [\mylanguage]{babel}  %% used languages; default language is...
+The package `' is defective.
+It attempts to load `textcomp' in the options section, i.e.,
+between \DeclareOption and \ProcessOptions.
+
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:30: LaTeX Error: \RequirePackage or \LoadClass in Options Section.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.30 \usepackage
+                {scrlayer-scrpage} %%  advanced page style using KOMA
+The package `' is defective.
+It attempts to load `babel' in the options section, i.e.,
+between \DeclareOption and \ProcessOptions.
+
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:31: LaTeX Error: \RequirePackage or \LoadClass in Options Section.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.31 
+     
+The package `' is defective.
+It attempts to load `scrlayer-scrpage' in the options section, i.e.,
+between \DeclareOption and \ProcessOptions.
+
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:33: LaTeX Error: \RequirePackage or \LoadClass in Options Section.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.33 \usepackage
+                {longtable}
+The package `' is defective.
+It attempts to load `xurl' in the options section, i.e.,
+between \DeclareOption and \ProcessOptions.
+
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:34: LaTeX Error: \RequirePackage or \LoadClass in Options Section.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.34 
+     
+The package `' is defective.
+It attempts to load `longtable' in the options section, i.e.,
+between \DeclareOption and \ProcessOptions.
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:36: Undefined control sequence.
+l.36 \ifthenelse
+                {\boolean{\mydraft}}{   %% the \mydraft switches between
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:36: Undefined control sequence.
+l.36 \ifthenelse{\boolean
+                         {\mydraft}}{   %% the \mydraft switches between
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:36: Undefined control sequence.
+l.36 \ifthenelse{\boolean{\mydraft
+                                  }}{   %% the \mydraft switches between
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:39: LaTeX Error: \RequirePackage or \LoadClass in Options Section.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.39 }
+      
+The package `' is defective.
+It attempts to load `graphicx' in the options section, i.e.,
+between \DeclareOption and \ProcessOptions.
+
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:42: LaTeX Error: \RequirePackage or \LoadClass in Options Section.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.42 }
+      
+The package `' is defective.
+It attempts to load `graphicx' in the options section, i.e.,
+between \DeclareOption and \ProcessOptions.
+
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:46: LaTeX Error: \RequirePackage or \LoadClass in Options Section.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.46 \newboolean
+                {myaddcolophon}
+The package `' is defective.
+It attempts to load `pifont' in the options section, i.e.,
+between \DeclareOption and \ProcessOptions.
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:46: Undefined control sequence.
+<recently read> \newboolean 
+                            
+l.46 \newboolean
+                {myaddcolophon}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:46: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.46 \newboolean{m
+                  yaddcolophon}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no m in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:47: Undefined control sequence.
+l.47 \newboolean
+                {myaddlistoftodos}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no m in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no s in font nullfont!
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:48: Undefined control sequence.
+l.48 \newboolean
+                {english_affidavit}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no h in font nullfont!
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:48: Missing $ inserted.
+<inserted text> 
+                $
+l.48 \newboolean{english_
+                         affidavit}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 48.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 48.
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:48: Extra }, or forgotten $.
+l.48 \newboolean{english_affidavit}
+                                   
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:50: LaTeX Error: \RequirePackage or \LoadClass in Options Section.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.50 \usepackage
+                [usenames,dvipsnames]{xcolor}
+The package `' is defective.
+It attempts to load `xspace' in the options section, i.e.,
+between \DeclareOption and \ProcessOptions.
+
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:51: LaTeX Error: \RequirePackage or \LoadClass in Options Section.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.51 \definecolor
+                 {DispositionColor}{RGB}{\mydispositioncolor} %% used for li...
+The package `' is defective.
+It attempts to load `xcolor' in the options section, i.e.,
+between \DeclareOption and \ProcessOptions.
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:51: Undefined control sequence.
+<recently read> \definecolor 
+                             
+l.51 \definecolor
+                 {DispositionColor}{RGB}{\mydispositioncolor} %% used for li...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:51: Undefined control sequence.
+l.51 ...DispositionColor}{RGB}{\mydispositioncolor
+                                                  } %% used for links and so...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:52: Missing $ inserted.
+<inserted text> 
+                $
+l.52 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:54: LaTeX Error: \RequirePackage or \LoadClass in Options Section.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.54 \usepackage
+                {framed}
+The package `' is defective.
+It attempts to load `ulem' in the options section, i.e.,
+between \DeclareOption and \ProcessOptions.
+
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:55: LaTeX Error: \RequirePackage or \LoadClass in Options Section.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.55 \usepackage
+                {eso-pic}
+The package `' is defective.
+It attempts to load `framed' in the options section, i.e.,
+between \DeclareOption and \ProcessOptions.
+
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:56: LaTeX Error: \RequirePackage or \LoadClass in Options Section.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.56 \usepackage
+                {enumitem}
+The package `' is defective.
+It attempts to load `eso-pic' in the options section, i.e.,
+between \DeclareOption and \ProcessOptions.
+
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:57: LaTeX Error: \RequirePackage or \LoadClass in Options Section.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.57 \usepackage
+                [\mytodonotesoptions]{todonotes}  %% option "disable" remove...
+The package `' is defective.
+It attempts to load `enumitem' in the options section, i.e.,
+between \DeclareOption and \ProcessOptions.
+
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:58: LaTeX Error: \RequirePackage or \LoadClass in Options Section.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.58 \usepackage
+                {units}
+The package `' is defective.
+It attempts to load `todonotes' in the options section, i.e.,
+between \DeclareOption and \ProcessOptions.
+
+
+/home/user/Desktop/school/Diplomarbeit/diploma-thesis/template/preamble.tex:59: LaTeX Error: \RequirePackage or \LoadClass in Options Section.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.59 \usepackage
+                {listings}
+The package `' is defective.
+It attempts to load `units' in the options section, i.e.,
+between \DeclareOption and \ProcessOptions.
+
+)
+! Emergency stop.
+<*> ...arbeit/diploma-thesis/template/preamble.tex
+                                                  
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 3036 strings out of 478051
+ 72134 string characters out of 5840897
+ 1852330 words of memory out of 5000000
+ 23237 multiletter control sequences out of 15000+600000
+ 512287 words of font info for 32 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 108i,2n,106p,10666b,2018s stack positions out of 10000i,1000n,20000p,200000b,200000s
+!  ==> Fatal error occurred, no output PDF file produced!

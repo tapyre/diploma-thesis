@@ -1,0 +1,86 @@
+\chapter{Einführung in Agentic AI}
+
+Agentic AI beschreibt ein neues Paradigma der künstlichen Intelligenz, bei dem Modelle nicht nur Antworten generieren, sondern eigenständig Handlungen planen, Tools verwenden, Entscheidungen treffen und komplexe Aufgaben in mehreren Schritten ausführen. Ein \textit{Agent} ist dabei ein KI-System, das aktiv Ziele verfolgt, Informationen beschafft, Aktionen ausführt und basierend auf den Ergebnissen weitere Schritte plant. Während klassische Sprachmodelle rein reaktiv arbeiten, agiert Agentic AI proaktiv und interaktiv.
+
+Dieses Konzept ist besonders relevant für Systeme wie Tapyre Paper Search, da Agenten autonom Texte analysieren, Datenbanken abfragen, externe Tools aufrufen oder Informationen aus verschiedenen Quellen kombinieren können. Moderne KI-Anwendungen setzen zunehmend auf agentische Systeme, um flexiblere und robustere Abläufe zu ermöglichen.
+
+\section{ReAct: Reasoning + Acting}
+
+Ein grundlegender Ansatz innerhalb von Agentic AI ist das \textbf{ReAct}-Framework (Reasoning + Acting). Dabei führt ein Agent nicht nur interne Überlegungen (\textit{Reasoning}) aus, sondern trifft auch explizite Entscheidungen und führt konkrete Aktionen (\textit{Acting}) aus. ReAct wurde von Yao et al.\ vorgestellt \cite{yao2022react}.
+
+Ein typischer ReAct-Agent arbeitet in zyklischer Struktur:
+
+\begin{enumerate}
+    \item Der Agent überlegt (\textit{Thought}), wie er vorgehen soll.
+    \item Er führt eine Aktion aus, z.\,B. eine API-Anfrage.
+    \item Er erhält eine Beobachtung (\textit{Observation}).
+    \item Basierend darauf plant er den nächsten Schritt.
+\end{enumerate}
+
+Diese Schleife ermöglicht es dem Agenten, komplexe Aufgaben flexibel in Teilschritte zu zerlegen und dynamisch auf neue Informationen zu reagieren.
+
+\section{Tool Usage}
+
+Ein wesentliches Merkmal agentischer Systeme ist die Fähigkeit, externe Werkzeuge (\textit{Tools}) einzusetzen. Beispiele hierfür sind:
+
+\begin{itemize}
+    \item Datenbanken (z.\,B. Qdrant, MySQL),
+    \item Web-APIs (arXiv, Semantic Scholar),
+    \item Dateisysteme,
+    \item Suchfunktionen,
+    \item Python-Skripte.
+\end{itemize}
+
+Der Agent wählt das passende Tool aus, übergibt Parameter, interpretiert die Ergebnisse und nutzt diese, um weitere Entscheidungen zu treffen. Dadurch wird das Sprachmodell zu einer Art Steuerzentrale, die verschiedene Systeme koordinieren kann.
+
+\section{Model Context Protocol (MCP)}
+
+Das \textbf{Model Context Protocol (MCP)} ist ein offener Standard, der definiert, wie KI-Modelle sicher und zuverlässig mit Tools und Datenquellen interagieren können. MCP legt fest:
+
+\begin{itemize}
+    \item wie Tools strukturiert beschrieben werden,
+    \item wie Kontext an Modelle übergeben wird,
+    \item wie Modelle Aktionen anfordern,
+    \item und wie Ergebnisse standardisiert zurückgegeben werden.
+\end{itemize}
+
+Der offene Standard von OpenAI \cite{openai2024mcp} ermöglicht es, Agenten flexibel in Software-Systeme einzubetten und komplexe Pipelines ohne individuelle Integrationslogik anzubinden.
+
+\section{Agent-to-Agent Kommunikation}
+
+In größeren Systemen arbeiten oft mehrere Agenten gemeinsam an einer Aufgabe. Diese Agent-to-Agent-Kommunikation kann genutzt werden, um Aufgaben zu verteilen, Wissen auszutauschen oder verschiedene Strategien zu evaluieren. Beispiele hierfür sind:
+
+\begin{itemize}
+    \item ein Analyse-Agent extrahiert Daten,
+    \item ein Recherche-Agent sucht passende Quellen,
+    \item ein Planungs-Agent entscheidet über das weitere Vorgehen,
+    \item ein Evaluations-Agent überprüft Ergebnisse.
+\end{itemize}
+
+Durch die Spezialisierung der Rollen entsteht eine höhere Robustheit und Skalierbarkeit.
+
+\section{RAG: Retrieval-Augmented Generation}
+
+\textbf{Retrieval-Augmented Generation (RAG)} verbindet Sprachmodelle mit externem Wissen. Statt Antworten frei zu generieren, sucht ein RAG-System zuerst nach relevanten Dokumenten und erzeugt anschließend eine fundierte Antwort auf Basis dieser Inhalte. Der Ansatz wurde von Lewis et al.\ eingeführt \cite{lewis2020rag}.
+
+Ein RAG-Agent arbeitet typischerweise wie folgt:
+
+\begin{enumerate}
+    \item \textbf{Retrieval:} Suche nach relevanten Dokumenten, z.\,B. über Vektorsuche in Qdrant.
+    \item \textbf{Generation:} Erzeugung einer Antwort mithilfe des Sprachmodells, unter Nutzung der gefundenen Informationen.
+\end{enumerate}
+
+Für Tapyre Paper Search ist dieser Ansatz essenziell, da wissenschaftliche Dokumente zuerst semantisch abgerufen und dann weiter analysiert oder zusammengefasst werden.
+
+\section{Multi-Agent Systems}
+
+Multi-Agent-Systems (MAS) bestehen aus mehreren spezialisierten Agenten, die parallel oder kooperativ arbeiten. Vorteile solcher Systeme umfassen:
+
+\begin{itemize}
+    \item höhere Robustheit durch Rollenverteilung,
+    \item bessere Skalierbarkeit,
+    \item parallele Problemlösung,
+    \item Spezialisierung auf Teilprobleme.
+\end{itemize}
+
+MAS werden zunehmend in Forschung, Retrieval-Systemen und komplexen KI-Anwendungen eingesetzt.

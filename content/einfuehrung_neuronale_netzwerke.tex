@@ -1,0 +1,100 @@
+\chapter{Einführung in Neuronale Netzwerke}
+
+\section{Künstliche Neuronen}
+
+Künstliche Neuronen bilden die Grundbausteine moderner neuronaler Netze und orientieren sich konzeptionell am Funktionsprinzip biologischer Nervenzellen. Ein künstliches Neuron erhält mehrere Eingangswerte $x_1, x_2, \dots, x_n$, die jeweils mit Gewichten $w_1, w_2, \dots, w_n$ multipliziert werden. Zusammen mit einem Bias-Term $b$ entsteht die gewichtete Summe
+
+\[
+z = \sum_{i=1}^{n} w_i x_i + b.
+\]
+
+Um dem Modell die Fähigkeit zu geben, nichtlineare Zusammenhänge zu lernen, wird auf diese Summe eine Aktivierungsfunktion angewendet. Typische Aktivierungsfunktionen sind die Sigmoid-Funktion, die Tanh-Funktion oder im modernen Deep Learning vor allem die \textit{Rectified Linear Unit} (ReLU). Das resultierende Ausgabe-Signal des Neurons lautet somit
+
+\[
+y = \sigma(z).
+\]
+
+Durch die Verschachtelung vieler solcher Neuronen in mehreren Schichten (sogenannten Layers) können sehr komplexe Funktionen modelliert werden. Das „Wissen“ des neuronalen Netzes ist in den Gewichten und Bias-Werten gespeichert, die während des Trainingsprozesses mithilfe von Optimierungsverfahren wie dem Gradientenabstieg angepasst werden.
+
+Die Fähigkeit eines einzelnen Neurons, eine lineare Entscheidungsgrenze zu modellieren, wurde bereits früh durch das Perzeptron-Modell demonstriert. Erst durch die Kombination vieler Neuronen in tieferen Netzen wurde es möglich, hochkomplexe Muster wie Bildmerkmale oder sprachliche Zusammenhänge effizient zu verarbeiten. Damit stellen künstliche Neuronen die Grundlage aller modernen Deep-Learning-Architekturen dar, aus denen später fortgeschrittene Modelle wie Convolutional Neural Networks (CNNs), Rekurrente Neuronale Netze (RNNs) und Transformer hervorgegangen sind.
+
+\cite{Goodfellow-et-al-2016}
+
+
+\section{Feed-Forward Neural Networks (FNN)}
+
+
+Ein Feed-Forward Neural Network (FNN) ist die einfachste Form eines neuronalen Netzes und bildet die Grundlage vieler moderner Deep-Learning-Modelle. Der Name beschreibt bereits die wichtigste Eigenschaft: Informationen fließen nur in eine Richtung, nämlich vom Eingang (\textit{Input Layer}) über eine oder mehrere verdeckte Schichten (\textit{Hidden Layers}) zum Ausgang (\textit{Output Layer}). Es gibt keine Rückkopplungen oder Schleifen.
+
+Ein FNN besteht aus vielen künstlichen Neuronen, die miteinander verbunden sind. Jedes Neuron berechnet aus seinen Eingaben eine gewichtete Summe und wendet anschließend eine Aktivierungsfunktion wie ReLU, Sigmoid oder Tanh an. Dadurch kann das Netzwerk auch komplexe, nichtlineare Zusammenhänge erkennen.
+
+Das Netzwerk „lernt“, indem es seine Gewichte anpasst. Dies geschieht über ein Verfahren namens \textit{Backpropagation}. Dabei wird gemessen, wie weit die Vorhersage des Netzes vom tatsächlichen Ergebnis entfernt ist. Dieser Fehler wird dann genutzt, um die Gewichte so zu verändern, dass das Modell in zukünftigen Durchläufen bessere Ergebnisse liefert.
+
+Obwohl FNNs im Vergleich zu neueren Architekturen wie CNNs, RNNs oder Transformern relativ einfach aufgebaut sind, bilden sie das Fundament des Deep Learning. Viele moderne Modelle lassen sich als Weiterentwicklungen dieses grundlegenden Prinzips verstehen.
+
+%Quelle
+\cite{Goodfellow-et-al-2016}
+
+
+\section{Convolutional Neural Networks (CNN)}
+
+Convolutional Neural Networks (CNNs) sind eine spezielle Art von neuronalen Netzen, die besonders gut für die Verarbeitung von Bildern geeignet sind. Im Gegensatz zu einfachen Feed-Forward-Netzen berücksichtigen CNNs die räumliche Struktur von Daten. Das bedeutet, dass sie Muster wie Kanten, Formen oder Texturen erkennen können – unabhängig davon, wo sie im Bild auftreten.
+
+Der wichtigste Baustein eines CNN ist die \textit{Convolutional Layer}. In dieser Schicht wandern kleine Filter (auch \textit{Kerne} oder \textit{Kernels} genannt) über das Bild und berechnen lokale Merkmale. Ein einzelner Filter kann zum Beispiel lernen, horizontale Kanten zu erkennen, während ein anderer runde Formen erkennt. Mehrere solcher Filter erzeugen sogenannte Feature Maps, die unterschiedliche Aspekte des Bildes hervorheben.
+
+Zusätzlich zu den Faltungsschichten verwenden CNNs oft \textit{Pooling-Schichten}. Diese verkleinern die Bilddarstellung, indem sie z.\,B. aus einem 2x2-Bereich nur den größten Wert übernehmen (\textit{Max-Pooling}). Dadurch wird das Modell robuster gegenüber kleinen Verschiebungen im Bild und reduziert gleichzeitig die Anzahl der Parameter.
+
+Am Ende eines CNNs befinden sich meist ein oder mehrere vollständig verbundene Schichten (\textit{Fully Connected Layers}), die auf Basis der erkannten Merkmale eine Entscheidung treffen, zum Beispiel welche Klasse ein Bild hat.
+
+CNNs haben die Bildverarbeitung revolutioniert und sind nach wie vor ein zentraler Bestandteil moderner Computer-Vision-Systeme. Für Textverarbeitung werden sie allerdings seltener eingesetzt, da Sprache eher eine Sequenz als eine zweidimensionale Struktur ist.
+
+\cite{726791}
+
+\section{Rekurrente Neuronale Netze (RNN, LSTM)}
+
+Rekurrente Neuronale Netze (RNNs) wurden entwickelt, um Daten zu verarbeiten, die aus Sequenzen bestehen – zum Beispiel Texte, Sprache, Musik oder Zeitreihen. Im Gegensatz zu Feed-Forward- oder Convolutional-Netzen besitzen RNNs eine Rückkopplung: Ein Teil der Ausgabe eines Zeitschrittes wird als Eingabe in den nächsten Schritt zurückgeführt. Dadurch können RNNs Informationen aus früheren Zeitpunkten speichern und haben eine Art „Gedächtnis“.
+
+Ein einfaches RNN verarbeitet zu jedem Zeitpunkt einen Eingangswert und kombiniert diesen mit dem vorherigen Zustand des Netzwerks. Das Verfahren funktioniert gut bei kurzen Sequenzen, hat jedoch Schwierigkeiten bei langen Abhängigkeiten. Das liegt am sogenannten \textit{Vanishing Gradient Problem}, bei dem wichtige Informationen beim Training schnell verloren gehen.
+
+Um diese Schwächen auszugleichen, wurden \textbf{LSTMs} (Long Short-Term Memory) entwickelt. LSTMs besitzen spezielle Schaltelemente, sogenannte \textit{Gates}. Diese Gates entscheiden, welche Informationen gespeichert, weitergegeben oder gelöscht werden. Dadurch können LSTMs deutlich länger relevante Zusammenhänge behalten und sind stabiler beim Training als einfache RNNs.
+
+LSTMs wurden viele Jahre erfolgreich im Bereich der Sprachverarbeitung eingesetzt, zum Beispiel für maschinelle Übersetzung oder Textklassifikation. Heute spielen sie jedoch eine deutlich kleinere Rolle, da Transformer-Modelle effizienter trainierbar sind und besser mit langen Texten umgehen können.
+
+\cite{long-short-term-memory}
+
+\section{Die Transformer-Architektur}
+
+Transformer-Modelle wurden im Jahr 2017 mit dem Paper Attention Is All You Need eingeführt und haben die Sprachverarbeitung grundlegend verändert. Im Gegensatz zu RNNs und LSTMs verarbeiten Transformer die Eingabe nicht schrittweise, sondern betrachten alle Wörter eines Satzes gleichzeitig. Dadurch können sie wesentlich besser mit langen Texten umgehen und lassen sich effizient auf modernen GPUs parallelisieren.
+
+Das zentrale Konzept eines Transformers ist die sogenannte Self-Attention. Diese Technik ermöglicht es dem Modell, zu bestimmen, welche Wörter in einem Satz für die Bedeutung eines anderen Wortes wichtig sind. Ein Beispiel: Im Satz „Der Hund jagt die Katze, weil sie schnell ist“ muss das Modell erkennen, dass sich „sie“ auf „die Katze“ bezieht. Self-Attention macht genau das möglich, indem jedes Wort auf alle anderen Wörter „aufmerksam“ werden kann.
+
+Ein weiterer wichtiger Bestandteil ist die Multi-Head Attention. Hierbei nutzt das Modell mehrere Attention-Mechanismen gleichzeitig, die jeweils unterschiedliche Arten von Beziehungen lernen können – etwa grammatische Strukturen, thematische Zusammenhänge oder Referenzen im Text. Diese Informationen werden anschließend kombiniert, um ein besonders aussagekräftiges Gesamtverständnis zu erzeugen.
+
+Da Transformer keine natürliche Reihenfolge wie RNNs haben, benötigen sie Positional Encodings, die beschreiben, an welcher Stelle ein Wort im Satz steht. Diese Positionsinformationen werden zu den Eingabedaten addiert, sodass das Modell die Struktur des Satzes versteht.
+
+Ein klassischer Transformer besteht aus zwei Teilen: einem Encoder, der den Text verarbeitet und in eine nützliche Repräsentation (Embedding) umwandelt, und einem Decoder, der beispielsweise Text generieren kann. Bei modernen Sprachmodellen wie GPT wird meist nur der Decoder verwendet, während für Suchsysteme wie Tapyre ausschließlich der Encoder relevant ist.
+
+Transformer haben sich aufgrund ihrer Genauigkeit, Skalierbarkeit und Effizienz als Standard für alle modernen NLP-Systeme durchgesetzt. Sie bilden die Grundlage großer Sprachmodelle (LLMs) und leistungsstarker Embedding-Modelle, wie sie auch in diesem Projekt verwendet werden.
+
+%Quelle
+
+\cite{Attention-Is-All-You-Need}
+
+\section{Bedeutung von Transformern für LLMs und Embeddings}
+
+Transformer-Modelle spielen heute eine zentrale Rolle in fast allen Bereichen der Sprachverarbeitung. Sie bilden die Grundlage großer Sprachmodelle (\textit{Large Language Models, LLMs}) wie GPT, LLaMA oder PaLM und sind außerdem der Standard für die Erzeugung hochwertiger Text-Embeddings. Der Grund dafür liegt in den besonderen Eigenschaften der Transformer-Architektur.
+
+Durch den Einsatz von Self-Attention können Transformer Zusammenhänge zwischen weit entfernten Wörtern erkennen, was besonders wichtig für längere Texte, komplexe Satzstrukturen oder wissenschaftliche Dokumente ist. Während frühere Modelle wie RNNs oder LSTMs oft Schwierigkeiten hatten, Informationen über viele Wörter hinweg zu behalten, können Transformer den gesamten Kontext gleichzeitig berücksichtigen. Dies führt zu deutlich besseren Ergebnissen bei allen Aufgaben, die ein tiefes Textverständnis erfordern.
+
+Für Embedding-Modelle – also Modelle, die Texte in numerische Vektoren umwandeln – bieten Transformer einen weiteren entscheidenden Vorteil: Sie erzeugen Repräsentationen, die nicht nur die Bedeutung einzelner Wörter, sondern die gesamte semantische Struktur eines Satzes oder Dokuments erfassen. Deshalb eignen sich Transformer-Encoder besonders gut für Suchsysteme, Klassifikationsaufgaben oder Recommendation-Systeme.
+
+Moderne Embedding-Modelle wie \textit{SPECTER2}, \textit{Sentence-BERT} oder \textit{E5} basieren alle auf Transformer-Encodern. Sie ermöglichen es, dass ähnliche Texte in einem Vektorraum nahe beieinander liegen, während unterschiedliche Inhalte klar voneinander getrennt sind. Diese Eigenschaft ist essenziell für semantische Suche, wie sie auch in diesem Projekt eingesetzt wird.
+
+Zusammenfassend lässt sich sagen, dass Transformer die Grundlage moderner Sprachverarbeitung bilden. Ohne Transformer wären sowohl leistungsfähige LLMs als auch präzise Embedding-Modelle nicht möglich – und Systeme wie Tapyre Paper Search könnten in dieser Form nicht existieren.
+
+%Quelle
+\cite{Attention-Is-All-You-Need}
+\cite{brown2020language}
+\cite{touvron2023llama}
+\cite{nandakumar2023specter2}
+
