@@ -36,17 +36,17 @@
 \contentsline {section}{\numberline {5.3}Plugins als Tools: Loose Coupling durch Interfaces}{26}{section.5.3}%
 \contentsline {section}{\numberline {5.4}Dynamisches Laden der Plugins}{27}{section.5.4}%
 \contentsline {section}{\numberline {5.5}Beispiel: AppPlugin zur Steuerung lokaler Anwendungen}{28}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Zusammenspiel: Agent, Plugins und ReAct-Loop}{31}{section.5.6}%
-\contentsline {chapter}{\numberline {6}Architektur und Implementierung von Tapyre Paper Search}{33}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Abstraktion der Datenquellen}{34}{section.6.1}%
-\contentsline {section}{\numberline {6.2}arXiv als konkrete Datenquelle}{34}{section.6.2}%
-\contentsline {section}{\numberline {6.3}PDF-Verarbeitung und Textextraktion}{38}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Abstraktion der Embedding-Erzeugung}{42}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Specter2 als semantisches Embedding-Modell}{43}{section.6.5}%
-\contentsline {section}{\numberline {6.6}Abstraktion der Datenhaltung}{45}{section.6.6}%
-\contentsline {section}{\numberline {6.7}MySQL für strukturierte Metadaten}{45}{section.6.7}%
-\contentsline {section}{\numberline {6.8}Qdrant als Vektordatenbank}{49}{section.6.8}%
-\contentsline {section}{\numberline {6.9}Pipeline zur Orchestrierung des Gesamtprozesses}{53}{section.6.9}%
-\contentsline {section}{\numberline {6.10}Zusammenspiel der Komponenten}{56}{section.6.10}%
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{65}{chapter*.15}%
+\contentsline {section}{\numberline {5.6}Zusammenspiel: Agent, Plugins und ReAct-Loop}{30}{section.5.6}%
+\contentsline {chapter}{\numberline {6}Architektur und Implementierung von Tapyre Paper Search}{31}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Abstraktion der Datenquellen}{32}{section.6.1}%
+\contentsline {section}{\numberline {6.2}arXiv als konkrete Datenquelle}{32}{section.6.2}%
+\contentsline {section}{\numberline {6.3}PDF-Verarbeitung und Textextraktion}{35}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Abstraktion der Embedding-Erzeugung}{38}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Specter2 als semantisches Embedding-Modell}{39}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Abstraktion der Datenhaltung}{40}{section.6.6}%
+\contentsline {section}{\numberline {6.7}MySQL für strukturierte Metadaten}{41}{section.6.7}%
+\contentsline {section}{\numberline {6.8}Qdrant als Vektordatenbank}{44}{section.6.8}%
+\contentsline {section}{\numberline {6.9}Pipeline zur Orchestrierung des Gesamtprozesses}{47}{section.6.9}%
+\contentsline {section}{\numberline {6.10}Zusammenspiel der Komponenten}{49}{section.6.10}%
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{59}{chapter*.15}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
