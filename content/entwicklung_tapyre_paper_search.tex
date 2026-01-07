@@ -1,0 +1,138 @@
+\chapter{Architektur und Implementierung von Tapyre Paper Search}
+
+In diesem Kapitel wird die Architektur und Implementierung von Tapyre Paper Search beschrieben. Das System dient der automatisierten Verarbeitung, Indexierung und semantischen Durchsuchung wissenschaftlicher Publikationen. Ziel ist es, große Mengen an Forschungsarbeiten aus unterschiedlichen Quellen strukturiert aufzubereiten und sowohl klassisch (Metadaten) als auch semantisch (Vektorrepräsentationen) durchsuchbar zu machen.
+
+Die Architektur folgt einem modularen Ansatz mit klar getrennten Verantwortlichkeiten für Datenbeschaffung, Textverarbeitung, Embedding-Erzeugung, Speicherung und Orchestrierung. Dadurch ist das System leicht erweiterbar, wartbar und auf unterschiedliche Datenquellen sowie Embedding-Modelle anpassbar.
+
+Im Folgenden werden die zentralen Bausteine erläutert:
+
+\begin{itemize}
+\item abstrakte Kernschnittstellen für Datenquellen, Embeddings und Datenbanken,
+\item konkrete Implementierungen für arXiv, Specter2, Qdrant und MySQL,
+\item die PDF-Verarbeitung als technische Herausforderung,
+\item die Pipeline zur Orchestrierung des Gesamtprozesses,
+\item das Zusammenspiel von strukturierter und semantischer Suche.
+\end{itemize}
+
+\section{Abstraktion der Datenquellen}
+
+Um unterschiedliche Paper-Quellen einbinden zu können, wird eine abstrakte Schnittstelle für Datenprovider definiert. Diese legt fest, wie neue Dokumente geladen und bereitgestellt werden, ohne den restlichen Verarbeitungsprozess zu beeinflussen.
+
+\lstinputlisting[
+style=python,
+caption={Abstrakte Schnittstelle für Datenquellen},
+captionpos=b
+]{sourcecode/tapyre/tapyre-paper-search/src/core/data_provider.py}
+
+Durch diese Abstraktion können neue Datenquellen (z.,B. PubMed oder lokale Archive) ergänzt werden, ohne Änderungen an der Pipeline oder den Datenbankschichten vorzunehmen. Das System folgt damit dem Open-Closed-Prinzip etablierter Softwarearchitekturen.
+
+\section{arXiv als konkrete Datenquelle}
+
+Eine konkrete Implementierung dieser Schnittstelle stellt der arXiv-Datenprovider dar. Er übernimmt das Abrufen von Metadaten sowie das Herunterladen der zugehörigen PDF-Dokumente.
+
+\lstinputlisting[
+style=python,
+caption={arXivDataProvider zur Anbindung der arXiv-API},
+captionpos=b
+]{sourcecode/tapyre/tapyre-paper-search/src/impl/arxiv_data_provider.py}
+
+Der Provider verarbeitet unter anderem Titel, Autoren, Abstracts, Kategorien sowie die PDF-URL eines Papers. Durch die Trennung von Metadatenbeschaffung und nachgelagerter Textverarbeitung bleibt die Architektur flexibel gegenüber Änderungen der Datenquelle.
+
+\section{PDF-Verarbeitung und Textextraktion}
+
+Die Umwandlung von wissenschaftlichen PDFs in maschinenlesbaren Text stellt eine zentrale technische Herausforderung dar. Wissenschaftliche Dokumente enthalten häufig mehrspaltige Layouts, Formeln, Fußnoten und Seitenheader, die eine robuste Textextraktion erschweren.
+
+\lstinputlisting[
+style=python,
+caption={PDF-zu-Text-Konvertierung mit PyMuPDF},
+captionpos=b
+]{sourcecode/tapyre/tapyre-paper-search/src/impl/fitz_pdf_converter.py}
+
+Die Implementierung basiert auf PyMuPDF (fitz) und extrahiert den Text seitenweise. Diese Lösung stellt einen praktikablen Kompromiss zwischen Performance und Textqualität dar und eignet sich insbesondere für große Paper-Sammlungen.
+
+\section{Abstraktion der Embedding-Erzeugung}
+
+Die semantische Suche erfordert die Umwandlung von Text in hochdimensionale Vektoren. Um unterschiedliche Modelle einsetzen zu können, wird eine abstrakte Embedder-Schnittstelle definiert.
+
+\lstinputlisting[
+style=python,
+caption={Abstrakte Embedder-Schnittstelle},
+captionpos=b
+]{sourcecode/tapyre/tapyre-paper-search/src/core/embedder.py}
+
+Diese Abstraktion erlaubt es, verschiedene Embedding-Modelle auszutauschen oder parallel zu evaluieren, ohne Änderungen an der restlichen Systemarchitektur vorzunehmen.
+
+\section{Specter2 als semantisches Embedding-Modell}
+
+Als konkrete Implementierung kommt Specter2 zum Einsatz, ein speziell für wissenschaftliche Texte entwickeltes Transformer-Modell. Es erzeugt Vektoren, die den semantischen Inhalt eines Papers erfassen und sich besonders für wissenschaftliche Suchanwendungen eignen.
+
+\lstinputlisting[
+style=python,
+caption={Specter2Embedder zur Erzeugung semantischer Vektoren},
+captionpos=b
+]{sourcecode/tapyre/tapyre-paper-search/src/impl/specter_2_embedder.py}
+
+Durch die Verwendung eines domänenspezifischen Modells wird eine deutlich bessere semantische Repräsentation erzielt als mit generischen Sprachmodellen.
+
+\section{Abstraktion der Datenhaltung}
+
+Das System unterscheidet bewusst zwischen strukturierter Datenhaltung (Metadaten) und semantischer Vektorspeicherung. Eine abstrakte Datenbankschnittstelle definiert dabei die notwendigen Operationen.
+
+\lstinputlisting[
+style=python,
+caption={Abstrakte Datenbankschnittstelle},
+captionpos=b
+]{sourcecode/tapyre/tapyre-paper-search/src/core/database.py}
+
+Diese Trennung erlaubt es, relationale und vektorbasierte Datenbanken gezielt für ihre jeweiligen Stärken einzusetzen.
+
+\section{MySQL für strukturierte Metadaten}
+
+Metadaten wie Titel, Autoren, Kategorien und Statusinformationen werden in einer relationalen Datenbank gespeichert. Die konkrete Implementierung basiert auf MySQL.
+
+\lstinputlisting[
+style=python,
+caption={MySQL-Datenbankanbindung für Paper-Metadaten},
+captionpos=b
+]{sourcecode/tapyre/tapyre-paper-search/src/impl/mysql_database.py}
+
+Relationale Datenbanken eignen sich besonders für konsistente Speicherung, Filterung und relationale Abfragen auf Metadaten.
+
+\section{Qdrant als Vektordatenbank}
+
+Für die semantische Suche werden die Embeddings in einer spezialisierten Vektordatenbank gespeichert. Qdrant ermöglicht effiziente Approximate-Nearest-Neighbor-Suche auf hochdimensionalen Vektoren.
+
+\lstinputlisting[
+style=python,
+caption={Qdrant-Datenbank für semantische Suche},
+captionpos=b
+]{sourcecode/tapyre/tapyre-paper-search/src/impl/qdrant_database.py}
+
+Durch den Einsatz von HNSW-basierten Indexstrukturen können auch sehr große Paper-Sammlungen performant durchsucht werden.
+
+\section{Pipeline zur Orchestrierung des Gesamtprozesses}
+
+Die Pipeline bildet das zentrale Orchestrierungselement des Systems. Sie verbindet Datenquelle, PDF-Verarbeitung, Embedding-Erzeugung und Speicherung zu einem konsistenten Ablauf.
+
+\lstinputlisting[
+style=python,
+caption={Pipeline zur Verarbeitung und Indexierung von Papers},
+captionpos=b
+]{sourcecode/tapyre/tapyre-paper-search/src/impl/pipeline.py}
+
+Der Ablauf gliedert sich dabei in folgende Schritte:
+
+\begin{enumerate}
+\item Abruf neuer Papers aus der Datenquelle,
+\item Download und Textextraktion aus PDFs,
+\item Chunking und Embedding der Texte,
+\item Speicherung von Metadaten und Vektoren.
+\end{enumerate}
+
+Durch die klare Trennung der einzelnen Schritte bleibt die Pipeline leicht erweiterbar und testbar.
+
+\section{Zusammenspiel der Komponenten}
+
+Das Zusammenspiel der beschriebenen Komponenten ermöglicht eine skalierbare und flexible Paper-Search-Plattform. Während relationale Datenbanken effiziente Metadatenabfragen erlauben, stellt die Vektordatenbank eine leistungsfähige semantische Suche bereit. Die modulare Architektur erlaubt es, neue Datenquellen, Modelle oder Datenbanken mit minimalem Implementierungsaufwand zu integrieren.
+
+Damit bildet Tapyre Paper Search die technische Grundlage für eine moderne, agentenfähige Forschungsplattform, die klassische Informationsretrieval-Ansätze mit aktuellen Methoden der semantischen Suche kombiniert.

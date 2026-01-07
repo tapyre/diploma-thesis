@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2025.10.24)  5 DEC 2025 20:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2025.10.24)  7 JAN 2026 08:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1374,14 +1374,14 @@ Package pdftex.def Info: figures/htl-logo.png  used on input line 1.
  [12]
 chapter 3.
 
-Overfull \hbox (6.8376pt too wide) in paragraph at lines 9--10
+Overfull \hbox (6.8376pt too wide) in paragraph at lines 8--9
 \T1/pplj/m/n/12 (-20) Ein grundle-gen-der Ansatz in-ner-halb von Agen-tic AI is
 t das \T1/pplj/b/n/12 (-20) Re-Act\T1/pplj/m/n/12 (-20) -Framework
  []
 
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 18.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 26.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
 [13
 
@@ -1389,12 +1389,12 @@ Package pdftex.def Info: figures/htl-logo.png  used on input line 18.
 ]
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 49.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 51.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
  [14]
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 74.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 79.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
  [15]) (./content/verwendeten_technologien.tex
 File: figures/htl-logo.png Graphic file (type png)
@@ -1430,12 +1430,12 @@ iz-it als Vektor-Datenbank
 
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 42.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 47.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
 [18]
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 73.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 79.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
  [19]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 9
@@ -1449,7 +1449,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 103.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 107.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
  [20])
 (./content/entwicklung_tapyre.tex
@@ -1589,39 +1589,1146 @@ File: figures/htl-logo.png Graphic file (type png)
 Package pdftex.def Info: figures/htl-logo.png  used on input line 85.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
  [30])
+(./content/entwicklung_tapyre_paper_search.tex
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 136.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 1.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
-
-[31] [32
+ [31] [32
 
 
 ]
+chapter 6.
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 136.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 20.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
- [33] [34]
+[33] (./sourcecode/tapyre/tapyre-paper-search/src/core/data_provider.py)
+Overfull \hbox (26.84264pt too wide) in paragraph at lines 31--32
+\T1/pplj/m/n/12 (-20) Eine konkrete Im-ple-men-tierung dieser Schnittstelle ste
+llt der arXiv-Datenprovider
+ []
+
+(./sourcecode/tapyre/tapyre-paper-search/src/impl/arxiv_data_provider.py
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 16.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+
+[34]
+Overfull \hbox (14.76558pt too wide) in paragraph at lines 31--32
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (30.06573pt too wide) in paragraph at lines 40--41
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (45.36589pt too wide) in paragraph at lines 58--60
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 71.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+ [35]
+Overfull \hbox (81.06625pt too wide) in paragraph at lines 76--77
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ 
+ []
+
+
+Overfull \hbox (19.86563pt too wide) in paragraph at lines 79--80
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (86.1663pt too wide) in paragraph at lines 87--88
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][] 
+ []
+
+
+! LaTeX Error: Invalid UTF-8 byte sequence (â\lst@FillFixed@\lst@EC€).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.93 ...r.info("[next] No more IDs to process â€” 
+                                                  finished.")
+? 
+
+! LaTeX Error: Invalid UTF-8 byte "94.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.93 ...r.info("[next] No more IDs to process â€” 
+                                                  finished.")
+? 
+
+! LaTeX Error: Invalid UTF-8 byte sequence (â\lst@FillFixed@\lst@EC€).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.101 ...] Reached last ID or invalid next ID â€” 
+                                                  marking finished.")
+? 
+
+! LaTeX Error: Invalid UTF-8 byte "94.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.101 ...] Reached last ID or invalid next ID â€” 
+                                                  marking finished.")
+? 
+
+Overfull \hbox (106.56651pt too wide) in paragraph at lines 101--102
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (70.86615pt too wide) in paragraph at lines 111--112
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][] 
+ []
+
+
+Overfull \hbox (60.66605pt too wide) in paragraph at lines 116--118
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[] 
+ []
+
+
+Overfull \hbox (14.76558pt too wide) in paragraph at lines 122--123
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (55.566pt too wide) in paragraph at lines 124--125
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 127.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+ [36]
+Overfull \hbox (60.66605pt too wide) in paragraph at lines 152--153
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (35.16579pt too wide) in paragraph at lines 159--160
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (91.26636pt too wide) in paragraph at lines 165--166
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][] 
+ []
+
+
+Overfull \hbox (70.86615pt too wide) in paragraph at lines 174--175
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][] 
+ []
+
+
+Overfull \hbox (30.06573pt too wide) in paragraph at lines 179--180
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 182.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+ [37]
+Overfull \hbox (60.66605pt too wide) in paragraph at lines 186--187
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (55.566pt too wide) in paragraph at lines 187--188
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (40.26584pt too wide) in paragraph at lines 196--197
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (65.7661pt too wide) in paragraph at lines 201--202
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[] 
+ []
+
+) (./sourcecode/tapyre/tapyre-paper-search/src/impl/fitz_pdf_converter.py
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 12.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+
+[38]
+Overfull \hbox (30.06573pt too wide) in paragraph at lines 22--23
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (4.56548pt too wide) in paragraph at lines 23--25
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (30.06573pt too wide) in paragraph at lines 36--38
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (50.46594pt too wide) in paragraph at lines 44--45
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][] 
+ []
+
+
+! LaTeX Error: Invalid UTF-8 byte sequence (â\lst@FillFixed@\lst@EC€).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.50 ...d to extract text from page %d/%d: %s â€“ 
+                                                  skipping this page.",
+? 
+
+! LaTeX Error: Invalid UTF-8 byte "93.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.50 ...d to extract text from page %d/%d: %s â€“ 
+                                                  skipping this page.",
+? 
+
+Overfull \hbox (75.9662pt too wide) in paragraph at lines 50--51
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (35.16579pt too wide) in paragraph at lines 57--58
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ 
+ []
+
+
+Overfull \hbox (19.86563pt too wide) in paragraph at lines 62--63
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 67.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+ [39]
+Overfull \hbox (4.56548pt too wide) in paragraph at lines 70--72
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (24.96568pt too wide) in paragraph at lines 79--80
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (4.56548pt too wide) in paragraph at lines 80--82
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (40.26584pt too wide) in paragraph at lines 91--92
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (14.76558pt too wide) in paragraph at lines 104--106
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (30.06573pt too wide) in paragraph at lines 110--112
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (4.56548pt too wide) in paragraph at lines 116--118
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 121.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+ [40]
+Overfull \hbox (24.96568pt too wide) in paragraph at lines 124--126
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][] 
+ []
+
+
+! LaTeX Error: Invalid UTF-8 byte sequence (â\lst@FillFixed@\lst@EC€).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.146         text = text.replace('â€“',
+                                         '-')
+? 
+
+! LaTeX Error: Invalid UTF-8 byte "93.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.146         text = text.replace('â€“',
+                                         '-')
+? 
+
+! LaTeX Error: Invalid UTF-8 byte sequence (â\lst@FillFixed@\lst@EC€).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.147         text = text.replace('â€”',
+                                         '-')
+? 
+
+! LaTeX Error: Invalid UTF-8 byte "94.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.147         text = text.replace('â€”',
+                                         '-')
+? 
+
+! LaTeX Error: Invalid UTF-8 byte sequence (â\lst@FillFixed@\lst@ECˆ).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.148         text = text.replace('âˆ’',
+                                         '-')
+? 
+
+! LaTeX Error: Invalid UTF-8 byte "92.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.148         text = text.replace('âˆ’',
+                                         '-')
+? 
+
+! LaTeX Error: Invalid UTF-8 byte sequence (Â\lst@FillFixed@).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.149         text = text.replace('Â­',
+                                        '')
+? 
+
+! LaTeX Error: Invalid UTF-8 byte "AD.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.149         text = text.replace('Â­',
+                                        '')
+? 
+
+Overfull \hbox (30.06573pt too wide) in paragraph at lines 155--156
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (4.56548pt too wide) in paragraph at lines 158--159
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+
+ []
+
+
+Overfull \hbox (96.36641pt too wide) in paragraph at lines 159--160
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (75.9662pt too wide) in paragraph at lines 168--169
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][] 
+ []
+
+
+Overfull \hbox (121.86667pt too wide) in paragraph at lines 173--174
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 176.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+ [41]
+Overfull \hbox (14.76558pt too wide) in paragraph at lines 180--181
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (9.66553pt too wide) in paragraph at lines 184--185
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (70.86615pt too wide) in paragraph at lines 187--188
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (65.7661pt too wide) in paragraph at lines 188--190
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (9.66553pt too wide) in paragraph at lines 190--191
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+
+ []
+
+
+Overfull \hbox (45.36589pt too wide) in paragraph at lines 195--196
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+) (./sourcecode/tapyre/tapyre-paper-search/src/core/embedder.py)
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 65.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+ [42]
+(./sourcecode/tapyre/tapyre-paper-search/src/impl/specter_2_embedder.py
+Overfull \hbox (14.76558pt too wide) in paragraph at lines 11--13
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (65.7661pt too wide) in paragraph at lines 38--39
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 40.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+[43]
+Overfull \hbox (111.66656pt too wide) in paragraph at lines 40--41
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ 
+ []
+
+
+Overfull \hbox (55.566pt too wide) in paragraph at lines 46--47
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (132.06677pt too wide) in paragraph at lines 49--51
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][] 
+ []
+
+
+Overfull \hbox (126.96672pt too wide) in paragraph at lines 58--60
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][] 
+ []
+
+
+Overfull \hbox (9.66553pt too wide) in paragraph at lines 61--62
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (14.76558pt too wide) in paragraph at lines 66--67
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (147.36693pt too wide) in paragraph at lines 73--75
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (35.16579pt too wide) in paragraph at lines 78--79
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 80.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+ [44]
+(./sourcecode/tapyre/tapyre-paper-search/src/core/database.py)
+(./sourcecode/tapyre/tapyre-paper-search/src/impl/mysql_database.py
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 15.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+ [45]
+Overfull \hbox (132.06677pt too wide) in paragraph at lines 23--25
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (152.46698pt too wide) in paragraph at lines 26--28
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (14.76558pt too wide) in paragraph at lines 38--39
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (24.96568pt too wide) in paragraph at lines 42--43
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][] 
+ []
+
+
+Overfull \hbox (86.1663pt too wide) in paragraph at lines 44--45
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (9.66553pt too wide) in paragraph at lines 49--50
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (60.66605pt too wide) in paragraph at lines 51--52
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 69.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+ [46]
+Overfull \hbox (126.96672pt too wide) in paragraph at lines 84--85
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (142.26688pt too wide) in paragraph at lines 108--109
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][] 
+ []
+
+
+Overfull \hbox (259.56807pt too wide) in paragraph at lines 114--115
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (121.86667pt too wide) in paragraph at lines 119--120
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 125.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+ [47]
+Overfull \hbox (19.86563pt too wide) in paragraph at lines 128--129
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (30.06573pt too wide) in paragraph at lines 144--145
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (4.56548pt too wide) in paragraph at lines 149--150
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (75.9662pt too wide) in paragraph at lines 155--156
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (70.86615pt too wide) in paragraph at lines 165--166
+[][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (75.9662pt too wide) in paragraph at lines 166--168
+[][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (132.06677pt too wide) in paragraph at lines 168--170
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (116.76662pt too wide) in paragraph at lines 175--176
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 179.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+ [48]
+Overfull \hbox (60.66605pt too wide) in paragraph at lines 185--186
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (91.26636pt too wide) in paragraph at lines 186--187
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+) (./sourcecode/tapyre/tapyre-paper-search/src/impl/qdrant_database.py
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 17.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+ [49]
+Overfull \hbox (91.26636pt too wide) in paragraph at lines 20--21
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (30.06573pt too wide) in paragraph at lines 28--29
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (106.56651pt too wide) in paragraph at lines 32--33
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[] 
+ []
+
+
+Overfull \hbox (121.86667pt too wide) in paragraph at lines 37--38
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (223.8677pt too wide) in paragraph at lines 39--40
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (172.86719pt too wide) in paragraph at lines 48--49
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (208.56755pt too wide) in paragraph at lines 50--51
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][] 
+ []
+
+
+Overfull \hbox (106.56651pt too wide) in paragraph at lines 58--60
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (96.36641pt too wide) in paragraph at lines 70--71
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 72.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+ [50]
+Overfull \hbox (9.66553pt too wide) in paragraph at lines 75--77
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (14.76558pt too wide) in paragraph at lines 87--88
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][] 
+ []
+
+
+Overfull \hbox (24.96568pt too wide) in paragraph at lines 109--110
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (111.66656pt too wide) in paragraph at lines 124--125
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 127.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+ [51]
+Overfull \hbox (4.56548pt too wide) in paragraph at lines 134--135
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+! LaTeX Error: Invalid UTF-8 byte sequence (â\lst@FillFixed@\lst@EC€).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.135 ...   "for paper %s (attempt %d/%d): %s â€“ 
+                                                  retrying in %.1fs",
+? 
+
+! LaTeX Error: Invalid UTF-8 byte "93.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.135 ...   "for paper %s (attempt %d/%d): %s â€“ 
+                                                  retrying in %.1fs",
+? 
+
+Overfull \hbox (75.9662pt too wide) in paragraph at lines 147--148
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (75.9662pt too wide) in paragraph at lines 155--157
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (81.06625pt too wide) in paragraph at lines 169--170
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (65.7661pt too wide) in paragraph at lines 172--173
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (142.26688pt too wide) in paragraph at lines 176--177
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 182.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+ [52]
+Overfull \hbox (75.9662pt too wide) in paragraph at lines 186--187
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+) (./sourcecode/tapyre/tapyre-paper-search/src/impl/pipeline.py
+Overfull \hbox (55.566pt too wide) in paragraph at lines 12--13
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 30.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+[53]
+Overfull \hbox (106.56651pt too wide) in paragraph at lines 30--31
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][] 
+ []
+
+
+! LaTeX Error: Invalid UTF-8 byte sequence (â\lst@FillFixed@\lst@EC€).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.50 ....warning("Data provider returned None â€” 
+                                                  no more papers or an error...
+
+? 
+
+! LaTeX Error: Invalid UTF-8 byte "94.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.50 ....warning("Data provider returned None â€” 
+                                                  no more papers or an error...
+
+? 
+
+Overfull \hbox (167.76714pt too wide) in paragraph at lines 50--51
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (91.26636pt too wide) in paragraph at lines 56--57
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+! LaTeX Error: Invalid UTF-8 byte sequence (â\lst@FillFixed@\lst@EC€).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.63 ....logger.info("Paper %s already exists â€“ 
+                                                  skipping.", arxiv_id)
+? 
+
+! LaTeX Error: Invalid UTF-8 byte "93.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.63 ....logger.info("Paper %s already exists â€“ 
+                                                  skipping.", arxiv_id)
+? 
+
+Overfull \hbox (45.36589pt too wide) in paragraph at lines 63--64
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (121.86667pt too wide) in paragraph at lines 71--72
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+! LaTeX Error: Invalid UTF-8 byte sequence (â\lst@FillFixed@\lst@EC€).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.75 ...ger.warning("No text extracted for %s â€“ 
+                                                  skipping.", arxiv_id)
+? 
+
+! LaTeX Error: Invalid UTF-8 byte "93.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.75 ...ger.warning("No text extracted for %s â€“ 
+                                                  skipping.", arxiv_id)
+? 
+
+Overfull \hbox (65.7661pt too wide) in paragraph at lines 75--76
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (142.26688pt too wide) in paragraph at lines 81--82
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 84.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+ [54]
+
+! LaTeX Error: Invalid UTF-8 byte sequence (â\lst@FillFixed@\lst@EC€).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.88 ...r.warning("No chunks generated for %s â€“ 
+                                                  skipping embedding.", arxi...
+
+? 
+
+! LaTeX Error: Invalid UTF-8 byte "93.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.88 ...r.warning("No chunks generated for %s â€“ 
+                                                  skipping embedding.", arxi...
+
+? 
+
+Overfull \hbox (126.96672pt too wide) in paragraph at lines 88--89
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (116.76662pt too wide) in paragraph at lines 105--107
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][] 
+ []
+
+
+Overfull \hbox (121.86667pt too wide) in paragraph at lines 110--111
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (86.1663pt too wide) in paragraph at lines 124--125
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+] 
+ []
+
+
+Overfull \hbox (35.16579pt too wide) in paragraph at lines 125--126
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (142.26688pt too wide) in paragraph at lines 129--131
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (19.86563pt too wide) in paragraph at lines 131--132
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][] 
+ []
+
+)
+Underfull \vbox (badness 1881) has occurred while \output is active []
+
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 126.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+ [55])
+Overfull \hbox (8.14012pt too wide) in paragraph at lines 138--134
+\T1/pplj/m/n/12 (-20) erne, agen-ten-fähige Forschungsplat-tform, die klas-sis-
+che Informationsretrieval-
+ []
+
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 137.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+[56]
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 137.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+ [57
+
+
+] [58]
 Package tocbasic Info: character protrusion at lot deactivated on input line 14
-0.
+1.
  (./main.lot)
 \tf@lot=\write6
 \openout6 = `main.lot'.
 
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 141.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 142.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
- [35
+ [59
 
 
-] [36
+] [60
 
 
 ]
 Package tocbasic Info: character protrusion at lof deactivated on input line 14
-1.
+2.
  (./main.lof)
 \tf@lof=\write7
 \openout7 = `main.lof'.
@@ -1638,13 +2745,13 @@ Class scrbook Warning: \float@listhead detected!
 (scrbook)              Loading of package `scrhack' may help to
 (scrbook)              avoid this warning, if you are using a
 (scrbook)              a package that still implements the
-(scrbook)              deprecated \float@listhead interface on input line 142.
+(scrbook)              deprecated \float@listhead interface on input line 143.
 
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 142.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 143.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
-[37] [38
+[61] [62
 
 
 ] (./main.lol)
@@ -1656,7 +2763,7 @@ File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
 Package pdftex.def Info: figures/htl-logo.png  used on input line 1.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
- [39] [40
+ [63] [64
 
 
 ]
@@ -1665,7 +2772,7 @@ File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
 Package pdftex.def Info: figures/htl-logo.png  used on input line 62.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
-[41]
+[65]
 
 Class scrbook Warning: deprecated old font command `\bf' used.
 (scrbook)              You should note, that since 1994 LaTeX2e provides a
@@ -1718,12 +2825,12 @@ File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
 Package pdftex.def Info: figures/htl-logo.png  used on input line 129.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
-[42]
+[66]
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
 Package pdftex.def Info: figures/htl-logo.png  used on input line 194.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
- [43]
+ [67]
 
 Class scrbook Warning: deprecated old font command `\bf' used.
 (scrbook)              You should note, that since 1994 LaTeX2e provides a
@@ -1749,9 +2856,9 @@ Class scrbook Warning: deprecated old font command `\bf' used.
 AED: lastpage setting LastPage
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 146.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 147.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
-[44] (./main.aux (./content/abstract.aux))
+[68] (./main.aux (./content/abstract.aux))
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1759,10 +2866,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 33024 strings out of 478051
- 642336 string characters out of 5840897
- 1919330 words of memory out of 5000000
- 51614 multiletter control sequences out of 15000+600000
+ 34491 strings out of 478051
+ 666990 string characters out of 5840897
+ 1933330 words of memory out of 5000000
+ 51972 multiletter control sequences out of 15000+600000
  587340 words of font info for 441 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
  118i,24n,113p,10683b,2397s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1780,10 +2887,10 @@ f/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt
 xmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
 /palatino/uplri8a.pfb>
-Output written on main.pdf (52 pages, 401188 bytes).
+Output written on main.pdf (76 pages, 507266 bytes).
 PDF statistics:
- 1067 PDF objects out of 1200 (max. 8388607)
- 970 compressed objects within 10 object streams
- 403 named destinations out of 1000 (max. 500000)
- 64319 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 2504 PDF objects out of 2984 (max. 8388607)
+ 2369 compressed objects within 24 object streams
+ 1480 named destinations out of 1728 (max. 500000)
+ 64407 words of extra memory for PDF output out of 74296 (max. 10000000)
 
