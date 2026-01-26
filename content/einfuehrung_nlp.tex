@@ -2,7 +2,7 @@
 
 Natural Language Processing (NLP) ist ein zentraler Bereich der Künstlichen Intelligenz, der sich mit der automatischen Verarbeitung menschlicher Sprache beschäftigt. Ziel ist es, Texte so zu analysieren und zu interpretieren, dass Computer sprachbasierte Aufgaben ausführen können – etwa Suchanfragen beantworten, Texte zusammenfassen oder Dokumente klassifizieren. Moderne Systeme wie Suchmaschinen, Chatbots oder Sprachassistenten bauen maßgeblich auf Methoden des NLP auf \cite{jurafsky2023slp}.
 
-Während frühe Ansätze vor allem statistische Modelle nutzten, basiert das heutige NLP überwiegend auf tiefen neuronalen Netzen. Eine entscheidende Rolle spielt dabei die Frage, wie Bedeutungen mathematisch repräsentiert werden können. Diese Repräsentationen werden als \textbf{Embeddings} bezeichnet.
+Während frühe Ansätze vor allem statistische Modelle nutzten, basiert das heutige NLP überwiegend auf tiefen neuronalen Netzen. Eine entscheidende Rolle spielt dabei die Frage, wie Bedeutungen mathematisch repräsentiert werden können. Diese Repräsentationen werden als Embeddings bezeichnet.
 
 \section{Klassische NLP-Ansätze}
 
@@ -24,17 +24,17 @@ Embeddings bilden die Grundlage vieler moderner NLP-Systeme und ermöglichen sem
 
 \section{Word Embeddings: Word2Vec und GloVe}
 
-Einen bedeutenden Fortschritt stellten Word Embeddings wie \textbf{Word2Vec} dar. Diese Modelle ordnen jedem Wort einen festen Vektor zu und basieren auf der Idee, dass Wörter, die in ähnlichen Kontexten auftreten, ähnliche Repräsentationen erhalten. Dadurch entstehen semantische Strukturen wie:
+Einen bedeutenden Fortschritt stellten Word Embeddings wie Word2Vec dar. Diese Modelle ordnen jedem Wort einen festen Vektor zu und basieren auf der Idee, dass Wörter, die in ähnlichen Kontexten auftreten, ähnliche Repräsentationen erhalten. Dadurch entstehen semantische Strukturen wie:
 
 \[
-\mathrm{König} - \mathrm{Mann} + \mathrm{Frau} \approx \mathrm{Königin}
+\mathrm{Koenig} - \mathrm{Mann} + \mathrm{Frau} \approx \mathrm{Koenigin}
 \]
 
 Word2Vec \cite{mikolov2013word2vec} und ähnliche Ansätze erfassen grundlegende semantische Beziehungen, ignorieren jedoch die Mehrdeutigkeit von Wörtern: Das Wort „Bank“ hat stets denselben Vektor, unabhängig vom Kontext.
 
 \section{Kontextualisierte Embeddings}
 
-Mit tiefen neuronalen Netzen entstanden Modelle, die Wortbedeutungen kontextabhängig repräsentieren. Ein Beispiel dafür ist \textbf{ELMo}, das für jedes Wort unterschiedliche Vektoren erzeugt – abhängig vom Satz, in dem es vorkommt. Diese Ansätze bilden eine Übergangsphase zwischen klassischen Embeddings und modernen Transformer-Modellen.
+Mit tiefen neuronalen Netzen entstanden Modelle, die Wortbedeutungen kontextabhängig repräsentieren. Ein Beispiel dafür ist ELMo, das für jedes Wort unterschiedliche Vektoren erzeugt – abhängig vom Satz, in dem es vorkommt. Diese Ansätze bilden eine Übergangsphase zwischen klassischen Embeddings und modernen Transformer-Modellen.
 
 \section{Embeddings mit der Transformer-Architektur}
 

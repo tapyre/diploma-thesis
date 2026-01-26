@@ -38,9 +38,9 @@ Die konkrete Implementation \texttt{PluginAgent} verwendet LangChain und das Age
 Wichtige Aspekte:
 
 \begin{itemize}
-  \item \textbf{ReAct-Loop:} \texttt{AgentType.ZERO\_SHOT\_REACT\_DESCRIPTION} sorgt dafür, dass das LLM selbst entscheidet, wann ein Tool benutzt werden soll. Es erzeugt intern eine Folge aus \enquote{Thought}, \enquote{Action} und \enquote{Observation}.
-  \item \textbf{Tool-Auswahl:} Die Liste \texttt{tools} wird später aus den geladenen Plugins erzeugt. Das LLM sieht nur die Tool-Beschreibungen und entscheidet basierend darauf, welches Tool geeignet ist.
-  \item \textbf{max\_iterations:} Begrenzung des ReAct-Loops auf zwei Tool-Aufrufe, um Endlosschleifen zu vermeiden \cite{schick2023toolformer}.
+  \item ReAct-Loop: \texttt{AgentType.ZERO\_SHOT\_REACT\_DESCRIPTION} sorgt dafür, dass das LLM selbst entscheidet, wann ein Tool benutzt werden soll. Es erzeugt intern eine Folge aus \enquote{Thought}, \enquote{Action} und \enquote{Observation}.
+  \item Tool-Auswahl: Die Liste \texttt{tools} wird später aus den geladenen Plugins erzeugt. Das LLM sieht nur die Tool-Beschreibungen und entscheidet basierend darauf, welches Tool geeignet ist.
+  \item max\_iterations: Begrenzung des ReAct-Loops auf zwei Tool-Aufrufe, um Endlosschleifen zu vermeiden \cite{schick2023toolformer}.
 \end{itemize}
 
 \section{Plugins als Tools: Loose Coupling durch Interfaces}
@@ -52,9 +52,9 @@ Plugins stellen die eigentliche Funktionalität des Systems dar (z.\,B. das Star
 Wesentliche Punkte:
 
 \begin{itemize}
-  \item \textbf{Interface-basiert:} Plugins müssen nur \texttt{run()} implementieren.
-  \item \textbf{Loose Coupling:} Der Agent kennt nur die LangChain-Tools, nicht die konkrete Plugin-Klasse.
-  \item \textbf{Tool-Integration:} \texttt{LCTool.from\_function} macht aus \texttt{run()} ein Tool, das im ReAct-Loop genutzt werden kann \cite{langchain2023}.
+  \item Interface-basiert: Plugins müssen nur \texttt{run()} implementieren.
+  \item Loose Coupling: Der Agent kennt nur die LangChain-Tools, nicht die konkrete Plugin-Klasse.
+  \item Tool-Integration: \texttt{LCTool.from\_function} macht aus \texttt{run()} ein Tool, das im ReAct-Loop genutzt werden kann \cite{langchain2023}.
 \end{itemize}
 
 \section{Dynamisches Laden der Plugins}
@@ -66,9 +66,9 @@ Damit neue Plugins hinzugefügt werden können, ohne das Hauptprogramm zu änder
 Vorteile dieses Ansatzes:
 
 \begin{itemize}
-  \item \textbf{Plugin-basiertes Design:} Funktionen werden modular ergänzt.
-  \item \textbf{Keine Codeänderung im Kern:} Neue Funktionalitäten sind sofort nutzbar.
-  \item \textbf{Reflection \& Introspection:} Automatische Erkennung von Plugin-Klassen.
+  \item Plugin-basiertes Design: Funktionen werden modular ergänzt.
+  \item Keine Codeänderung im Kern: Neue Funktionalitäten sind sofort nutzbar.
+  \item Reflection \& Introspection: Automatische Erkennung von Plugin-Klassen.
 \end{itemize}
 
 \section{Beispiel: AppPlugin zur Steuerung lokaler Anwendungen}

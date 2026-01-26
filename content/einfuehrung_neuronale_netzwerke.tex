@@ -56,7 +56,7 @@ Rekurrente Neuronale Netze (RNNs) wurden entwickelt, um Daten zu verarbeiten, di
 
 Ein einfaches RNN verarbeitet zu jedem Zeitpunkt einen Eingangswert und kombiniert diesen mit dem vorherigen Zustand des Netzwerks. Das Verfahren funktioniert gut bei kurzen Sequenzen, hat jedoch Schwierigkeiten bei langen Abhängigkeiten. Das liegt am sogenannten \textit{Vanishing Gradient Problem}, bei dem wichtige Informationen beim Training schnell verloren gehen.
 
-Um diese Schwächen auszugleichen, wurden \textbf{LSTMs} (Long Short-Term Memory) entwickelt. LSTMs besitzen spezielle Schaltelemente, sogenannte \textit{Gates}. Diese Gates entscheiden, welche Informationen gespeichert, weitergegeben oder gelöscht werden. Dadurch können LSTMs deutlich länger relevante Zusammenhänge behalten und sind stabiler beim Training als einfache RNNs.
+Um diese Schwächen auszugleichen, wurden LSTMs (Long Short-Term Memory) entwickelt. LSTMs besitzen spezielle Schaltelemente, sogenannte \textit{Gates}. Diese Gates entscheiden, welche Informationen gespeichert, weitergegeben oder gelöscht werden. Dadurch können LSTMs deutlich länger relevante Zusammenhänge behalten und sind stabiler beim Training als einfache RNNs.
 
 LSTMs wurden viele Jahre erfolgreich im Bereich der Sprachverarbeitung eingesetzt, zum Beispiel für maschinelle Übersetzung oder Textklassifikation. Heute spielen sie jedoch eine deutlich kleinere Rolle, da Transformer-Modelle effizienter trainierbar sind und besser mit langen Texten umgehen können.
 
@@ -64,7 +64,7 @@ LSTMs wurden viele Jahre erfolgreich im Bereich der Sprachverarbeitung eingesetz
 
 \section{Die Transformer-Architektur}
 
-Transformer-Modelle wurden im Jahr 2017 mit dem Paper Attention Is All You Need eingeführt und haben die Sprachverarbeitung grundlegend verändert. Im Gegensatz zu RNNs und LSTMs verarbeiten Transformer die Eingabe nicht schrittweise, sondern betrachten alle Wörter eines Satzes gleichzeitig. Dadurch können sie wesentlich besser mit langen Texten umgehen und lassen sich effizient auf modernen GPUs parallelisieren.
+Transformer-Modelle wurden im Jahr 2017 mit dem Paper \textit{Attention Is All You Need} eingeführt und haben die Sprachverarbeitung grundlegend verändert. Im Gegensatz zu RNNs und LSTMs verarbeiten Transformer die Eingabe nicht schrittweise, sondern betrachten alle Wörter eines Satzes gleichzeitig. Dadurch können sie wesentlich besser mit langen Texten umgehen und lassen sich effizient auf modernen GPUs parallelisieren.
 
 Das zentrale Konzept eines Transformers ist die sogenannte Self-Attention. Diese Technik ermöglicht es dem Modell, zu bestimmen, welche Wörter in einem Satz für die Bedeutung eines anderen Wortes wichtig sind. Ein Beispiel: Im Satz „Der Hund jagt die Katze, weil sie schnell ist“ muss das Modell erkennen, dass sich „sie“ auf „die Katze“ bezieht. Self-Attention macht genau das möglich, indem jedes Wort auf alle anderen Wörter „aufmerksam“ werden kann.
 
@@ -72,7 +72,7 @@ Ein weiterer wichtiger Bestandteil ist die Multi-Head Attention. Hierbei nutzt d
 
 Da Transformer keine natürliche Reihenfolge wie RNNs haben, benötigen sie Positional Encodings, die beschreiben, an welcher Stelle ein Wort im Satz steht. Diese Positionsinformationen werden zu den Eingabedaten addiert, sodass das Modell die Struktur des Satzes versteht.
 
-Ein klassischer Transformer besteht aus zwei Teilen: einem Encoder, der den Text verarbeitet und in eine nützliche Repräsentation (Embedding) umwandelt, und einem Decoder, der beispielsweise Text generieren kann. Bei modernen Sprachmodellen wie GPT wird meist nur der Decoder verwendet, während für Suchsysteme wie Tapyre ausschließlich der Encoder relevant ist.
+Ein klassischer Transformer besteht aus zwei Teilen: einem Encoder, der den Text verarbeitet und in eine nützliche Repräsentation (Embedding) umwandelt, und einem Decoder, der beispielsweise Text generieren kann. Bei modernen Sprachmodellen wie GPT wird meist nur der Decoder verwendet, während für Suchsysteme wie Tapyre-Paper-Search ausschließlich der Encoder relevant ist.
 
 Transformer haben sich aufgrund ihrer Genauigkeit, Skalierbarkeit und Effizienz als Standard für alle modernen NLP-Systeme durchgesetzt. Sie bilden die Grundlage großer Sprachmodelle (LLMs) und leistungsstarker Embedding-Modelle, wie sie auch in diesem Projekt verwendet werden.
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2025.10.24)  7 JAN 2026 08:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2025.10.24)  7 JAN 2026 11:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1343,19 +1343,11 @@ LaTeX Font Info:    Trying to load font information for TS1+pplj on input line
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1pplj.fd
 File: ts1pplj.fd 2004/09/06 font definitions for TS1/pplj.
 )
-
-LaTeX Warning: Command \" invalid in math mode on input line 30.
-
-
-LaTeX Warning: Command \" invalid in math mode on input line 30.
-
-Missing character: There is no ö in font pplr9t!
-Missing character: There is no ö in font pplr9t!
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
 Package pdftex.def Info: figures/htl-logo.png  used on input line 38.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
-[10]
+ [10]
 Overfull \hbox (3.3344pt too wide) in paragraph at lines 52--53
 \T1/pplj/m/n/12 (-20) senschaftliche Texte mit ihren kom-plex-en Be-grif-flichk
 eit-en und Struk-turmerk-
@@ -1374,9 +1366,9 @@ Package pdftex.def Info: figures/htl-logo.png  used on input line 1.
  [12]
 chapter 3.
 
-Overfull \hbox (6.8376pt too wide) in paragraph at lines 8--9
+Overfull \hbox (5.87326pt too wide) in paragraph at lines 8--9
 \T1/pplj/m/n/12 (-20) Ein grundle-gen-der Ansatz in-ner-halb von Agen-tic AI is
-t das \T1/pplj/b/n/12 (-20) Re-Act\T1/pplj/m/n/12 (-20) -Framework
+t das ReAct-Framework
  []
 
 File: figures/htl-logo.png Graphic file (type png)
@@ -1392,11 +1384,16 @@ File: figures/htl-logo.png Graphic file (type png)
 Package pdftex.def Info: figures/htl-logo.png  used on input line 51.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
  [14]
+Overfull \hbox (1.05542pt too wide) in paragraph at lines 63--64
+\T1/pplj/m/n/12 (-20) zuerst nach rel-e-van-ten Doku-menten und erzeugt an-schl
+ieÿend eine fundierte
+ []
+
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
 Package pdftex.def Info: figures/htl-logo.png  used on input line 79.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
- [15]) (./content/verwendeten_technologien.tex
+[15]) (./content/verwendeten_technologien.tex
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
 Package pdftex.def Info: figures/htl-logo.png  used on input line 1.
@@ -1404,9 +1401,9 @@ Package pdftex.def Info: figures/htl-logo.png  used on input line 1.
  [16]
 chapter 4.
 
-Overfull \hbox (7.69751pt too wide) in paragraph at lines 11--12
-[]\T1/pplj/b/n/12 (-20) Control Groups (cgroups)\T1/pplj/m/n/12 (-20) : be-gren
--zen CPU-, RAM- und I/O-Ressourcen. 
+Overfull \hbox (4.32753pt too wide) in paragraph at lines 11--12
+[]\T1/pplj/m/n/12 (-20) Control Groups (cgroups): be-gren-zen CPU-, RAM- und I/
+O-Ressourcen. 
  []
 
 File: figures/htl-logo.png Graphic file (type png)
@@ -2167,15 +2164,15 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 34485 strings out of 478051
- 666948 string characters out of 5840897
- 1959330 words of memory out of 5000000
+ 34445 strings out of 478051
+ 666608 string characters out of 5840897
+ 1960330 words of memory out of 5000000
  51972 multiletter control sequences out of 15000+600000
- 587340 words of font info for 441 fonts, out of 8000000 for 9000
+ 585876 words of font info for 409 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
  118i,24n,113p,10683b,2401s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texlive/texmf-dist
-/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf/
+fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fpl/fplbj8a.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/s
@@ -2188,7 +2185,7 @@ f/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt
 xmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
 /palatino/uplri8a.pfb>
-Output written on main.pdf (70 pages, 501252 bytes).
+Output written on main.pdf (70 pages, 495585 bytes).
 PDF statistics:
  2476 PDF objects out of 2487 (max. 8388607)
  2347 compressed objects within 24 object streams

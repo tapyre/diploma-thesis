@@ -5,7 +5,7 @@ Agentic AI beschreibt ein neues Paradigma der künstlichen Intelligenz, bei dem 
 
 \section{ReAct: Reasoning + Acting}
 
-Ein grundlegender Ansatz innerhalb von Agentic AI ist das \textbf{ReAct}-Framework (Reasoning + Acting). Dabei führt ein Agent nicht nur interne Überlegungen (\textit{Reasoning}) aus, sondern trifft auch explizite Entscheidungen und führt konkrete Aktionen (\textit{Acting}) aus. ReAct wurde von Yao et al.\ vorgestellt \cite{yao2022react}.
+Ein grundlegender Ansatz innerhalb von Agentic AI ist das ReAct-Framework (Reasoning + Acting). Dabei führt ein Agent nicht nur interne Überlegungen (\textit{Reasoning}) aus, sondern trifft auch explizite Entscheidungen und führt konkrete Aktionen (\textit{Acting}) aus. ReAct wurde von Yao et al.\ vorgestellt \cite{yao2022react}.
 
 Ein typischer ReAct-Agent arbeitet in zyklischer Struktur:
 
@@ -34,7 +34,7 @@ Der Agent wählt das passende Tool aus, übergibt Parameter, interpretiert die E
 
 \section{Model Context Protocol (MCP)}
 
-Das \textbf{Model Context Protocol (MCP)} ist ein offener Standard, der definiert, wie KI-Modelle sicher und zuverlässig mit Tools und Datenquellen interagieren können. MCP legt fest:
+Das Model Context Protocol (MCP) ist ein offener Standard, der definiert, wie KI-Modelle sicher und zuverlässig mit Tools und Datenquellen interagieren können. MCP legt fest:
 
 \begin{itemize}
     \item wie Tools strukturiert beschrieben werden,
@@ -60,13 +60,13 @@ Durch die Spezialisierung der Rollen entsteht eine höhere Robustheit und Skalie
 
 \section{RAG: Retrieval-Augmented Generation}
 
-\textbf{Retrieval-Augmented Generation (RAG)} verbindet Sprachmodelle mit externem Wissen. Statt Antworten frei zu generieren, sucht ein RAG-System zuerst nach relevanten Dokumenten und erzeugt anschließend eine fundierte Antwort auf Basis dieser Inhalte. Der Ansatz wurde von Lewis et al.\ eingeführt \cite{lewis2020rag}.
+Retrieval-Augmented Generation (RAG) verbindet Sprachmodelle mit externem Wissen. Statt Antworten frei zu generieren, sucht ein RAG-System zuerst nach relevanten Dokumenten und erzeugt anschließend eine fundierte Antwort auf Basis dieser Inhalte. Der Ansatz wurde von Lewis et al.\ eingeführt \cite{lewis2020rag}.
 
 Ein RAG-Agent arbeitet typischerweise wie folgt:
 
 \begin{enumerate}
-    \item \textbf{Retrieval:} Suche nach relevanten Dokumenten, z.\,B. über Vektorsuche in Qdrant.
-    \item \textbf{Generation:} Erzeugung einer Antwort mithilfe des Sprachmodells, unter Nutzung der gefundenen Informationen.
+    \item Retrieval: Suche nach relevanten Dokumenten, z.\,B. über Vektorsuche in Qdrant.
+    \item Generation: Erzeugung einer Antwort mithilfe des Sprachmodells, unter Nutzung der gefundenen Informationen.
 \end{enumerate}
 
 Für Tapyre Paper Search ist dieser Ansatz essenziell, da wissenschaftliche Dokumente zuerst semantisch abgerufen und dann weiter analysiert oder zusammengefasst werden.
