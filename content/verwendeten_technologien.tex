@@ -1,96 +1,96 @@
 \chapter{Grundkonzepte der verwendeten Technologien}
 
-Für die Umsetzung von Tapyre Paper Search werden mehrere moderne Software- und Infrastrukturtechnologien eingesetzt, die zusammen eine performante und erweiterbare Architektur bilden. Dieses Kapitel erläutert die wichtigsten technischen Grundlagen und erklärt insbesondere, wie Daten gespeichert, verarbeitet und über REST-Schnittstellen ausgetauscht werden.
+Für die Umsetzung von Tapyre Paper Search werden mehrere moderne Software- und Infrastrukturtechnologien eingesetzt, die zusammen eine performante und erweiterbare Architektur ermöglichen. Dieses Kapitel erläutert die technischen Grundlagen und zeigt jeweils den praktischen Bezug zur Umsetzung des Systems (z.\,B. Deployment, Datenhaltung, semantische Suche, API-Schicht und GPU-beschleunigte Modellinferenz).
 
 \section{Docker und Containerisierung}
 
-Docker ist eine Plattform zur Containerisierung von Anwendungen \cite{docker2025security}. Im Gegensatz zu klassischen virtuellen Maschinen teilt sich ein Container den Kernel des Host-Betriebssystems. Trotzdem ist jede Anwendung logisch isoliert. Diese Isolation wird durch mehrere Linux-Technologien erreicht, insbesondere Namespaces, Control Groups und Union-Filesystems \cite{docker2025security,container_architecture_namespaces}:
+Docker ist eine Plattform zur Containerisierung von Anwendungen (vgl. \cite{docker2025security}). Im Gegensatz zu klassischen virtuellen Maschinen teilen sich Container den Kernel des Host-Betriebssystems, sind aber logisch voneinander isoliert. Diese Isolation wird durch mehrere Linux-Technologien erreicht, insbesondere Namespaces, Control Groups (cgroups) und Union-Filesystems (vgl. \cite{docker2025security,container_architecture_namespaces}):
 
 \begin{itemize}
-    \item Namespaces: isolieren Prozesse, Netzwerke, Benutzer und Dateisysteme.
-    \item Control Groups (cgroups): begrenzen CPU-, RAM- und I/O-Ressourcen.
-    \item Union-Filesystems (z.\,B. OverlayFS): ermöglichen effiziente Layer-basierte Images.
+    \item \textbf{Namespaces}: isolieren Prozesse, Netzwerk, Benutzer und Dateisysteme.
+    \item \textbf{Control Groups (cgroups)}: begrenzen CPU-, RAM- und I/O-Ressourcen.
+    \item \textbf{Union-Filesystems} (z.\,B. OverlayFS): ermöglichen effiziente, layer-basierte Images.
 \end{itemize}
 
-Docker ermöglicht reproduzierbare Umgebungen, schnelle Deployments und konsistente Konfigurationen. Für Projekte wie Tapyre bedeutet dies, dass Komponenten wie Qdrant, MySQL oder Python-Anwendungen unabhängig voneinander, aber dennoch einheitlich ausgeführt werden können.
+Docker ermöglicht reproduzierbare Umgebungen, schnelle Deployments und konsistente Konfigurationen (vgl. \cite{docker2025security}). Für Tapyre Paper Search ist dies insbesondere relevant, da Komponenten wie Qdrant, MySQL und die Python-Dienste unabhängig voneinander, aber dennoch in einer einheitlichen Laufzeitumgebung betrieben werden können. Dadurch lassen sich Entwicklungs-, Test- und Produktionsumgebungen konsistent abbilden und Abhängigkeiten (z.\,B. Datenbankversionen) kontrollierbar halten.
 
 \section{MySQL als relationale Datenbank}
 
-MySQL ist ein relationales Datenbanksystem, das Daten strukturiert in Tabellen speichert. Das Datenmodell folgt einem relationalen Schema, bei dem Entitäten über Primär- und Fremdschlüssel miteinander verbunden sind. Für die interne Datenorganisation nutzt MySQL (InnoDB) hauptsächlich B{+}-Bäume, die als Clustered und Secondary Indexes realisiert sind \cite{mysql_innodb_indexes,percona2024mysqlindexes}:
+MySQL ist ein relationales Datenbanksystem, das Daten strukturiert in Tabellen speichert. Das Datenmodell folgt einem relationalen Schema, bei dem Entitäten über Primär- und Fremdschlüssel miteinander verbunden sind. Für die interne Datenorganisation nutzt MySQL (InnoDB) insbesondere B\textsuperscript{+}-Bäume, die als Clustered und Secondary Indexes realisiert sind (vgl. \cite{mysql_innodb_indexes,percona2024mysqlindexes}):
 
 \begin{itemize}
-    \item Clustered Index: InnoDB speichert Daten entlang des Primärschlüssels. Die Tabelle ist selbst ein B{+}-Baum.
-    \item Secondary Indexes: weitere B{+}-Bäume, die Zeiger auf die Primärzeilen enthalten.
-    \item Effiziente Suche: Durch die logarithmische Höhe der B{+}-Bäume können Suchanfragen schnell ausgeführt werden.
+    \item \textbf{Clustered Index}: InnoDB speichert Daten entlang des Primärschlüssels; die Tabelle ist selbst als B\textsuperscript{+}-Baum organisiert.
+    \item \textbf{Secondary Indexes}: weitere B\textsuperscript{+}-Bäume, die Verweise auf die Primärschlüsselzeilen enthalten.
+    \item \textbf{Effiziente Suche}: durch die logarithmische Höhe der B\textsuperscript{+}-Bäume können Suchanfragen performant ausgeführt werden.
 \end{itemize}
 
-MySQL bietet außerdem ACID-Transaktionen, die Datenkonsistenz garantieren und in der klassischen Datenbankliteratur ausführlich beschrieben werden \cite{gray1992transaction}:
+MySQL bietet außerdem ACID-Transaktionen, die Datenkonsistenz und Zuverlässigkeit sicherstellen (vgl. \cite{gray1992transaction}):
 
 \begin{itemize}
-    \item Atomicity: Eine Transaktion wird entweder vollständig ausgeführt oder verworfen.
-    \item Consistency: Alle Daten erfüllen definierte Integritätsregeln.
-    \item Isolation: Gleichzeitige Transaktionen beeinflussen sich nicht.
-    \item Durability: Bestätigte Änderungen bleiben dauerhaft gespeichert.
+    \item \textbf{Atomicity}: Eine Transaktion wird entweder vollständig ausgeführt oder verworfen.
+    \item \textbf{Consistency}: Integritätsregeln bleiben erhalten.
+    \item \textbf{Isolation}: Parallel ausgeführte Transaktionen beeinflussen sich kontrolliert bzw. entsprechend des Isolation-Levels nicht unzulässig.
+    \item \textbf{Durability}: bestätigte Änderungen bleiben dauerhaft gespeichert.
 \end{itemize}
 
-In Tapyre wird MySQL zur Speicherung von Metadaten eingesetzt.
+In Tapyre Paper Search wird MySQL zur Speicherung strukturierter Metadaten eingesetzt (z.\,B. Titel, Autoren, Kategorien, Importstatus). Das ermöglicht klassische Filter- und Verwaltungsabfragen (z.\,B. nach Datum, Kategorie oder Verarbeitungsstatus), während die semantische Suche separat über die Vektordatenbank erfolgt.
 
 \section{Qdrant und Approximate Nearest Neighbor Search}
 
-Qdrant ist eine spezialisierte Datenbank zur Speicherung und Suche von Vektorrepräsentationen (Embeddings) und wird explizit als Vektor-Datenbank für semantische Suche entwickelt \cite{qdrant_docs}. Im Gegensatz zu relationalen Datenbanken speichert Qdrant keine Texte, sondern numerische Vektoren, die die Bedeutung eines Dokuments darstellen.
+Qdrant ist eine spezialisierte Datenbank zur Speicherung und Suche von Vektorrepräsentationen (Embeddings) und ist für semantische Suchanwendungen optimiert (vgl. \cite{qdrant_docs}). Im Gegensatz zu relationalen Datenbanken steht hier nicht die textbasierte Volltextsuche im Vordergrund, sondern die Ähnlichkeitssuche in einem Vektorraum, in dem Dokumente durch numerische Repräsentationen beschrieben werden.
 
-\section*{Speicherstruktur}
+\subsection{Speicherstruktur}
 
-Eine Qdrant-Collection besteht aus \cite{qdrant_collections}:
+Eine Qdrant-Collection besteht typischerweise aus Vektoren, Payload-Daten (Metadaten) sowie internen Segmenten zur Datenorganisation (vgl. \cite{qdrant_collections}):
 
 \begin{itemize}
-    \item Vektoren (meist 768 oder 1024 Dimensionen),
-    \item Payload-Daten wie Titel, DOI, Autoren oder Jahr,
-    \item Segmenten zur internen Aufteilung der Daten.
+    \item \textbf{Vektoren} (häufig 768 oder 1024 Dimensionen, abhängig vom Embedding-Modell),
+    \item \textbf{Payload} wie Titel, DOI, Autoren oder Jahr,
+    \item \textbf{Segmente} zur internen Aufteilung der Daten.
 \end{itemize}
 
-Diese Struktur ist optimiert für sequentielles Lesen und schnelle Ähnlichkeitsabfragen \cite{qdrant_similarity}.
+Diese Struktur ist auf schnelle Ähnlichkeitsabfragen und effiziente Datenzugriffe ausgelegt (vgl. \cite{qdrant_similarity}). In Tapyre Paper Search erlaubt die Payload zudem das nachträgliche Filtern semantischer Treffer (z.\,B. nach Jahr oder Kategorie), während die eigentliche Ranking-Logik über Vektorsimilarität erfolgt.
 
-\subsection*{Approximate Nearest Neighbor (ANN)}
+\subsection{Approximate Nearest Neighbor (ANN)}
 
-Da ein exakter Vergleich aller Vektoren bei großen Datenmengen ineffizient wäre, verwendet Qdrant Approximate Nearest Neighbor (ANN)-Algorithmen. Der wichtigste davon ist der HNSW-Index (Hierarchical Navigable Small World), ein Graph-basierter ANN-Algorithmus \cite{malkov2020hnsw,qdrant_indexing,qdrant_hnsw_course}:
+Da ein exakter Vergleich aller Vektoren bei großen Datenmengen ineffizient ist, verwenden Vektordatenbanken ANN-Algorithmen. Qdrant nutzt hierfür u.\,a. den HNSW-Index (Hierarchical Navigable Small World), einen graphbasierten ANN-Algorithmus (vgl. \cite{malkov2020hnsw,qdrant_indexing,qdrant_hnsw_course}):
 
 \begin{itemize}
-    \item eine mehrschichtige Graphstruktur,
+    \item mehrschichtige Graphstruktur,
     \item wenige Knoten auf höheren Ebenen (grobe Orientierung),
     \item viele Knoten auf unteren Ebenen (feine Suche),
-    \item Navigation vom groben zum feinen Bereich,
-    \item ermöglicht extrem schnelle Annäherung an das richtige Suchergebnis.
+    \item Navigation vom groben in den feinen Suchraum,
+    \item schnelle Annäherung an die nächsten Nachbarn.
 \end{itemize}
 
-HNSW kombiniert hohe Geschwindigkeit mit hoher Genauigkeit und eignet sich besonders gut für semantische Suchsysteme \cite{malkov2020hnsw,qdrant_similarity}.
+HNSW kombiniert hohe Geschwindigkeit mit hoher Treffergenauigkeit und eignet sich besonders für semantische Suchsysteme (vgl. \cite{malkov2020hnsw,qdrant_similarity}). In Tapyre Paper Search ist dies zentral, da auch größere Paper-Sammlungen interaktiv durchsuchbar bleiben sollen.
 
-\subsection*{Ähnlichkeitsmaße}
+\subsection{Ähnlichkeitsmaße}
 
-Qdrant unterstützt verschiedene Metriken \cite{qdrant_similarity}:
+Qdrant unterstützt verschiedene Distanz- bzw. Ähnlichkeitsmaße, darunter Kosinusähnlichkeit, euklidische Distanz und skalares Produkt (vgl. \cite{qdrant_similarity}):
 
 \begin{itemize}
-    \item Kosinusähnlichkeit (Standard für NLP-Modelle),
-    \item Euklidische Distanz,
-    \item Skalares Produkt (Dot Product).
+    \item \textbf{Kosinusähnlichkeit} (häufiger Standard für NLP-Embeddings),
+    \item \textbf{Euklidische Distanz},
+    \item \textbf{Skalares Produkt} (Dot Product).
 \end{itemize}
 
-In Tapyre kommt hauptsächlich die Kosinusähnlichkeit zum Einsatz, da sie die semantische Nähe zwischen Dokumenten besonders gut abbildet.
+In Tapyre wird hauptsächlich die Kosinusähnlichkeit eingesetzt, da sie bei normalisierten Text-Embeddings eine robuste Näherung semantischer Ähnlichkeit bietet (vgl. \cite{qdrant_similarity}).
 
 \section{Flask und REST-APIs}
 
-Flask ist ein leichtgewichtiges Webframework für Python und dient in Tapyre zur Bereitstellung von REST-APIs \cite{flask_docs}. Eine REST-API (\textit{Representational State Transfer}) basiert auf einem Architekturstil für verteilte Hypermedia-Systeme, der von Fielding in seiner Dissertation beschrieben wurde \cite{fielding2000rest}. Sie ermöglicht die Kommunikation zwischen Anwendungsteilen über standardisierte HTTP-Methoden:
+Flask ist ein leichtgewichtiges Webframework für Python und dient in Tapyre zur Bereitstellung von REST-APIs (vgl. \cite{flask_docs}). REST (\textit{Representational State Transfer}) ist ein Architekturstil für verteilte Systeme, der u.\,a. von Fielding beschrieben wurde (vgl. \cite{fielding2000rest}). REST-basierte Schnittstellen verwenden standardisierte HTTP-Methoden:
 
 \begin{itemize}
-    \item GET: Anfrage von Daten
-    \item POST: Erstellen neuer Daten
-    \item PUT/PATCH: Aktualisieren von Daten
-    \item DELETE: Löschen von Daten
+    \item \textbf{GET}: Abfrage von Daten,
+    \item \textbf{POST}: Erstellen neuer Ressourcen bzw. Auslösen von Verarbeitung,
+    \item \textbf{PUT/PATCH}: Aktualisieren von Ressourcen,
+    \item \textbf{DELETE}: Löschen von Ressourcen.
 \end{itemize}
 
-REST-APIs verwenden häufig JSON als Datenaustauschformat und sind zustandslos: Jeder Request enthält alle notwendigen Informationen, um verarbeitet zu werden \cite{fielding2000rest}.
+REST-APIs verwenden häufig JSON als Datenaustauschformat und sind zustandslos, d.\,h. jeder Request enthält alle für die Verarbeitung notwendigen Informationen (vgl. \cite{fielding2000rest}).
 
-Ein typischer Beispiel-Request:
+Ein vereinfachtes Beispiel für eine Anfrage an einen Embedding-Endpunkt:
 
 \begin{verbatim}
 POST /embed
@@ -99,21 +99,23 @@ POST /embed
 }
 \end{verbatim}
 
-Die API ruft daraufhin den Embedding-Prozess auf, speichert das Ergebnis oder gibt es zurück. Dieser Ansatz ermöglicht modulare, wartbare und gut testbare Kommunikationsstrukturen.
+In Tapyre Paper Search dient die API-Schicht als klar definierte Kommunikationsgrenze zwischen Komponenten (z.\,B. Frontend, Orchestrierung und Embedding-Service). Das erleichtert Tests, ermöglicht unabhängige Skalierung einzelner Dienste und reduziert Kopplung zwischen Systemteilen.
 
 \section{PyTorch und GPU-Beschleunigung}
 
-PyTorch ist ein Framework für Deep Learning und wird verwendet, um Embeddings zu berechnen \cite{paszke2019pytorch}. Da Transformer-Modelle wie SPECTER2 hunderte Millionen Parameter besitzen, werden GPUs genutzt, um Berechnungen massiv zu beschleunigen. CUDA ermöglicht hierbei die Ausführung linearer Algebraoperationen direkt auf der Grafikkarte \cite{nvidia_cuda_guide}.
+PyTorch ist ein Framework für Deep Learning und wird in Tapyre zur Berechnung von Embeddings eingesetzt (vgl. \cite{paszke2019pytorch}). Da Transformer-Modelle wie SPECTER2 sehr rechenintensiv sind, wird die Ausführung auf GPUs genutzt, um Matrixoperationen massiv zu beschleunigen. CUDA stellt hierfür eine Plattform bereit, um entsprechende Operationen auf der Grafikkarte auszuführen (vgl. \cite{nvidia_cuda_guide}).
 
-Relevante Vorteile von PyTorch \cite{paszke2019pytorch}:
+Relevante Vorteile von PyTorch sind unter anderem (vgl. \cite{paszke2019pytorch}):
 
 \begin{itemize}
     \item dynamische Rechengraphen,
-    \item große Modellbibliothek,
-    \item nahtlose GPU-Unterstützung,
-    \item Integration in moderne NLP-Pipelines.
+    \item breite Modell- und Tool-Unterstützung,
+    \item nahtlose GPU-Nutzung,
+    \item gute Integrierbarkeit in moderne NLP-Pipelines.
 \end{itemize}
+
+Für Tapyre Paper Search ist dies praktisch relevant, da die Embedding-Erzeugung typischerweise den größten Rechenanteil der Pipeline darstellt. GPU-Beschleunigung reduziert die Laufzeit der Indexierung und ermöglicht schnellere Aktualisierungen des Paper-Bestands.
 
 \section{Zusammenfassung}
 
-Docker stellt reproduzierbare Umgebungen bereit \cite{docker2025security}, MySQL speichert strukturierte Daten effizient über B{+}-Bäume und Clustered Indexes \cite{mysql_innodb_indexes}, Qdrant ermöglicht schnelle semantische Vektorsuche mithilfe von HNSW und ANN \cite{qdrant_docs,malkov2020hnsw}, Flask dient als Kommunikationsschicht über REST-APIs \cite{flask_docs,fielding2000rest}, und PyTorch führt rechenintensive Transformer-Modelle auf GPUs mithilfe von CUDA aus \cite{paszke2019pytorch,nvidia_cuda_guide}. Diese Technologien bilden zusammen die Basis für ein modernes, flexibles und leistungsfähiges Informationssystem wie Tapyre Paper Search.
+Docker stellt reproduzierbare Umgebungen für die komponentenbasierte Ausführung bereit (vgl. \cite{docker2025security}), MySQL speichert strukturierte Metadaten effizient über Indizes und Transaktionen (vgl. \cite{mysql_innodb_indexes,gray1992transaction}), Qdrant ermöglicht performante semantische Vektorsuche mittels ANN/HNSW (vgl. \cite{qdrant_docs,malkov2020hnsw}), Flask dient als Kommunikationsschicht über REST (vgl. \cite{flask_docs,fielding2000rest}), und PyTorch führt rechenintensive Embedding-Modelle GPU-beschleunigt aus (vgl. \cite{paszke2019pytorch,nvidia_cuda_guide}). Zusammen bilden diese Technologien die technische Grundlage für ein flexibles und leistungsfähiges Informationssystem wie Tapyre Paper Search.

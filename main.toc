@@ -5,48 +5,57 @@
 \contentsline {chapter}{\numberline {1}Einführung in Neuronale Netzwerke}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Künstliche Neuronen}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Feed-Forward Neural Networks (FNN)}{2}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Convolutional Neural Networks (CNN)}{3}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Rekurrente Neuronale Netze (RNN, LSTM)}{4}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Die Transformer-Architektur}{4}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Bedeutung von Transformern für LLMs und Embeddings}{6}{section.1.6}%
-\contentsline {chapter}{\numberline {2}Einführung in Natural Language Processing (NLP)}{9}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Klassische NLP-Ansätze}{9}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Einführung in Embeddings}{10}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Word Embeddings: Word2Vec und GloVe}{10}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Kontextualisierte Embeddings}{11}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Embeddings mit der Transformer-Architektur}{11}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Relevanz für Tapyre Paper Search}{11}{section.2.6}%
-\contentsline {chapter}{\numberline {3}Einführung in Agentic AI}{13}{chapter.3}%
-\contentsline {section}{\numberline {3.1}ReAct: Reasoning + Acting}{13}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Tool Usage}{14}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Model Context Protocol (MCP)}{14}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Agent-to-Agent Kommunikation}{15}{section.3.4}%
-\contentsline {section}{\numberline {3.5}RAG: Retrieval-Augmented Generation}{15}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Multi-Agent Systems}{16}{section.3.6}%
-\contentsline {chapter}{\numberline {4}Grundkonzepte der verwendeten Technologien}{17}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Docker und Containerisierung}{17}{section.4.1}%
-\contentsline {section}{\numberline {4.2}MySQL als relationale Datenbank}{18}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Qdrant und Approximate Nearest Neighbor Search}{18}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Flask und REST-APIs}{20}{section.4.4}%
-\contentsline {section}{\numberline {4.5}PyTorch und GPU-Beschleunigung}{21}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Zusammenfassung}{21}{section.4.6}%
-\contentsline {chapter}{\numberline {5}Entwicklung von Tapyre als Agentic-AI-System}{23}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Abstraktion der LLM-Schnittstelle}{23}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Der Agent und der ReAct-Loop}{24}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Plugins als Tools: Loose Coupling durch Interfaces}{26}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Dynamisches Laden der Plugins}{27}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Beispiel: AppPlugin zur Steuerung lokaler Anwendungen}{28}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Zusammenspiel: Agent, Plugins und ReAct-Loop}{30}{section.5.6}%
-\contentsline {chapter}{\numberline {6}Architektur und Implementierung von Tapyre Paper Search}{31}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Abstraktion der Datenquellen}{32}{section.6.1}%
-\contentsline {section}{\numberline {6.2}arXiv als konkrete Datenquelle}{32}{section.6.2}%
-\contentsline {section}{\numberline {6.3}PDF-Verarbeitung und Textextraktion}{35}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Abstraktion der Embedding-Erzeugung}{38}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Specter2 als semantisches Embedding-Modell}{39}{section.6.5}%
-\contentsline {section}{\numberline {6.6}Abstraktion der Datenhaltung}{40}{section.6.6}%
-\contentsline {section}{\numberline {6.7}MySQL für strukturierte Metadaten}{41}{section.6.7}%
-\contentsline {section}{\numberline {6.8}Qdrant als Vektordatenbank}{44}{section.6.8}%
-\contentsline {section}{\numberline {6.9}Pipeline zur Orchestrierung des Gesamtprozesses}{47}{section.6.9}%
-\contentsline {section}{\numberline {6.10}Zusammenspiel der Komponenten}{49}{section.6.10}%
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{59}{chapter*.15}%
+\contentsline {section}{\numberline {1.3}Rekurrente Neuronale Netze (RNN, LSTM)}{3}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Die Transformer-Architektur}{4}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Bedeutung von Transformern für LLMs und Embeddings}{5}{section.1.5}%
+\contentsline {chapter}{\numberline {2}Einführung in Natural Language Processing (NLP)}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Klassische NLP-Ansätze}{7}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Einführung in Embeddings}{8}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Word Embeddings: Word2Vec und GloVe}{9}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Kontextualisierte Embeddings}{9}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Embeddings mit der Transformer-Architektur}{10}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Relevanz für Tapyre Paper Search}{10}{section.2.6}%
+\contentsline {chapter}{\numberline {3}Einführung in Agentic AI}{11}{chapter.3}%
+\contentsline {section}{\numberline {3.1}ReAct: Reasoning + Acting}{11}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Tool Usage}{12}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Model Context Protocol (MCP)}{12}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Agent-to-Agent Kommunikation}{13}{section.3.4}%
+\contentsline {section}{\numberline {3.5}RAG: Retrieval-Augmented Generation}{13}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Multi-Agent Systems}{14}{section.3.6}%
+\contentsline {chapter}{\numberline {4}Grundkonzepte der verwendeten Technologien}{15}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Docker und Containerisierung}{15}{section.4.1}%
+\contentsline {section}{\numberline {4.2}MySQL als relationale Datenbank}{16}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Qdrant und Approximate Nearest Neighbor Search}{17}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Speicherstruktur}{17}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Approximate Nearest Neighbor (ANN)}{17}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Ähnlichkeitsmaße}{18}{subsection.4.3.3}%
+\contentsline {section}{\numberline {4.4}Flask und REST-APIs}{18}{section.4.4}%
+\contentsline {section}{\numberline {4.5}PyTorch und GPU-Beschleunigung}{19}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Zusammenfassung}{20}{section.4.6}%
+\contentsline {chapter}{\numberline {5}Entwicklung von Tapyre als Agentic-AI-System}{21}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Abstraktion der LLM-Schnittstelle}{22}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Der Agent und der ReAct-Loop}{23}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Plugins als Tools: Lose Kopplung durch Interfaces}{24}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Dynamisches Laden der Plugins}{25}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Beispiel: AppPlugin zur Steuerung lokaler Anwendungen}{26}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Zusammenspiel von Agent, Plugins und ReAct-Loop}{28}{section.5.6}%
+\contentsline {chapter}{\numberline {6}Architektur und Implementierung von Tapyre Paper Search}{29}{chapter.6}%
+\contentsline {paragraph}{\nonumberline Abgrenzung zu klassischen Big-Data-Architekturen}{29}{paragraph*.8}%
+\contentsline {section}{\numberline {6.1}Abstraktion der Datenquellen}{30}{section.6.1}%
+\contentsline {section}{\numberline {6.2}als konkrete Datenquelle}{31}{section.6.2}%
+\contentsline {section}{\numberline {6.3}PDF-Verarbeitung und Textextraktion}{34}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Abstraktion der Embedding-Erzeugung}{37}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Specter2 als semantisches Embedding-Modell}{37}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Abstraktion der Datenhaltung}{39}{section.6.6}%
+\contentsline {section}{\numberline {6.7}MySQL für strukturierte Metadaten}{40}{section.6.7}%
+\contentsline {section}{\numberline {6.8}Qdrant als Vektordatenbank}{43}{section.6.8}%
+\contentsline {section}{\numberline {6.9}Pipeline zur Orchestrierung des Gesamtprozesses}{45}{section.6.9}%
+\contentsline {section}{\numberline {6.10}Zusammenspiel der Komponenten}{48}{section.6.10}%
+\contentsline {section}{\numberline {6.11}Analyse der Performance-Charakteristika und Systemeinschränkungen}{48}{section.6.11}%
+\contentsline {subsection}{\numberline {6.11.1}Limitierungen bei der semantischen Suche}{48}{subsection.6.11.1}%
+\contentsline {subsection}{\numberline {6.11.2}Anfängliche Implementierungsineffizienzen und Optimierungen}{49}{subsection.6.11.2}%
+\contentsline {subsection}{\numberline {6.11.3}Periodische Verarbeitungseinbrüche durch geplante Unterbrechungen}{50}{subsection.6.11.3}%
+\contentsline {subsection}{\numberline {6.11.4}Kumulative Verarbeitung und Gesamtstabilität des Systems}{50}{subsection.6.11.4}%
+\contentsline {subsection}{\numberline {6.11.5}Zusammenfassende Einordnung}{51}{subsection.6.11.5}%
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{61}{chapter*.14}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

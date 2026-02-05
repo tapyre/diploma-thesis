@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2025.10.24)  7 JAN 2026 11:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2025.10.24)  5 FEB 2026 10:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -971,26 +971,7 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count328
 \l__pdf_internal_box=\box78
 )
-(./main.aux (./content/abstract.aux)
-
-LaTeX Warning: Label `python_bsp' multiply defined.
-
-
-LaTeX Warning: Label `python_bsp' multiply defined.
-
-
-LaTeX Warning: Label `python_bsp' multiply defined.
-
-
-LaTeX Warning: Label `python_bsp' multiply defined.
-
-
-LaTeX Warning: Label `python_bsp' multiply defined.
-
-
-LaTeX Warning: Label `python_bsp' multiply defined.
-
-)
+(./main.aux (./content/abstract.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 88.
@@ -1021,7 +1002,8 @@ Package scrbase Info: activating ngerman \listfigurename on input line 88.
 Package scrbase Info: activating ngerman \listtablename on input line 88.
 Package scrbase Info: activating ngerman \bibname on input line 88.
 Package scrbase Info: activating ngerman \indexname on input line 88.
- (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count329
 \scratchdimen=\dimen274
@@ -1295,25 +1277,31 @@ Package pdftex.def Info: figures/htl-logo.png  used on input line 20.
 ]
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 39.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 30.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
  [2]
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 56.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 44.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
  [3]
+Overfull \hbox (8.6024pt too wide) in paragraph at lines 51--52
+\T1/pplj/m/n/12 (-20) Attention-Köpfe wer-den an-schlieÿend zusam-menge-führt (
+vgl. [][]Ashish Vaswani[][]
+ []
+
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 68.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 56.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
- [4]
-File: figures/htl-logo.png Graphic file (type png)
-<use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 86.
-(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
- [5]
-Overfull \hbox (9.62889pt too wide) in paragraph at lines 91--92
+[4]
+Overfull \hbox (9.7036pt too wide) in paragraph at lines 65--66
+\T1/pplj/m/n/12 (-20) Tex-tk-las-si-fika-tion oder Empfehlungssys-teme (vgl. []
+[]Nan-daku-mar et al.[][] ([][]2023[][])). 
+ []
+
+
+Overfull \hbox (9.62889pt too wide) in paragraph at lines 67--68
 []\T1/pplj/m/n/12 (-20) Moderne Embedding-Modelle wie \T1/pplj/m/it/12 (-20) SP
 ECTER2\T1/pplj/m/n/12 (-20) , \T1/pplj/m/it/12 (-20) Sentence-BERT \T1/pplj/m/n
 /12 (-20) oder \T1/pplj/m/it/12 (-20) E5 \T1/pplj/m/n/12 (-20) basieren
@@ -1321,252 +1309,268 @@ ECTER2\T1/pplj/m/n/12 (-20) , \T1/pplj/m/it/12 (-20) Sentence-BERT \T1/pplj/m/n
 
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 100.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 68.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
-[6]) (./content/einfuehrung_nlp.tex
+[5]) (./content/einfuehrung_nlp.tex
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
 Package pdftex.def Info: figures/htl-logo.png  used on input line 1.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
- [7] [8
+ [6]
+chapter 2.
+
+Overfull \hbox (9.46243pt too wide) in paragraph at lines 11--12
+[]\T1/pplj/m/n/12 (-20) So wird beispiel-sweise nicht erkan-nt, dass Be-griffe 
+wie ^^RAu-to^^P und ^^RFahrzeug^^P
+ []
+
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 12.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+[7
 
 
 ]
-chapter 2.
-File: figures/htl-logo.png Graphic file (type png)
-<use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 13.
-(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
-[9]
 LaTeX Font Info:    Trying to load font information for TS1+pplj on input line 
-18.
+22.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1pplj.fd
 File: ts1pplj.fd 2004/09/06 font definitions for TS1/pplj.
 )
-File: figures/htl-logo.png Graphic file (type png)
-<use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 38.
-(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
- [10]
-Overfull \hbox (3.3344pt too wide) in paragraph at lines 52--53
-\T1/pplj/m/n/12 (-20) senschaftliche Texte mit ihren kom-plex-en Be-grif-flichk
-eit-en und Struk-turmerk-
+Overfull \hbox (18.74869pt too wide) in paragraph at lines 31--32
+\T1/pplj/m/n/12 (-20) Einen wesentlichen Fortschritt stell-ten Word-Embedding-M
+odelle wie Word2Vec
  []
 
-) (./content/einfuerung_agentic_ai.tex
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 32.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+[8]
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 50.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+ [9]) (./content/einfuerung_agentic_ai.tex
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
 Package pdftex.def Info: figures/htl-logo.png  used on input line 1.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
- [11]
-File: figures/htl-logo.png Graphic file (type png)
-<use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 1.
-(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
- [12]
+ [10]
 chapter 3.
 
-Overfull \hbox (5.87326pt too wide) in paragraph at lines 8--9
+Overfull \hbox (5.87326pt too wide) in paragraph at lines 9--10
 \T1/pplj/m/n/12 (-20) Ein grundle-gen-der Ansatz in-ner-halb von Agen-tic AI is
 t das ReAct-Framework
  []
 
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 26.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 17.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
-[13
+[11
 
 
 ]
-File: figures/htl-logo.png Graphic file (type png)
-<use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 51.
-(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
- [14]
-Overfull \hbox (1.05542pt too wide) in paragraph at lines 63--64
-\T1/pplj/m/n/12 (-20) zuerst nach rel-e-van-ten Doku-menten und erzeugt an-schl
-ieÿend eine fundierte
+Overfull \hbox (16.84894pt too wide) in paragraph at lines 24--25
+\T1/pplj/m/n/12 (-20) Ein zen-trales Merk-mal agen-tis-ch-er Sys-teme ist die F
+ähigkeit, ex-terne Werkzeuge
  []
 
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 79.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 46.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
-[15]) (./content/verwendeten_technologien.tex
+[12]
+Overfull \hbox (23.66096pt too wide) in paragraph at lines 53--54
+\T1/pplj/m/n/12 (-20) gemein-sam an ein-er Auf-gabe. Diese so-ge-nan-nte Agent-
+to-Agent-Kommunikation
+ []
+
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 72.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+[13]
+Overfull \hbox (6.28235pt too wide) in paragraph at lines 72--73
+[]\T1/pplj/b/n/12 (-20) Generation\T1/pplj/m/n/12 (-20) : Erzeu-gung ein-er Ant
+wort unter Ein-beziehung der abgerufe-
+ []
+
+) (./content/verwendeten_technologien.tex
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
 Package pdftex.def Info: figures/htl-logo.png  used on input line 1.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
- [16]
+ [14]
 chapter 4.
 
-Overfull \hbox (4.32753pt too wide) in paragraph at lines 11--12
-[]\T1/pplj/m/n/12 (-20) Control Groups (cgroups): be-gren-zen CPU-, RAM- und I/
-O-Ressourcen. 
+Overfull \hbox (7.69751pt too wide) in paragraph at lines 11--12
+[]\T1/pplj/b/n/12 (-20) Control Groups (cgroups)\T1/pplj/m/n/12 (-20) : be-gren
+-zen CPU-, RAM- und I/O-Ressourcen. 
  []
 
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 20.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 16.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
-[17
+[15
 
 
 ]
-Overfull \hbox (13.49373pt too wide) in paragraph at lines 27--28
-[]\T1/pplj/m/n/12 (-20) MySQL bi-etet auÿer-dem ACID-Transaktionen, die Datenko
-n-sis-tenz garantieren
- []
-
-
-Overfull \hbox (6.84756pt too wide) in paragraph at lines 40--41
-\T1/pplj/m/n/12 (-20) Vek-tor-repräsen-ta-tio-nen (Em-bed-dings) und wird ex-pl
-iz-it als Vektor-Datenbank
+Overfull \hbox (14.55675pt too wide) in paragraph at lines 23--24
+[]\T1/pplj/b/n/12 (-20) Secondary In-dex-es\T1/pplj/m/n/12 (-20) : weit-ere B$[
+]$-Bäume, die Ver-weise auf die Primärschlüs-
  []
 
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 47.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 41.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
-[18]
+[16]
+Overfull \hbox (10.5541pt too wide) in paragraph at lines 47--48
+[]\T1/pplj/b/n/12 (-20) Vektoren \T1/pplj/m/n/12 (-20) (häu-fig 768 oder 1024 D
+i-men-sio-nen, ab-hängig vom Embedding-
+ []
+
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 79.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 60.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
- [19]
+[17]
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 87.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+ [18]
+Overfull \hbox (1.5393pt too wide) in paragraph at lines 93--94
+[]\T1/pplj/m/n/12 (-20) Ein vere-in-facht-es Beispiel für eine An-frage an eine
+n Embedding-Endpunkt: 
+ []
+
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 9
 5.
- (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-File: figures/htl-logo.png Graphic file (type png)
-<use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 107.
-(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
- [20])
-(./content/entwicklung_tapyre.tex
-Overfull \hbox (1.79555pt too wide) in paragraph at lines 119--1
-\T1/pplj/m/n/12 (-20) Docker stellt re-pro-duzier-bare Umge-bun-gen bere-it [][
-]Dock-er Inc.[][] ([][]2025[][]), MySQL
+
+Overfull \hbox (13.86877pt too wide) in paragraph at lines 102--103
+\T1/pplj/m/n/12 (-20) Skalierung einzel-ner Di-en-ste und re-duziert Kop-plung 
+zwis-chen Sys-temteilen. 
  []
 
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 118.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+[19]) (./content/entwicklung_tapyre.tex
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
 Package pdftex.def Info: figures/htl-logo.png  used on input line 1.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
-[21] [22
-
-
-]
+ [20]
 chapter 5.
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 19.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 21.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
-[23] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+[21
+
+
+] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 20.
+nput line 28.
 
 (./sourcecode/tapyre/tapyre/src/abstractions/llm.py
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <6> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 1.
 )
 (./sourcecode/tapyre/tapyre/src/implementations/ollama_llm.py)
-Overfull \hbox (26.47203pt too wide) in paragraph at lines 26--27
-[]\T1/pplj/m/n/12 (-20) Der Rest des Sys-tems ken-nt nur das In-ter-face \T1/lm
-tt/m/n/12 LLM \T1/pplj/m/n/12 (-20) und ar-beit-et mit \T1/lmtt/m/n/12 BaseChat
-Model\T1/pplj/m/n/12 (-20) -
- []
-
-(./sourcecode/tapyre/tapyre/src/abstractions/agent.py)
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 35.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 45.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
- [24]
+ [22]
+(./sourcecode/tapyre/tapyre/src/abstractions/agent.py)
 (./sourcecode/tapyre/tapyre/src/implementations/plugin_agent.py
 Overfull \hbox (3.28926pt too wide) in paragraph at lines 3--4
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 )
-Underfull \vbox (badness 6063) has occurred while \output is active []
-
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 49.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 66.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
- [25]
-(./sourcecode/tapyre/tapyre/src/abstractions/plugin.py)
+ [23] (./sourcecode/tapyre/tapyre/src/abstractions/plugin.py)
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 63.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 78.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
- [26]
-(./sourcecode/tapyre/tapyre/src/runtime/plugin_loader.py)
+ [24]
+(./sourcecode/tapyre/tapyre/src/runtime/plugin_loader.py
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 69.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 36.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
- [27]
-Overfull \hbox (13.0131pt too wide) in paragraph at lines 76--77
-\T1/pplj/m/n/12 (-20) Ein konkretes Plu-g-in ist das \T1/lmtt/m/n/12 AppPlugin\
-T1/pplj/m/n/12 (-20) , das in-stal-lierte Desktop-Anwendungen
- []
-
+ [25])
 (./sourcecode/tapyre/tapyre/src/plugins/app_plugin.py
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 40.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 18.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
- [28])
-Overfull \hbox (22.30263pt too wide) in paragraph at lines 82--83
-\T1/pplj/m/n/12 (-20) Der typ-is-che Ablauf ein-er An-frage kom-biniert mehrere
- etablierte Forschungsrich-
- []
-
-
+ [26]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 85.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 92.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
- [29])
+ [27]))
 (./content/entwicklung_tapyre_paper_search.tex
+Overfull \hbox (19.93356pt too wide) in paragraph at lines 130--1
+\T1/pplj/m/n/12 (-20) System. Das Sprach-mod-ell übern-immt die Rolle ein-er in
+-tel-li-gen-ten Steuerungsin-
+ []
+
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
 Package pdftex.def Info: figures/htl-logo.png  used on input line 1.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
- [30]
+[28]
 chapter 6.
+
+Overfull \hbox (17.02644pt too wide) in paragraph at lines 8--9
+\T1/pplj/m/n/12 (-20) Diplo-mar-beit wurde be-wusst auf den Ein-satz klas-sis-c
+h-er Big-Data-Technologien
+ []
+
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 20.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 11.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
-[31
+[29
 
 
 ] (./sourcecode/tapyre/tapyre-paper-search/src/core/data_provider.py)
-Overfull \hbox (26.84264pt too wide) in paragraph at lines 31--32
-\T1/pplj/m/n/12 (-20) Eine konkrete Im-ple-men-tierung dieser Schnittstelle ste
-llt der arXiv-Datenprovider
- []
-
-(./sourcecode/tapyre/tapyre-paper-search/src/impl/arxiv_data_provider.py
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 25.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 35.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
 
-[32]
+[30] (./sourcecode/tapyre/tapyre-paper-search/src/impl/arxiv_data_provider.py
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 53.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+
+[31]
 
 ! LaTeX Error: Invalid UTF-8 byte sequence (â\lst@FillFixed@\lst@EC€).
 
@@ -1588,48 +1592,47 @@ l.93 ...r.info("[next] No more IDs to process â€”
                                                   finished.")
 ? 
 
+! LaTeX Error: Invalid UTF-8 byte sequence (â\lst@FillFixed@\lst@EC€).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.101 ...] Reached last ID or invalid next ID â€” 
+                                                  marking finished.")
+? 
+
+! LaTeX Error: Invalid UTF-8 byte "94.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.101 ...] Reached last ID or invalid next ID â€” 
+                                                  marking finished.")
+? 
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 100.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 129.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+ [32])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 44.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
  [33]
-
-! LaTeX Error: Invalid UTF-8 byte sequence (â\lst@FillFixed@\lst@EC€).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.101 ...] Reached last ID or invalid next ID â€” 
-                                                  marking finished.")
-? 
-
-! LaTeX Error: Invalid UTF-8 byte "94.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.101 ...] Reached last ID or invalid next ID â€” 
-                                                  marking finished.")
-? 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-File: figures/htl-logo.png Graphic file (type png)
-<use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 174.
-(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
- [34])
 (./sourcecode/tapyre/tapyre-paper-search/src/impl/fitz_pdf_converter.py
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 16.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 45.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
 
-[35]
+[34]
 
 ! LaTeX Error: Invalid UTF-8 byte sequence (â\lst@FillFixed@\lst@EC€).
 
@@ -1655,9 +1658,9 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 91.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 119.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
- [36]
+ [35]
 
 ! LaTeX Error: Invalid UTF-8 byte sequence (â\lst@FillFixed@\lst@EC€).
 
@@ -1743,22 +1746,22 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 166.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 194.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
- [37])
+ [36])
 (./sourcecode/tapyre/tapyre-paper-search/src/core/embedder.py)
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 65.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 80.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
- [38]
+ [37]
 (./sourcecode/tapyre/tapyre-paper-search/src/impl/specter_2_embedder.py
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 53.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 73.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
 
-[39]
+[38]
 Overfull \hbox (10.93932pt too wide) in paragraph at lines 73--75
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
@@ -1767,9 +1770,9 @@ Overfull \hbox (10.93932pt too wide) in paragraph at lines 73--75
 ) (./sourcecode/tapyre/tapyre-paper-search/src/core/database.py)
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 88.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 104.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
- [40]
+ [39]
 (./sourcecode/tapyre/tapyre-paper-search/src/impl/mysql_database.py
 Overfull \hbox (14.76434pt too wide) in paragraph at lines 26--28
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
@@ -1778,9 +1781,9 @@ Overfull \hbox (14.76434pt too wide) in paragraph at lines 26--28
 
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 57.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 68.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
-[41]
+[40]
 Overfull \hbox (7.11429pt too wide) in paragraph at lines 108--109
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
@@ -1799,15 +1802,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 133.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 143.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
- [42])
+ [41])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 101.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 111.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
-
-[43] (./sourcecode/tapyre/tapyre-paper-search/src/impl/qdrant_database.py
+ [42]
+(./sourcecode/tapyre/tapyre-paper-search/src/impl/qdrant_database.py
 Overfull \hbox (68.31473pt too wide) in paragraph at lines 39--40
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
@@ -1829,16 +1834,9 @@ Overfull \hbox (56.83965pt too wide) in paragraph at lines 50--51
 
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 60.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 66.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
-[44]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-File: figures/htl-logo.png Graphic file (type png)
-<use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 134.
-(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
- [45]
+[43]
 
 ! LaTeX Error: Invalid UTF-8 byte sequence (â\lst@FillFixed@\lst@EC€).
 
@@ -1860,20 +1858,24 @@ l.135 ...   "for paper %s (attempt %d/%d): %s â€“
                                                   retrying in %.1fs",
 ? 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 141.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+ [44]
 Overfull \hbox (7.11429pt too wide) in paragraph at lines 176--177
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 )
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 116.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 128.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
- [46]
-(./sourcecode/tapyre/tapyre-paper-search/src/impl/pipeline.py
+ [45] (./sourcecode/tapyre/tapyre-paper-search/src/impl/pipeline.py
 
 ! LaTeX Error: Invalid UTF-8 byte sequence (â\lst@FillFixed@\lst@EC€).
 
@@ -1903,11 +1905,6 @@ Overfull \hbox (26.23943pt too wide) in paragraph at lines 50--51
 [][][][][][][][][][][][] 
  []
 
-File: figures/htl-logo.png Graphic file (type png)
-<use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 63.
-(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
-[47]
 
 ! LaTeX Error: Invalid UTF-8 byte sequence (â\lst@FillFixed@\lst@EC€).
 
@@ -1928,6 +1925,11 @@ Type  H <return>  for immediate help.
 l.63 ....logger.info("Paper %s already exists â€“ 
                                                   skipping.", arxiv_id)
 ? 
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 75.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+[46]
 
 ! LaTeX Error: Invalid UTF-8 byte sequence (â\lst@FillFixed@\lst@EC€).
 
@@ -1983,31 +1985,76 @@ Overfull \hbox (7.11429pt too wide) in paragraph at lines 129--131
  []
 
 )
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 121.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 137.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
- [48])
-Overfull \hbox (8.14012pt too wide) in paragraph at lines 138--134
+ [47]
+Overfull \hbox (8.14012pt too wide) in paragraph at lines 145--146
 \T1/pplj/m/n/12 (-20) erne, agen-ten-fähige Forschungsplat-tform, die klas-sis-
 che Informationsretrieval-
  []
 
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
-Package pdftex.def Info: figures/htl-logo.png  used on input line 137.
+Package pdftex.def Info: figures/htl-logo.png  used on input line 153.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
-[49] [50
+[48]
+<figures/papers_per_day.png, id=1888, 722.7pt x 361.35pt>
+File: figures/papers_per_day.png Graphic file (type png)
+<use figures/papers_per_day.png>
+Package pdftex.def Info: figures/papers_per_day.png  used on input line 160.
+(pdftex.def)             Requested size: 338.59026pt x 169.29417pt.
+
+Overfull \hbox (15.98895pt too wide) in paragraph at lines 165--166
+\T1/pplj/m/n/12 (-20) Pub-lika-tio-nen während des Test-be-triebs. Zu Be-ginn d
+es Beobach-tungszeitraums
+ []
+
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 166.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+[49 <./figures/papers_per_day.png>]
+<figures/papers_cumulative.png, id=1898, 722.7pt x 361.35pt>
+File: figures/papers_cumulative.png Graphic file (type png)
+<use figures/papers_cumulative.png>
+Package pdftex.def Info: figures/papers_cumulative.png  used on input line 179.
+
+(pdftex.def)             Requested size: 338.59026pt x 169.29417pt.
 
 
-]
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 185.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+[50]
+Overfull \hbox (1.41783pt too wide) in paragraph at lines 190--191
+\T1/pplj/m/n/12 (-20) Zusammenfassend lassen sich die beobachteten Performance-
+Charakteristika
+ []
+
+)
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
 Package pdftex.def Info: figures/htl-logo.png  used on input line 137.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
- [51] [52]
+ [51 <./figures/papers_cumulative.png>]
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 137.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+ [52]
+File: figures/htl-logo.png Graphic file (type png)
+<use figures/htl-logo.png>
+Package pdftex.def Info: figures/htl-logo.png  used on input line 137.
+(pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
+ [53
+
+
+] [54]
 Package tocbasic Info: character protrusion at lot deactivated on input line 14
 1.
  (./main.lot)
@@ -2018,10 +2065,11 @@ File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
 Package pdftex.def Info: figures/htl-logo.png  used on input line 142.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
- [53
+ [55
 
 
-] [54
+]
+[56
 
 
 ]
@@ -2049,7 +2097,7 @@ File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
 Package pdftex.def Info: figures/htl-logo.png  used on input line 143.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
-[55] [56
+[57] [58
 
 
 ] (./main.lol)
@@ -2061,7 +2109,7 @@ File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
 Package pdftex.def Info: figures/htl-logo.png  used on input line 1.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
- [57] [58
+ [59] [60
 
 
 ]
@@ -2070,7 +2118,7 @@ File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
 Package pdftex.def Info: figures/htl-logo.png  used on input line 62.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
-[59]
+[61]
 
 Class scrbook Warning: deprecated old font command `\bf' used.
 (scrbook)              You should note, that since 1994 LaTeX2e provides a
@@ -2123,12 +2171,12 @@ File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
 Package pdftex.def Info: figures/htl-logo.png  used on input line 129.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
-[60]
+[62]
 File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
 Package pdftex.def Info: figures/htl-logo.png  used on input line 194.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
- [61]
+ [63]
 
 Class scrbook Warning: deprecated old font command `\bf' used.
 (scrbook)              You should note, that since 1994 LaTeX2e provides a
@@ -2156,39 +2204,43 @@ File: figures/htl-logo.png Graphic file (type png)
 <use figures/htl-logo.png>
 Package pdftex.def Info: figures/htl-logo.png  used on input line 147.
 (pdftex.def)             Requested size: 85.35826pt x 17.00815pt.
-[62] (./main.aux (./content/abstract.aux))
+[64] (./main.aux (./content/abstract.aux))
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 34445 strings out of 478051
- 666608 string characters out of 5840897
- 1960330 words of memory out of 5000000
- 51972 multiletter control sequences out of 15000+600000
- 585876 words of font info for 409 fonts, out of 8000000 for 9000
+ 34554 strings out of 478051
+ 668307 string characters out of 5840897
+ 1962330 words of memory out of 5000000
+ 52010 multiletter control sequences out of 15000+600000
+ 590749 words of font info for 451 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 118i,24n,113p,10683b,2401s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf/
-fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fpl/fplbj8a.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/fpl/fplrij8a.pfb></usr/share/texmf/fonts/type1/public/lm/l
-mss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texm
-f/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt
-12.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt8.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
-/palatino/uplri8a.pfb>
-Output written on main.pdf (70 pages, 495585 bytes).
+ 118i,24n,113p,10683b,2395s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{chapter*.24} has been referenced but does not exist
+, replaced by a fixed one
+
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf/fo
+nts/enc/dvips/lm/lm-ec.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fpl/fplbj8a.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/fpl/fplrij8a.pfb></usr/share/texmf/fonts/type1/public/lm/lms
+s12.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/
+fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12
+.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt8.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/p
+alatino/uplri8a.pfb>
+Output written on main.pdf (72 pages, 728819 bytes).
 PDF statistics:
- 2476 PDF objects out of 2487 (max. 8388607)
- 2347 compressed objects within 24 object streams
- 1474 named destinations out of 1728 (max. 500000)
- 64407 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 2570 PDF objects out of 2984 (max. 8388607)
+ 2434 compressed objects within 25 object streams
+ 1486 named destinations out of 1728 (max. 500000)
+ 72673 words of extra memory for PDF output out of 74296 (max. 10000000)
 

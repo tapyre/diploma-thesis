@@ -1,57 +1,66 @@
 \chapter{Einführung in Natural Language Processing (NLP)}
 
-Natural Language Processing (NLP) ist ein zentraler Bereich der Künstlichen Intelligenz, der sich mit der automatischen Verarbeitung menschlicher Sprache beschäftigt. Ziel ist es, Texte so zu analysieren und zu interpretieren, dass Computer sprachbasierte Aufgaben ausführen können – etwa Suchanfragen beantworten, Texte zusammenfassen oder Dokumente klassifizieren. Moderne Systeme wie Suchmaschinen, Chatbots oder Sprachassistenten bauen maßgeblich auf Methoden des NLP auf \cite{jurafsky2023slp}.
+Natural Language Processing (NLP) ist ein zentraler Teilbereich der Künstlichen Intelligenz, der sich mit der automatischen Verarbeitung und Analyse menschlicher Sprache beschäftigt. Ziel ist es, Texte so zu modellieren, dass Computersysteme sprachbasierte Aufgaben ausführen können, etwa das Beantworten von Suchanfragen, das Zusammenfassen von Texten oder die Klassifikation von Dokumenten. Moderne Anwendungen wie Suchmaschinen, Chatbots oder Sprachassistenten basieren maßgeblich auf Methoden des NLP (vgl. \cite{jurafsky2023slp}).
 
-Während frühe Ansätze vor allem statistische Modelle nutzten, basiert das heutige NLP überwiegend auf tiefen neuronalen Netzen. Eine entscheidende Rolle spielt dabei die Frage, wie Bedeutungen mathematisch repräsentiert werden können. Diese Repräsentationen werden als Embeddings bezeichnet.
+Während frühe NLP-Ansätze überwiegend auf regelbasierten oder statistischen Verfahren beruhten, wird heutiges NLP fast ausschließlich durch tiefe neuronale Netze geprägt. Eine zentrale Fragestellung dabei ist, wie sprachliche Bedeutung in numerischer Form repräsentiert werden kann. Diese numerischen Repräsentationen werden als Embeddings bezeichnet und bilden die Grundlage moderner NLP-Systeme.
 
 \section{Klassische NLP-Ansätze}
 
-Vor dem Aufkommen neuronaler Modelle wurden Texte meist mithilfe statistischer Verfahren dargestellt. Typische Beispiele sind Bag-of-Words, TF--IDF und N-Gramme. Diese Methoden berücksichtigen jedoch weder semantische Beziehungen noch Kontextinformationen. So wird nicht erkannt, dass „Auto“ und „Fahrzeug“ ähnliche Bedeutungen haben oder dass „Bank“ sowohl ein Sitzmöbel als auch ein Finanzinstitut bezeichnen kann \cite{jurafsky2023slp}. 
+Vor dem Aufkommen neuronaler Sprachmodelle wurden Texte hauptsächlich mithilfe statistischer Verfahren repräsentiert. Zu den bekanntesten Ansätzen zählen Bag-of-Words, TF--IDF sowie N-Gramm-Modelle. Diese Methoden basieren auf der Häufigkeit von Wörtern oder Wortfolgen, berücksichtigen jedoch weder semantische Beziehungen noch den sprachlichen Kontext.
 
-Für einfache Klassifikationsaufgaben sind solche Modelle oft ausreichend, stoßen jedoch bei komplexeren Anwendungen – etwa semantischer Suche oder Übersetzung – schnell an ihre Grenzen.
+So wird beispielsweise nicht erkannt, dass Begriffe wie „Auto“ und „Fahrzeug“ eine ähnliche Bedeutung haben oder dass ein Wort wie „Bank“ je nach Kontext unterschiedliche Bedeutungen annehmen kann (vgl. \cite{jurafsky2023slp}). Für einfache Klassifikations- oder Zählaufgaben können diese Modelle ausreichend sein, bei komplexeren Anwendungen wie semantischer Suche oder maschineller Übersetzung stoßen sie jedoch schnell an ihre Grenzen.
+
+Diese Einschränkungen waren ein wesentlicher Motivationsfaktor für die Entwicklung semantischer Repräsentationen in Form von Embeddings.
 
 \section{Einführung in Embeddings}
 
-Da Computer ausschließlich mit numerischen Daten arbeiten, müssen Texte in Zahlen überführt werden. Embeddings lösen dieses Problem, indem sie Wörter, Sätze oder ganze Dokumente als Vektoren in einem kontinuierlichen Raum darstellen. Dabei gilt:
+Da Computer ausschließlich mit numerischen Daten arbeiten, müssen sprachliche Informationen in eine geeignete mathematische Form überführt werden. Embeddings lösen dieses Problem, indem sie Wörter, Sätze oder ganze Dokumente als Vektoren in einem kontinuierlichen Vektorraum darstellen. Ziel dieser Repräsentation ist es, semantische Beziehungen geometrisch abzubilden.
+
+Dabei gelten folgende grundlegende Prinzipien:
 
 \begin{itemize}
-    \item Ähnliche Bedeutungen sollen ähnliche Vektoren besitzen.
-    \item Unterschiedliche Bedeutungen sollen weit voneinander entfernt liegen.
-    \item Kontextinformationen sollen möglichst berücksichtigt werden.
+    \item Ähnliche Bedeutungen sollen durch ähnliche Vektoren repräsentiert werden.
+    \item Unterschiedliche Bedeutungen sollen im Vektorraum weit voneinander entfernt liegen.
+    \item Kontextinformationen sollen – sofern möglich – in die Repräsentation einfließen.
 \end{itemize}
 
-Embeddings bilden die Grundlage vieler moderner NLP-Systeme und ermöglichen semantische Ähnlichkeitsanalysen sowie inhaltliche Textvergleiche.
+Embeddings bilden die Grundlage vieler moderner NLP-Anwendungen, insbesondere für Aufgaben wie Ähnlichkeitsberechnungen, Clustering oder semantische Suche. Auch in dieser Arbeit spielen Embeddings eine zentrale Rolle, da sie die Basis für den Vergleich wissenschaftlicher Texte darstellen.
 
 \section{Word Embeddings: Word2Vec und GloVe}
 
-Einen bedeutenden Fortschritt stellten Word Embeddings wie Word2Vec dar. Diese Modelle ordnen jedem Wort einen festen Vektor zu und basieren auf der Idee, dass Wörter, die in ähnlichen Kontexten auftreten, ähnliche Repräsentationen erhalten. Dadurch entstehen semantische Strukturen wie:
+Einen wesentlichen Fortschritt stellten Word-Embedding-Modelle wie Word2Vec dar. Diese Modelle ordnen jedem Wort einen festen Vektor zu und beruhen auf der Annahme, dass Wörter, die in ähnlichen Kontexten auftreten, auch ähnliche Bedeutungen haben. Dadurch entstehen semantische Strukturen im Vektorraum, die sich beispielsweise durch einfache Vektorrechnungen ausdrücken lassen:
 
 \[
 \mathrm{Koenig} - \mathrm{Mann} + \mathrm{Frau} \approx \mathrm{Koenigin}
 \]
 
-Word2Vec \cite{mikolov2013word2vec} und ähnliche Ansätze erfassen grundlegende semantische Beziehungen, ignorieren jedoch die Mehrdeutigkeit von Wörtern: Das Wort „Bank“ hat stets denselben Vektor, unabhängig vom Kontext.
+Modelle wie Word2Vec (vgl. \cite{mikolov2013word2vec}) erfassen grundlegende semantische Beziehungen zwischen Wörtern sehr effektiv. Ein zentrales Problem dieser Ansätze besteht jedoch darin, dass jedes Wort unabhängig vom Kontext immer durch denselben Vektor repräsentiert wird. Mehrdeutige Wörter wie „Bank“ können somit nicht kontextabhängig interpretiert werden.
+
+Diese Einschränkung führte zur Entwicklung kontextualisierter Embedding-Modelle.
 
 \section{Kontextualisierte Embeddings}
 
-Mit tiefen neuronalen Netzen entstanden Modelle, die Wortbedeutungen kontextabhängig repräsentieren. Ein Beispiel dafür ist ELMo, das für jedes Wort unterschiedliche Vektoren erzeugt – abhängig vom Satz, in dem es vorkommt. Diese Ansätze bilden eine Übergangsphase zwischen klassischen Embeddings und modernen Transformer-Modellen.
+Mit dem Einsatz tiefer neuronaler Netze entstanden Modelle, die Wortbedeutungen abhängig vom jeweiligen Kontext darstellen können. Ein bekanntes Beispiel ist ELMo, das für ein Wort unterschiedliche Vektoren erzeugt, je nachdem, in welchem Satz es vorkommt. Dadurch kann zwischen verschiedenen Bedeutungen desselben Wortes unterschieden werden.
+
+Diese kontextualisierten Embeddings stellten einen wichtigen Zwischenschritt dar und ebneten den Weg für leistungsfähigere Modelle auf Basis der Transformer-Architektur. Sie zeigten erstmals, dass eine dynamische, kontextabhängige Repräsentation von Sprache deutlich bessere Ergebnisse liefert als statische Wortvektoren.
 
 \section{Embeddings mit der Transformer-Architektur}
 
-Mit der Einführung der Transformer-Architektur wurden neue Maßstäbe gesetzt. Transformer-Encoder wie BERT \cite{devlin2018bert} oder wissenschaftsspezifische Modelle wie SPECTER \cite{cohan2020specter} erzeugen hochqualitative, kontextualisierte Embeddings, indem sie den gesamten Satz oder sogar das gesamte Dokument berücksichtigen.
+Mit der Einführung der Transformer-Architektur wurden neue Maßstäbe in der Sprachverarbeitung gesetzt. Transformer-Encoder wie BERT (vgl. \cite{devlin2018bert}) oder wissenschaftsspezifische Modelle wie SPECTER (vgl. \cite{cohan2020specter}) erzeugen hochqualitative, kontextualisierte Embeddings, indem sie den gesamten Satz oder sogar vollständige Dokumente berücksichtigen.
 
-Dies führt zu:
+Dies führt unter anderem zu folgenden Vorteilen:
 
 \begin{itemize}
-    \item kontextabhängigen Wortvektoren,
-    \item Satz- und Dokumentrepräsentationen als einzelne Vektoren,
-    \item präziser semantischer Modellierung,
-    \item robuster Erfassung langer und komplexer Zusammenhänge.
+    \item kontextabhängige Wortrepräsentationen,
+    \item Satz- und Dokumentembeddings als einzelne Vektoren,
+    \item präzisere semantische Modellierung,
+    \item robuste Verarbeitung langer und komplexer Textstrukturen.
 \end{itemize}
 
-Transformer-Embeddings sind daher besonders gut geeignet, um wissenschaftliche Texte mit ihren komplexen Begrifflichkeiten und Strukturmerkmalen zu verarbeiten.
+Insbesondere für wissenschaftliche Texte mit komplexer Terminologie und langen Abhängigkeiten sind Transformer-basierte Embeddings besonders geeignet. Aus diesem Grund kommen sie auch in dieser Arbeit zum Einsatz.
 
 \section{Relevanz für Tapyre Paper Search}
 
-Im Projekt \textit{Tapyre Paper Search} dienen Embeddings dazu, wissenschaftliche Artikel in einem Vektorraum abzubilden. Dokumente mit thematischen Ähnlichkeiten liegen darin räumlich nahe beieinander, was eine präzise semantische Suche ermöglicht. Spezialisierte Modelle wie SPECTER2, die auf wissenschaftlichen Publikationen trainiert wurden, verbessern die Erkennung fachlicher Zusammenhänge nochmals deutlich.
+Im Projekt \textit{Tapyre Paper Search} werden Embeddings verwendet, um wissenschaftliche Publikationen in einem hochdimensionalen Vektorraum abzubilden. Dokumente mit ähnlichem inhaltlichem Schwerpunkt liegen dabei räumlich nahe beieinander, wodurch eine präzise semantische Suche ermöglicht wird.
 
+Der Einsatz spezialisierter Modelle wie SPECTER2, die gezielt auf wissenschaftlichen Texten trainiert wurden, verbessert die Erkennung fachlicher Zusammenhänge zusätzlich. Die in diesem Kapitel beschriebenen NLP- und Embedding-Konzepte bilden somit die theoretische Grundlage für die im weiteren Verlauf der Arbeit vorgestellten Such- und Vergleichsmechanismen.
