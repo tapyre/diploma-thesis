@@ -13,11 +13,11 @@
 \addvspace {10\p@ }
 \contentsline {lstlisting}{\numberline {6.1}Abstrakte Schnittstelle für Datenquellen}{30}{lstlisting.6.1}%
 \contentsline {lstlisting}{\numberline {6.2}arXivDataProvider zur Anbindung der arXiv-API}{31}{lstlisting.6.2}%
-\contentsline {lstlisting}{\numberline {6.3}PDF-zu-Text-Konvertierung mit PyMuPDF}{34}{lstlisting.6.3}%
-\contentsline {lstlisting}{\numberline {6.4}Abstrakte Embedder-Schnittstelle}{37}{lstlisting.6.4}%
-\contentsline {lstlisting}{\numberline {6.5}Specter2Embedder zur Erzeugung semantischer Vektoren}{38}{lstlisting.6.5}%
-\contentsline {lstlisting}{\numberline {6.6}Abstrakte Datenbankschnittstelle}{39}{lstlisting.6.6}%
-\contentsline {lstlisting}{\numberline {6.7}MySQL-Datenbankanbindung für Paper-Metadaten}{40}{lstlisting.6.7}%
-\contentsline {lstlisting}{\numberline {6.8}Qdrant-Datenbank für semantische Suche}{43}{lstlisting.6.8}%
-\contentsline {lstlisting}{\numberline {6.9}Pipeline zur Verarbeitung und Indexierung von Papers}{46}{lstlisting.6.9}%
+\contentsline {lstlisting}{\numberline {6.3}PDF-zu-Text-Konvertierung mit PyMuPDF}{35}{lstlisting.6.3}%
+\contentsline {lstlisting}{\numberline {6.4}Abstrakte Embedder-Schnittstelle}{39}{lstlisting.6.4}%
+\contentsline {lstlisting}{\numberline {6.5}Specter2Embedder zur Erzeugung semantischer Vektoren}{39}{lstlisting.6.5}%
+\contentsline {lstlisting}{\numberline {6.6}Abstrakte Datenbankschnittstelle}{41}{lstlisting.6.6}%
+\contentsline {lstlisting}{\numberline {6.7}MySQL-Datenbankanbindung für Paper-Metadaten}{42}{lstlisting.6.7}%
+\contentsline {lstlisting}{\numberline {6.8}Qdrant-Datenbank für semantische Suche}{46}{lstlisting.6.8}%
+\contentsline {lstlisting}{\numberline {6.9}Pipeline zur Verarbeitung und Indexierung von Papers}{49}{lstlisting.6.9}%
 \addvspace {10\p@ }

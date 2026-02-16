@@ -33,7 +33,7 @@ captionpos=b
 
 Die Schnittstelle definiert ein einheitliches Vertragsmodell für den Zugriff auf Papers und deren Metadaten. Dadurch können neue Quellen, etwa PubMed oder lokale Archive, ergänzt werden, ohne bestehende Komponenten anpassen zu müssen. Dieses Vorgehen entspricht dem Open-Closed-Prinzip, bei dem Software für Erweiterungen offen, für Änderungen jedoch geschlossen bleibt.
 
-\section{ als konkrete Datenquelle}
+\section{ArXiv als konkrete Datenquelle}
 
 Eine konkrete Implementierung dieser Schnittstelle stellt der Datenprovider für arXiv dar. Dieser ist für das Abrufen von Metadaten sowie das Herunterladen der zugehörigen PDF-Dokumente verantwortlich.
 
@@ -143,7 +143,7 @@ Durch die klare Trennung dieser Schritte bleibt die Pipeline leicht erweiterbar,
 Das Zusammenspiel der beschriebenen Komponenten ermöglicht eine skalierbare und flexible Paper-Search-Plattform. Während relationale Datenbanken effiziente Metadatenabfragen erlauben, stellt die Vektordatenbank eine leistungsfähige semantische Suche bereit. Die modulare Architektur erlaubt es, neue Datenquellen, Embedding-Modelle oder Datenbanken mit minimalem Implementierungsaufwand zu integrieren.
 
 Damit bildet Tapyre Paper Search die technische Grundlage für eine moderne, agentenfähige Forschungsplattform, die klassische Informationsretrieval-Ansätze mit aktuellen Methoden der semantischen Suche kombiniert.
-\section{Analyse der Performance-Charakteristika und Systemeinschränkungen}
+\section{Analyse der Performance-Charakteristika}
 
 Diese Section analysiert beobachtete Performance-Effekte während des praktischen Betriebs von Tapyre Paper Search. Neben ressourcenbedingten Einschränkungen werden insbesondere Limitierungen bei der semantischen Suche, anfängliche Implementierungsineffizienzen sowie periodische Unterbrechungen des Systems betrachtet. Ziel ist es, die gemessenen Verläufe einzuordnen und deren Ursachen transparent darzustellen.
 
@@ -164,7 +164,7 @@ Die Ursache lag primär in den begrenzten verfügbaren Arbeitsspeicherressourcen
 
 Abbildung~\ref{fig:papers_per_day} zeigt die Anzahl der täglich verarbeiteten wissenschaftlichen Publikationen während des Testbetriebs. Zu Beginn des Beobachtungszeitraums ist eine vergleichsweise geringe Verarbeitungsrate erkennbar. Diese anfängliche Phase ist primär auf noch ineffiziente Implementierungen innerhalb der Pipeline zurückzuführen.
 
-Insbesondere betraf dies nicht optimal gewählte Batch-Größen, redundante Verarbeitungsschritte sowie fehlende Parallelisierung einzelner Komponenten. Im Verlauf der Entwicklung wurden diese Schwachstellen schrittweise identifiziert und durch gezielte Refaktorierungen behoben. Die anschließend steigende Tagesleistung verdeutlicht, dass Performanceverbesserungen vor allem durch Implementierungsoptimierungen erreicht wurden und die zugrunde liegende Architektur grundsätzlich skalierbar ausgelegt ist.
+Insbesondere betraf dies nicht optimal gewählte Batch-Größen, redundante Verarbeitungsschritte sowie fehlende Parallelisierung einzelner Komponenten. Im Verlauf der Entwicklung wurden diese Schwachstellen schrittweise identifiziert und durch gezieltes Refactoring behoben werden. Die anschließend steigende Tagesleistung verdeutlicht, dass Performanceverbesserungen vor allem durch Implementierungsoptimierungen erreicht wurden und die zugrunde liegende Architektur grundsätzlich skalierbar ausgelegt ist.
 
 \subsection{Periodische Verarbeitungseinbrüche durch geplante Unterbrechungen}
 

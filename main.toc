@@ -42,20 +42,20 @@
 \contentsline {chapter}{\numberline {6}Architektur und Implementierung von Tapyre Paper Search}{29}{chapter.6}%
 \contentsline {paragraph}{\nonumberline Abgrenzung zu klassischen Big-Data-Architekturen}{29}{paragraph*.8}%
 \contentsline {section}{\numberline {6.1}Abstraktion der Datenquellen}{30}{section.6.1}%
-\contentsline {section}{\numberline {6.2}als konkrete Datenquelle}{31}{section.6.2}%
-\contentsline {section}{\numberline {6.3}PDF-Verarbeitung und Textextraktion}{34}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Abstraktion der Embedding-Erzeugung}{37}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Specter2 als semantisches Embedding-Modell}{37}{section.6.5}%
-\contentsline {section}{\numberline {6.6}Abstraktion der Datenhaltung}{39}{section.6.6}%
-\contentsline {section}{\numberline {6.7}MySQL für strukturierte Metadaten}{40}{section.6.7}%
-\contentsline {section}{\numberline {6.8}Qdrant als Vektordatenbank}{43}{section.6.8}%
-\contentsline {section}{\numberline {6.9}Pipeline zur Orchestrierung des Gesamtprozesses}{45}{section.6.9}%
-\contentsline {section}{\numberline {6.10}Zusammenspiel der Komponenten}{48}{section.6.10}%
-\contentsline {section}{\numberline {6.11}Analyse der Performance-Charakteristika und Systemeinschränkungen}{48}{section.6.11}%
-\contentsline {subsection}{\numberline {6.11.1}Limitierungen bei der semantischen Suche}{48}{subsection.6.11.1}%
-\contentsline {subsection}{\numberline {6.11.2}Anfängliche Implementierungsineffizienzen und Optimierungen}{49}{subsection.6.11.2}%
-\contentsline {subsection}{\numberline {6.11.3}Periodische Verarbeitungseinbrüche durch geplante Unterbrechungen}{50}{subsection.6.11.3}%
-\contentsline {subsection}{\numberline {6.11.4}Kumulative Verarbeitung und Gesamtstabilität des Systems}{50}{subsection.6.11.4}%
-\contentsline {subsection}{\numberline {6.11.5}Zusammenfassende Einordnung}{51}{subsection.6.11.5}%
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{61}{chapter*.14}%
+\contentsline {section}{\numberline {6.2}ArXiv als konkrete Datenquelle}{31}{section.6.2}%
+\contentsline {section}{\numberline {6.3}PDF-Verarbeitung und Textextraktion}{35}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Abstraktion der Embedding-Erzeugung}{39}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Specter2 als semantisches Embedding-Modell}{39}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Abstraktion der Datenhaltung}{41}{section.6.6}%
+\contentsline {section}{\numberline {6.7}MySQL für strukturierte Metadaten}{42}{section.6.7}%
+\contentsline {section}{\numberline {6.8}Qdrant als Vektordatenbank}{46}{section.6.8}%
+\contentsline {section}{\numberline {6.9}Pipeline zur Orchestrierung des Gesamtprozesses}{49}{section.6.9}%
+\contentsline {section}{\numberline {6.10}Zusammenspiel der Komponenten}{53}{section.6.10}%
+\contentsline {section}{\numberline {6.11}Analyse der Performance-Charakteristika}{53}{section.6.11}%
+\contentsline {subsection}{\numberline {6.11.1}Limitierungen bei der semantischen Suche}{53}{subsection.6.11.1}%
+\contentsline {subsection}{\numberline {6.11.2}Anfängliche Implementierungsineffizienzen und Optimierungen}{54}{subsection.6.11.2}%
+\contentsline {subsection}{\numberline {6.11.3}Periodische Verarbeitungseinbrüche durch geplante Unterbrechungen}{55}{subsection.6.11.3}%
+\contentsline {subsection}{\numberline {6.11.4}Kumulative Verarbeitung und Gesamtstabilität des Systems}{55}{subsection.6.11.4}%
+\contentsline {subsection}{\numberline {6.11.5}Zusammenfassende Einordnung}{56}{subsection.6.11.5}%
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{65}{chapter*.14}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
