@@ -10,6 +10,24 @@
 %% Document metadata: DIESE WERTE BITTE ANPASSEN, wie werden dann automatisch auf der
 %% Titelseite angezeigt
 %% ========================================================================
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\lstset{
+  columns=fullflexible,
+  keepspaces=true,
+  upquote=true,
+  literate=
+    {—}{{---}}1
+    {–}{{--}}1
+    {→}{{$\rightarrow$}}1
+    {−}{{-}}1
+    {…}{{\dots}}1
+    {’}{{'}}1
+    {“}{{``}}1
+    {”}{{''}}1
+    {­}{{}}1
+}
 
 \newcommand{\mytitle}{Tapyre} 
 \newcommand{\mysubtitle}{Entwicklung eines KI-integrierten Produktivitätstools mit Plugin-System}
@@ -29,7 +47,7 @@
 
 \ohead{\headmark }
 \ihead*{\includegraphics[width=3cm]{figures/htl-logo}}
-%\ifoot{\thepage}  %Will man Anzahl Seiten: /\pageref{LastPage}
+\ifoot{\thepage}  %Will man Anzahl Seiten: /\pageref{LastPage}
 \ofoot{\myauthor}
 
 
