@@ -47,53 +47,74 @@ Astal ist eine spezialisierte Bibliothek, die es ermöglicht, GTK-Widgets mittel
 \subsubsection{Fazit} Die Entscheidung fiel auf GTK 3 mit Python, da es den besten Kompromiss aus nativer Integration, einheitlicher Sprachbasis (Python) und modernen Gestaltungsmöglichkeiten (CSS) bot.
 
 \subsection{Architektur der GTK-Anwendung}
+Die Architektur der Tapyre-Desktopanwendung ist darauf ausgelegt, eine schlanke, performante und nahtlos in die Desktop-Umgebung integrierte Benutzeroberfläche zu schaffen. Der zentrale Einstiegspunkt ist die Klasse \texttt{MyWindow}, die von \texttt{Gtk.Window} erbt. Diese Klasse ist für den gesamten Lebenszyklus des Fensters verantwortlich, von der Initialisierung der Widgets über die Konfiguration des Fensterverhaltens bis hin zur Behandlung von Benutzerinteraktionen.
 
-Der Einstiegspunkt der Anwendung wird durch die Klasse \texttt{MyWindow} gebildet, die von \texttt{Gtk.Window} erbt. Diese Klasse initialisiert das Hauptfenster, lädt das CSS-Styling und konfiguriert die Interaktion mit dem \texttt{GtkLayerShell}-Protokoll, um als Overlay auf dem Desktop zu fungieren.
+\subsubsection{Fenster-Management mit GtkLayerShell}
+Eine Kernanforderung an die Tapyre-Anwendung war es, nicht als herkömmliches Anwendungsfenster, sondern als eine Art Overlay oder Desktop-Widget zu fungieren, das bei Bedarf schnell aufgerufen werden kann. Um dieses Verhalten zu realisieren, wurde die Bibliothek \textbf{GtkLayerShell} eingesetzt. Diese Bibliothek ermöglicht es GTK-Anwendungen, das Layer-Shell-Protokoll des Wayland-Compositors zu nutzen, das für die Erstellung von Komponenten der Desktop-Umgebung (wie Panels, Hintergrundbilder oder eben Overlays) vorgesehen ist.
+
+Die Konfiguration erfolgt durch gezielte Aufrufe nach der Initialisierung des Fensters:
+\begin{itemize}
+    \item \texttt{GtkLayerShell.init\_for\_window(self)}: Dieser Aufruf registriert das GTK-Fenster bei der Layer Shell und signalisiert dem Compositor, dass es als Teil der Desktop-Shell und nicht als normale Anwendung behandelt werden soll.
+    \item \texttt{GtkLayerShell.set\_layer(self, GtkLayerShell.Layer.OVERLAY)}: Hiermit wird das Fenster auf der "Overlay"-Ebene platziert. Diese Ebene befindet sich über den normalen Anwendungsfenstern, aber unterhalb von systemeigenen Overlays wie z.B. dem Sperrbildschirm. Dies stellt sicher, dass Tapyre über anderen Anwendungen schwebt, wenn es sichtbar ist.
+    \item \texttt{GtkLayerShell.set\_keyboard\_mode(self, GtkLayerShell.KeyboardMode.EXCLUSIVE)}: Dieser Modus gewährt dem Tapyre-Fenster den exklusiven Fokus auf die Tastatureingaben, solange es sichtbar ist. Dies ist entscheidend, damit Benutzereingaben zuverlässig erfasst werden und nicht versehentlich an das darunterliegende Fenster gesendet werden.
+\end{itemize}
+Durch den Einsatz von GtkLayerShell wird das Anwendungsfenster tief in die Desktop-Shell integriert und erhält den Charakter eines nativen System-Widgets, was maßgeblich zur angestrebten nahtlosen Benutzererfahrung beiträgt.
+
+\subsubsection{Widget-Hierarchie und Layout}
+Das Layout der Anwendung ist bewusst minimalistisch gehalten, um den Fokus des Benutzers auf die zentrale Eingabeaufforderung zu lenken. Die Struktur wird durch eine Hierarchie von GTK-Widgets realisiert, die ineinander verschachtelt sind.
 
 \lstinputlisting[
 style=python,
-caption={Implementierung des Hauptfensters mit GTK und Layer Shell},
-captionpos=b
+caption={Initialisierung der Widget-Hierarchie},
+captionpos=b,
+firstline=33,
+lastline=49
 ]{sourcecode/tapyre/tapyre/src/frontend/gtk.py}
 
-\subsection{Benutzeroberfläche}
-
-Abbildung \ref{fig:tapyre_ui} zeigt die Benutzeroberfläche der Anwendung.
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.9\textwidth]{figures/tapyre.png}
-    \caption{Tapyre Benutzeroberfläche}
-    \label{fig:tapyre_ui}
-\end{figure}
-
-Das Layout ist minimalistisch gehalten und besteht im Wesentlichen aus einer vertikalen \texttt{Gtk.Box}, die als Container für die Eingabeelemente dient.
-Innerhalb dieser Box befindet sich eine horizontale Box, die ein Label (\texttt{>}) als Prompt-Indikator und das eigentliche Eingabefeld (\texttt{Gtk.Entry}) enthält.
-Diese Struktur ermöglicht eine schlanke und fokussierte Benutzereingabe, ähnlich einer Kommandozeile, jedoch grafisch eingebettet.
-
-\subsection{Asynchrone Verarbeitung und Threading}
-
-Eine besondere Herausforderung bei der Entwicklung von GUIs für KI-Systeme ist die Latenz der Modellantworten. Da die Generierung von Text durch das LLM Zeit in Anspruch nimmt, darf dieser Prozess nicht im Haupt-Thread (Main Loop) der GUI ausgeführt werden, da dies zum Einfrieren der Oberfläche führen würde.
-
-Zur Lösung dieses Problems wird Python's \texttt{threading}-Modul eingesetzt. Sobald eine Anfrage im Eingabefeld bestätigt wird (\texttt{on\_entry\_activate}), startet die Anwendung einen separaten Thread:
-
+Die Hierarchie lässt sich wie folgt beschreiben:
 \begin{enumerate}
-    \item Das Fenster wird ausgeblendet (\texttt{self.hide()}).
-    \item Der Agent wird in einem neuen Thread gestartet (\texttt{thread.start()}), um die Anfrage asynchron zu verarbeiten.
-    \item Der GTK-Main-Loop wird beendet, um Ressourcen freizugeben, während der Agent im Hintergrund weiterarbeitet.
+    \item \textbf{\texttt{Gtk.Window}:} Das Hauptfenster (\texttt{MyWindow}) dient als Wurzelcontainer für alle anderen Elemente.
+    \item \textbf{\texttt{Gtk.Box (vertikal)}:} Direkt im Fenster platziert ist eine vertikale Box (\texttt{self.box}), die als Hauptcontainer für das Layout dient. Sie hat die ID \texttt{\#main-box} für das CSS-Styling und sorgt dafür, dass die darin enthaltenen Elemente untereinander angeordnet werden.
+    \item \textbf{\texttt{Gtk.Box (horizontal)}:} Innerhalb der vertikalen Box befindet sich eine horizontale Box (\texttt{input\_box}), die das Label und das Eingabefeld nebeneinander anordnet. Sie wird mit der Methode \texttt{pack\_start} in die vertikale Box gepackt, wobei die Parameter \texttt{False, False, 10} dafür sorgen, dass sie sich nicht ausdehnt und einen inneren Abstand von 10 Pixeln hat.
+    \item \textbf{\texttt{Gtk.Label}:} Ein einfaches Label (\texttt{self.prompt\_label}) mit dem Text " > " dient als visueller Indikator für die Eingabeaufforderung, ähnlich einer Kommandozeile.
+    \item \textbf{\texttt{Gtk.Entry}:} Das zentrale Element der Benutzeroberfläche ist das Eingabefeld (\texttt{self.entry}). Es erhält die ID \texttt{\#user-input} für das Styling. Durch den Aufruf \texttt{input\_box.pack\_start(self.entry, True, True, 0)} wird das Eingabefeld so konfiguriert, dass es den gesamten verfügbaren horizontalen Platz innerhalb der \texttt{input\_box} ausfüllt.
 \end{enumerate}
+Diese klare, hierarchische Anordnung von Containern und Widgets ist ein typisches Merkmal von GTK-Anwendungen und ermöglicht ein präzises und flexibles Layout-Management.
 
-\subsection{Integration des CSS-Stylings}
-
-Um das visuelle Design vom Python-Code zu entkoppeln, nutzt die Anwendung einen \texttt{Gtk.CssProvider}. Beim Start wird die Datei \texttt{style/main.css} geladen und an den \texttt{Gdk.Screen} gebunden.
+\subsubsection{Ereignisbehandlung und asynchrone Prozessausführung}
+Die Interaktivität der Anwendung wird durch das Signal-System von GTK realisiert. Jede Benutzeraktion, wie eine Tastatureingabe oder das Drücken der Enter-Taste, löst ein Signal aus, mit dem eine Callback-Funktion verbunden werden kann.
 
 \lstinputlisting[
 style=python,
-caption={CSS-Styling der Benutzeroberfläche},
+caption={Ereignisbehandlung und Threading},
+captionpos=b,
+firstline=51,
+lastline=61
+]{sourcecode/tapyre/tapyre/src/frontend/gtk.py}
+
+Zwei zentrale Ereignisse werden in der Anwendung behandelt:
+\begin{itemize}
+    \item \textbf{Das \texttt{activate}-Signal:} Dieses Signal wird vom \texttt{Gtk.Entry}-Widget ausgelöst, wenn der Benutzer die Enter-Taste drückt. Es ist mit der Methode \texttt{on\_entry\_activate} verbunden. Diese Methode liest den Text aus dem Eingabefeld, leert es, und startet dann die Verarbeitung der Anfrage.
+    \item \textbf{Das \texttt{key-press-event}:} Das Hauptfenster lauscht auf dieses Ereignis, um auf das Drücken der Escape-Taste zu reagieren und die Anwendung durch den Aufruf von \texttt{Gtk.main\_quit()} zu beenden.
+\end{itemize}
+
+Eine besondere Herausforderung bei der Anbindung an ein KI-System ist die potenziell lange Latenz der Agenten-Antworten. Würde die \texttt{agent.ask()}-Methode direkt im GTK-Main-Loop (dem Haupt-Thread der GUI) ausgeführt, würde die gesamte Benutzeroberfläche für die Dauer der Anfrage einfrieren.
+
+Um dies zu verhindern, wird die Anfrage in einem separaten Thread ausgeführt. In \texttt{on\_entry\_activate} wird eine neue Instanz von \texttt{threading.Thread} erstellt, der die \texttt{self.agent.ask}-Methode als Ziel übergeben wird. Mit \texttt{thread.start()} beginnt die Ausführung im Hintergrund. Unmittelbar danach wird die GUI mit \texttt{self.hide()} ausgeblendet und der GTK-Main-Loop mit \texttt{Gtk.main\_quit()} beendet, um Ressourcen freizugeben. Der Agent kann seine Arbeit im Hintergrund-Thread beenden, ohne die Benutzererfahrung zu blockieren.
+
+\subsection{Integration des CSS-Stylings}
+Um das visuelle Design der Anwendung flexibel und unabhängig von der Anwendungslogik zu gestalten, nutzt Tapyre die integrierte CSS-Engine von GTK. Anstatt Farben, Abstände oder Schriftarten fest im Python-Code zu definieren, werden diese in einer externen CSS-Datei (\texttt{src/style/main.css}) deklariert.
+
+\lstinputlisting[
+language=css,
+style=python,
+caption={Ausschnitt aus der CSS-Datei für das Anwendungs-Styling},
 captionpos=b
 ]{sourcecode/tapyre/tapyre/src/style/main.css}
 
-Elemente werden im Code über IDs (z.\,B. \texttt{\#main-box}, \texttt{\#user-input}) angesprochen. Dies erlaubt es, Farben, Abstände, Schriftarten und Rahmen zentral in der CSS-Datei zu definieren, ohne den Programmcode anpassen zu müssen.
+Die Einbindung geschieht über einen \texttt{Gtk.CssProvider}, der die CSS-Datei lädt und für den gesamten Bildschirm (\texttt{Gdk.Screen}) bereitstellt. Im Code werden den GTK-Widgets über die Methode \texttt{set\_name()} eindeutige IDs zugewiesen (z.B. \texttt{\#main-box}, \texttt{\#user-input}). Diese IDs fungieren als CSS-Selektoren und erlauben es, die Widgets gezielt zu gestalten.
+
+So wird beispielsweise über \texttt{\#main-box} der Hintergrund der Anwendung auf semi-transparentes Schwarz gesetzt und ein abgerundeter Rahmen definiert. Der Selektor \texttt{\#user-input} sorgt dafür, dass das Eingabefeld selbst keinen Hintergrund oder Rahmen hat und sich nahtlos in das Design einfügt. Dieser Ansatz entkoppelt das Design vollständig von der Logik und ermöglicht es, das Erscheinungsbild der Anwendung zu ändern, ohne eine einzige Zeile Python-Code anpassen zu müssen.
 
 \section{Tapyre Paper Search}
 
