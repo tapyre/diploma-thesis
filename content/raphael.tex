@@ -154,7 +154,7 @@ Vue.js (vgl. \cite{vuejs}) ist bekannt für seine einfache Erlernbarkeit und sei
 Svelte (vgl. \cite{svelte}) verfolgt einen radikal anderen Ansatz: Anstatt die Arbeit zur Laufzeit im Browser durch ein virtuelles DOM zu erledigen, verschiebt Svelte diese Arbeit in einen Kompilierungsschritt.
 \begin{itemize}
     \item \textbf{Vorteile:} Dies führt zu extrem performantem, Vanilla-JavaScript-Code ohne Framework-Overhead zur Laufzeit, was in sehr kleinen Bundle-Größen resultiert. Der Code ist oft kürzer und leichter verständlich.
-    \item \textbf{Nachteile:} Svelte ist ein jüngeres Framework mit einem entsprechend kleineren Ökosystem und weniger verfügbaren Bibliotheken und Werkzeugen im Vergleich zu React. Die Wahl von React bot einen größeren Pool an vorgefertigten Lösungen und eine größere Community für Support.
+    \item \textbf{Nachteile:} Svelte ist ein jüngeres Framework mit einem entsprechend kleineren Ökosystem und weniger verfügbaren Bibliotheken und Werkzeugen im Vergleich zu React.
 \end{itemize}
 
 \subsubsection{Fazit}
@@ -177,7 +177,7 @@ Da die Suche im Backend dauern kann, wird dem Benutzer mit einem \texttt{Skeleto
 
 \begin{figure}[h]
     \centering
-    \fbox{Placeholder für Skeleton Loader Abbildung}
+    \includegraphics[width=1\textwidth]{figures/tapyre-skeleton.png}
     \caption{Skeleton Loader als visuelles Feedback während des Ladens}
     \label{fig:skeleton_loader}
 \end{figure}
@@ -192,7 +192,7 @@ Die visuelle Gestaltung basiert auf einem Utility-First-Ansatz mit Tailwind CSS.
 Anstelle von traditionellem CSS werden Utility-Klassen (z.B. \texttt{flex}, \texttt{pt-4}) direkt im JSX-Markup kombiniert. Dies beschleunigt die Entwicklung, verhindert Namenskonflikte und sorgt für ein konsistentes Design. Nicht verwendete Klassen werden im Build-Prozess automatisch entfernt, was die finale CSS-Datei minimiert.
 
 \subsubsection{Komponentenbasis mit shadcn/ui}
-Aufbauend auf Tailwind CSS wird \texttt{shadcn/ui} verwendet. Anstatt eine Bibliothek zu installieren, wird der Code der benötigten Komponenten (z.B. Buttons, Dropdowns) direkt ins Projekt kopiert. Dies bietet maximale Kontrolle und Anpassbarkeit und stellt sicher, dass alle Komponenten barrierefrei sind und eine konsistente API haben.
+Aufbauend auf Tailwind CSS wird \texttt{shadcn/ui} verwendet. Anstatt eine Bibliothek zu installieren, wird der Code der benötigten Komponenten (z.B. Buttons, Dropdowns) direkt ins Projekt kopiert. Dies bietet maximale Kontrolle und Anpassbarkeit.
 
 \subsection{Build- und Deployment-Prozess}
 Für die Bereitstellung wird ein containerisierter Ansatz mit Docker und einer Multi-Stage-Build-Strategie verwendet, um ein schlankes und sicheres Produktions-Image zu erzeugen.
@@ -216,9 +216,16 @@ Die Benutzeroberfläche (siehe Abbildung \ref{fig:tapyre_paper_search_ui}) ist b
 
 \begin{figure}[h]
     \centering
-    \fbox{Placeholder für Mobile-Ansicht}
-    \caption{Tapyre Paper Search auf einem mobilen Endgerät (Platzhalter)}
+    \includegraphics[height=0.6\textwidth]{figures/tapyre-paper-search-mobile.png}
+    \caption{Tapyre Paper Search auf einem mobilen Endgerät}
     \label{fig:tapyre_paper_search_mobile}
 \end{figure}
 
-Nach dem Absenden der Suche werden die Ergebnisse unterhalb des Eingabebereichs als übersichtliche Liste dargestellt, die jeweils direkt auf die Publikation bei arXiv verlinkt.
+Nach dem Absenden der Suche werden die Ergebnisse, wie in Abbildung \ref{fig:tapyre_paper_search_results} ersichtlich, unterhalb des Eingabebereichs als übersichtliche Liste dargestellt, die jeweils direkt auf die Publikation bei arXiv verlinkt.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/tapyr-paper-searc-results.png}
+    \caption{Tapyre Paper Search mit Suchergebnissen}
+    \label{fig:tapyre_paper_search_results}
+\end{figure}
