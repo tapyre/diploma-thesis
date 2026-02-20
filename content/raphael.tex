@@ -1,0 +1,203 @@
+\chapter{Implementierung der Benutzeroberflächen}
+
+Nachdem in den vorangegangenen Kapiteln die Entwicklung der Backend-Logik, der Agentic-AI-Architektur sowie der Datenverarbeitungspipeline detailliert beschrieben wurde, widmet sich dieses Kapitel der Implementierung der Benutzeroberflächen. 
+
+Es werden zwei unterschiedliche Frontends vorgestellt, die auf die spezifischen Anforderungen der jeweiligen Anwendungsfälle zugeschnitten sind:
+\begin{itemize}
+    \item Die \textbf{Tapyre Desktop-Anwendung}, die als native Schnittstelle für den AI-Agenten dient und eine tiefe Integration in die Arbeitsumgebung ermöglicht.
+    \item Die \textbf{Tapyre Paper Search Webanwendung}, die eine intuitive Suche und Exploration wissenschaftlicher Publikationen im Browser bietet.
+\end{itemize}
+
+Das Kapitel beleuchtet dabei die Auswahl der Technologien, die Designentscheidungen sowie die technische Umsetzung der grafischen Oberflächen.
+
+\section{Tapyre}
+
+Tapyre ist eine Desktop-Anwendung, die als grafische Benutzeroberfläche (GUI) für das im vorherigen Kapitel beschriebene Agentic-AI-System dient. Während die Kernlogik des Agenten auf textbasierten Interaktionen aufbaut, stellt diese Anwendung eine intuitive und visuelle Schnittstelle bereit, um die Nutzung des KI-Assistenten im alltäglichen Arbeitsablauf zu erleichtern.
+
+Ein zentrales Ziel bei der Entwicklung war die nahtlose Integration in die bestehende Desktop-Umgebung, um eine konsistente und reibungslose Benutzererfahrung zu gewährleisten. 
+
+\subsection{Auswahl des Technologie-Stacks}
+
+Die Auswahl der geeigneten Technologien für die Tapyre-Desktop-Anwendung basierte auf mehreren zentralen Anforderungen: der nahtlosen Integration der im Backend entwickelten Python-Logik, einer hohen Performance der Benutzeroberfläche sowie einer effizienten und reproduzierbaren Entwicklungsumgebung.
+
+Als Programmiersprache wurde \textbf{Python} gewählt (vgl. \cite{python}). Da der Kern des Agentic-AI-Systems und die genutzten Frameworks bereits in Python implementiert sind, entfällt durch die Verwendung derselben Sprache für das Frontend der Overhead einer sprachübergreifenden Schnittstelle (z.\,B. REST-API oder IPC). Dies ermöglicht eine direkte und performante Kommunikation zwischen GUI und Agentenlogik.
+
+Für die grafische Benutzeroberfläche fiel die Entscheidung auf GTK 3 (vgl. \cite{gtk3}). GTK ist eines der führenden Toolkits für Linux-Desktop-Umgebungen und bietet durch \textbf{PyGObject} exzellente Python-Bindings (vgl. \cite{pygobject}). Es erlaubt die Entwicklung nativer Anwendungen, die sich optisch und funktional harmonisch in den Linux-Desktop einfügen. Ein weiterer entscheidender Vorteil ist die Möglichkeit, das Design der Anwendung mittels \textbf{CSS} (Cascading Style Sheets) anzupassen, was eine flexible und moderne Gestaltung der Oberfläche ermöglicht (vgl. \cite{w3c_css}).
+
+Um die Herausforderungen des Abhängigkeitsmanagements und der Reproduzierbarkeit zu lösen, kommen \textbf{Nix} (vgl. \cite{nixos}) und \textbf{uv} (vgl. \cite{astral_uv}) zum Einsatz. Nix garantiert eine deterministische Systemumgebung, in der auch binäre Abhängigkeiten (wie die GTK-Bibliotheken) zuverlässig bereitgestellt werden. Ergänzend dazu wird uv als extrem schneller Paketmanager für Python verwendet, um Installationszeiten zu minimieren und eine strikte Versionierung der Python-Bibliotheken sicherzustellen.
+
+\subsection{Evaluierung alternativer UI-Toolkits}
+
+Vor der Festlegung auf GTK 3 und Python wurden mehrere alternative Technologien für die Entwicklung der Desktop-Oberfläche evaluiert. Ziel war es, ein Framework zu finden, das eine moderne Optik, hohe Performance und eine nahtlose Anbindung an die Python-basierte Agentenlogik ermöglicht.
+
+\subsubsection{Tauri}
+Tauri ist ein modernes Framework, das es ermöglicht, Desktop-Anwendungen mit Web-Technologien (HTML, CSS, JavaScript/TypeScript) für das Frontend und Rust für das Backend zu erstellen (vgl. \cite{tauri}).
+\begin{itemize}
+    \item \textbf{Vorteile:} Tauri zeichnet sich durch extrem kleine Dateigrößen und hohe Performance aus, da es auf den nativen Webview des Betriebssystems zurückgreift. Das Sicherheitsmodell ist robust, und die Trennung von Frontend und Backend ist strikt.
+    \item \textbf{Nachteile:} Die Nutzung von Tauri hätte die Einführung von zwei neuen Technologie-Stacks erfordert: Rust für die Core-Logik und JavaScript/TypeScript für das UI. Da der bestehende Agenten-Kern in Python geschrieben ist, hätte eine komplexe Inter-Process Communication (IPC) oder eine komplette Neuentwicklung in Rust stattfinden müssen. Dies hätte die Komplexität des Projekts unnötig erhöht.
+\end{itemize}
+
+\subsubsection{Astal}
+Astal ist eine spezialisierte Bibliothek, die es ermöglicht, GTK-Widgets mittels JavaScript oder TypeScript (GJS) zu definieren und zu steuern (vgl. \cite{astal}).
+\begin{itemize}
+    \item \textbf{Vorteile:} Dieses Tool erlaubt eine extrem schnelle und deklarative Entwicklung von Shell-Komponenten (wie Bars, Panels oder Widgets) und bietet eine sehr tiefe Integration in das GTK-Ökosystem.
+    \item \textbf{Nachteile:} Obwohl Astal auf GTK basiert, erzwingt es die Nutzung von JavaScript/TypeScript als "Klebstoffsprache". Dies bricht die Homogenität der Codebasis, da der Backend-Code in Python vorliegt. Eine direkte Interaktion zwischen Python-Objekten und dem UI wäre erschwert. Zudem ist dieses Tool primär für Shell-Erweiterungen und weniger für eigenständige Anwendungsfenster konzipiert.
+\end{itemize}
+
+\subsubsection{Fazit} Die Entscheidung fiel auf GTK 3 mit Python, da es den besten Kompromiss aus nativer Integration, einheitlicher Sprachbasis (Python) und modernen Gestaltungsmöglichkeiten (CSS) bot.
+
+\subsection{Architektur der GTK-Anwendung}
+
+Der Einstiegspunkt der Anwendung wird durch die Klasse \texttt{MyWindow} gebildet, die von \texttt{Gtk.Window} erbt. Diese Klasse initialisiert das Hauptfenster, lädt das CSS-Styling und konfiguriert die Interaktion mit dem \texttt{GtkLayerShell}-Protokoll, um als Overlay auf dem Desktop zu fungieren.
+
+\lstinputlisting[
+style=python,
+caption={Implementierung des Hauptfensters mit GTK und Layer Shell},
+captionpos=b
+]{sourcecode/tapyre/tapyre/src/frontend/gtk.py}
+
+\subsection{Benutzeroberfläche}
+
+Abbildung \ref{fig:tapyre_ui} zeigt die Benutzeroberfläche der Anwendung.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/tapyre.png}
+    \caption{Tapyre Benutzeroberfläche}
+    \label{fig:tapyre_ui}
+\end{figure}
+
+Das Layout ist minimalistisch gehalten und besteht im Wesentlichen aus einer vertikalen \texttt{Gtk.Box}, die als Container für die Eingabeelemente dient.
+Innerhalb dieser Box befindet sich eine horizontale Box, die ein Label (\texttt{>}) als Prompt-Indikator und das eigentliche Eingabefeld (\texttt{Gtk.Entry}) enthält.
+Diese Struktur ermöglicht eine schlanke und fokussierte Benutzereingabe, ähnlich einer Kommandozeile, jedoch grafisch eingebettet.
+
+\subsection{Asynchrone Verarbeitung und Threading}
+
+Eine besondere Herausforderung bei der Entwicklung von GUIs für KI-Systeme ist die Latenz der Modellantworten. Da die Generierung von Text durch das LLM Zeit in Anspruch nimmt, darf dieser Prozess nicht im Haupt-Thread (Main Loop) der GUI ausgeführt werden, da dies zum Einfrieren der Oberfläche führen würde.
+
+Zur Lösung dieses Problems wird Python's \texttt{threading}-Modul eingesetzt. Sobald eine Anfrage im Eingabefeld bestätigt wird (\texttt{on\_entry\_activate}), startet die Anwendung einen separaten Thread:
+
+\begin{enumerate}
+    \item Das Fenster wird ausgeblendet (\texttt{self.hide()}).
+    \item Der Agent wird in einem neuen Thread gestartet (\texttt{thread.start()}), um die Anfrage asynchron zu verarbeiten.
+    \item Der GTK-Main-Loop wird beendet, um Ressourcen freizugeben, während der Agent im Hintergrund weiterarbeitet.
+\end{enumerate}
+
+\subsection{Integration des CSS-Stylings}
+
+Um das visuelle Design vom Python-Code zu entkoppeln, nutzt die Anwendung einen \texttt{Gtk.CssProvider}. Beim Start wird die Datei \texttt{style/main.css} geladen und an den \texttt{Gdk.Screen} gebunden.
+
+\lstinputlisting[
+style=python,
+caption={CSS-Styling der Benutzeroberfläche},
+captionpos=b
+]{sourcecode/tapyre/tapyre/src/style/main.css}
+
+Elemente werden im Code über IDs (z.\,B. \texttt{\#main-box}, \texttt{\#user-input}) angesprochen. Dies erlaubt es, Farben, Abstände, Schriftarten und Rahmen zentral in der CSS-Datei zu definieren, ohne den Programmcode anpassen zu müssen.
+
+\section{Tapyre Paper Search}
+
+Parallel zur Desktop-Anwendung wurde die \textbf{Tapyre Paper Search} Webanwendung entwickelt. Sie dient als leicht zugängliche, browserbasierte Schnittstelle für die im Backend implementierte semantische Such- und Embedding-Pipeline.
+
+\subsection{Auswahl des Technologie-Stacks}
+
+Für das Frontend der Paper-Search-Anwendung wurde ein moderner Web-Technologie-Stack gewählt, der auf Skalierbarkeit, eine schnelle Entwicklungs-Erfahrung und eine reaktive Benutzeroberfläche ausgelegt ist.
+
+Als Framework wurde \textbf{Next.js} (vgl. \cite{nextjs}) gewählt, das auf der JavaScript-Bibliothek \textbf{React} (vgl. \cite{react}) aufbaut. Next.js bietet entscheidende Vorteile wie serverseitiges Rendern (SSR) und statische Seitengenerierung (SSG), die zu exzellenten Ladezeiten und einer besseren Suchmaschinenoptimierung führen. Die komponentenbasierte Architektur von React fördert zudem die Wiederverwendbarkeit von UI-Elementen und die Wartbarkeit des Codes.
+
+Als Programmiersprache kommt \textbf{TypeScript} (vgl. \cite{typescript}) zum Einsatz. Als typisierte Obermenge von JavaScript erhöht es die Codequalität und Entwicklerproduktivität, indem es Fehler bereits während der Entwicklung durch statische Typüberprüfung erkennt und eine robustere Code-Basis sowie eine bessere Werkzeugunterstützung ermöglicht.
+
+Für die Gestaltung der Benutzeroberfläche wurde auf \textbf{Tailwind CSS} (vgl. \cite{tailwindcss}) in Kombination mit der Komponentenbibliothek \textbf{shadcn/ui} (vgl. \cite{shadcnui}) gesetzt. Tailwind CSS ist ein Utility-First-Framework, das eine schnelle und flexible Gestaltung direkt im HTML-Markup erlaubt, ohne dass dedizierte CSS-Dateien pro Komponente notwendig sind. shadcn/ui ergänzt diesen Ansatz, indem es eine Sammlung barrierefreier und anpassbarer UI-Komponenten bereitstellt, die als hochwertige Grundlage für ein konsistentes und modernes Design dienen.
+
+Um eine konsistente und isolierte Ausführungsumgebung zu gewährleisten und die Bereitstellung (Deployment) zu vereinfachen, ist die Anwendung für den Betrieb in einem \textbf{Docker-Container} konzipiert, wie durch das bereitgestellte \texttt{Dockerfile} ersichtlich ist.
+
+\subsection{Evaluierung alternativer Frontend-Frameworks}
+
+Vor der Festlegung auf Next.js und React wurden weitere führende Frontend-Frameworks evaluiert. Die Entscheidung basierte auf den spezifischen Anforderungen des Projekts, insbesondere der Notwendigkeit einer schnellen Prototypentwicklung, einer guten Entwicklererfahrung und der Verfügbarkeit eines robusten Ökosystems.
+
+\subsubsection{Angular}
+Angular ist ein umfassendes, von Google entwickeltes Framework (vgl. \cite{angular}), das auf TypeScript basiert und einem strikten Model-View-Controller (MVC)-Ansatz folgt.
+\begin{itemize}
+    \item \textbf{Vorteile:} Es bietet eine voll ausgestattete, meinungsstarke (opinionated) Architektur, die viele Entscheidungen vorgibt und sich gut für große Enterprise-Anwendungen eignet. Das integrierte Dependency-Injection-System und die umfangreichen Werkzeuge (Angular CLI) sind mächtig.
+    \item \textbf{Nachteile:} Die steile Lernkurve und die hohe Komplexität wurden für ein schnelles Prototyping im Rahmen dieser Arbeit als hinderlich bewertet. Die strikte Struktur von Angular bietet weniger Flexibilität als React.
+\end{itemize}
+
+\subsubsection{Vue.js}
+Vue.js (vgl. \cite{vuejs}) ist bekannt für seine einfache Erlernbarkeit und seine progressive Natur, die es erlaubt, es schrittweise in Projekte zu integrieren.
+\begin{itemize}
+    \item \textbf{Vorteile:} Die saubere Trennung von HTML-Templates, JavaScript-Logik und CSS-Styling (Single-File Components) ist sehr entwicklerfreundlich. Die Dokumentation gilt als eine der besten in der Branche.
+    \item \textbf{Nachteile:} Obwohl das Ökosystem von Vue.js stark wächst, ist es immer noch kleiner als das von React. Für serverseitiges Rendering bietet Vue.js mit Nuxt.js eine Lösung, die jedoch zum Zeitpunkt der Entscheidung nicht die gleiche Reife und Verbreitung wie Next.js aufwies.
+\end{itemize}
+
+\subsubsection{Svelte}
+Svelte (vgl. \cite{svelte}) verfolgt einen radikal anderen Ansatz: Anstatt die Arbeit zur Laufzeit im Browser durch ein virtuelles DOM zu erledigen, verschiebt Svelte diese Arbeit in einen Kompilierungsschritt.
+\begin{itemize}
+    \item \textbf{Vorteile:} Dies führt zu extrem performantem, Vanilla-JavaScript-Code ohne Framework-Overhead zur Laufzeit, was in sehr kleinen Bundle-Größen resultiert. Der Code ist oft kürzer und leichter verständlich.
+    \item \textbf{Nachteile:} Svelte ist ein jüngeres Framework mit einem entsprechend kleineren Ökosystem und weniger verfügbaren Bibliotheken und Werkzeugen im Vergleich zu React. Die Wahl von React bot einen größeren Pool an vorgefertigten Lösungen und eine größere Community für Support.
+\end{itemize}
+
+\subsubsection{Fazit}
+Die Entscheidung für \textbf{React} mit \textbf{Next.js} bot den besten Kompromiss aus Flexibilität, einem riesigen Ökosystem an Bibliotheken (einschließlich UI-Komponenten), exzellenter Community-Unterstützung und einer ausgereiften Lösung für serverseitiges Rendering. Dies ermöglichte eine schnelle und effiziente Entwicklung der Tapyre Paper Search Anwendung.
+
+\subsection{Architektur der Frontend-Anwendung}
+Die Webanwendung folgt einer komponentenorientierten Architektur, einem zentralen Paradigma von React. Diese Architektur fördert die Wiederverwendbarkeit und Kapselung von UI-Logik und -Struktur.
+
+\subsubsection{Komponenten-Hierarchie und Komposition}
+Die Anwendung ist hierarchisch aus Komponenten aufgebaut. An der Spitze steht die \texttt{app/page.tsx}, die die zentrale \texttt{PaperSearch}-Komponente rendert. Diese wiederum komponiert ihre Oberfläche aus kleineren, spezialisierten Bausteinen wie \texttt{InputGroup}, \texttt{Item} und \texttt{DropdownMenu}. Dieses Prinzip der Komposition erlaubt es, komplexe UIs aus einfachen, testbaren Teilen zusammenzusetzen.
+
+\subsubsection{Zustandsverwaltung (State Management)}
+Der Zustand der Anwendung wird lokal in der \texttt{PaperSearch}-Komponente mit dem \texttt{useState}-Hook von React verwaltet. Wichtige Zustandsvariablen sind \texttt{searchText} (Benutzereingabe), \texttt{searchResults} (API-Ergebnisse oder Fehler), und \texttt{isLoading} (zur Steuerung von Ladeindikatoren).
+
+\subsection{Fehlerbehandlung und User Experience}
+Eine robuste Anwendung muss auch Fehlerzustände und Ladezeiten adäquat behandeln, um eine positive User Experience (UX) zu gewährleisten.
+
+\subsubsection{Asynchrones Feedback während der Suche}
+Da die Suche im Backend dauern kann, wird dem Benutzer mit einem \texttt{Skeleton}-Loader visuelles Feedback gegeben. Während die \texttt{isLoading}-Variable auf \texttt{true} gesetzt ist, werden graue, pulsierende Platzhalter angezeigt, die die Struktur der zukünftigen Ergebnisse nachahmen. Dies verbessert die wahrgenommene Performance und reduziert die Unsicherheit des Benutzers.
+
+\begin{figure}[h]
+    \centering
+    \fbox{Placeholder für Skeleton Loader Abbildung}
+    \caption{Skeleton Loader als visuelles Feedback während des Ladens}
+    \label{fig:skeleton_loader}
+\end{figure}
+
+\subsubsection{Umgang mit API-Fehlern}
+Netzwerk- oder Serverfehler werden im \texttt{catch}-Block der \texttt{handleSearch}-Funktion abgefangen. Anstatt die Anwendung abstürzen zu lassen, wird ein Fehlerobjekt im Zustand gespeichert. Die UI erkennt diesen Fehlerzustand und zeigt eine verständliche Meldung an.
+
+\subsection{Styling-Architektur und Design-System}
+Die visuelle Gestaltung basiert auf einem Utility-First-Ansatz mit Tailwind CSS.
+
+\subsubsection{Utility-First mit Tailwind CSS}
+Anstelle von traditionellem CSS werden Utility-Klassen (z.B. \texttt{flex}, \texttt{pt-4}) direkt im JSX-Markup kombiniert. Dies beschleunigt die Entwicklung, verhindert Namenskonflikte und sorgt für ein konsistentes Design. Nicht verwendete Klassen werden im Build-Prozess automatisch entfernt, was die finale CSS-Datei minimiert.
+
+\subsubsection{Komponentenbasis mit shadcn/ui}
+Aufbauend auf Tailwind CSS wird \texttt{shadcn/ui} verwendet. Anstatt eine Bibliothek zu installieren, wird der Code der benötigten Komponenten (z.B. Buttons, Dropdowns) direkt ins Projekt kopiert. Dies bietet maximale Kontrolle und Anpassbarkeit und stellt sicher, dass alle Komponenten barrierefrei sind und eine konsistente API haben.
+
+\subsection{Build- und Deployment-Prozess}
+Für die Bereitstellung wird ein containerisierter Ansatz mit Docker und einer Multi-Stage-Build-Strategie verwendet, um ein schlankes und sicheres Produktions-Image zu erzeugen.
+
+\lstinputlisting[
+language=bash,
+style=python,
+caption={Multi-Stage-Build im Dockerfile der Webanwendung},
+captionpos=b
+]{sourcecode/website/Dockerfile}
+
+\subsection{Benutzeroberfläche und Suche}
+Die Benutzeroberfläche (siehe Abbildung \ref{fig:tapyre_paper_search_ui}) ist bewusst minimalistisch gehalten. Durch den Einsatz responsiver Designprinzipien passt sich die Darstellung zudem flexibel an unterschiedliche Bildschirmgrößen an und ist somit auch auf mobilen Endgeräten optimal nutzbar (vgl. Abbildung \ref{fig:tapyre_paper_search_mobile}). Das zentrale Element ist eine Eingabegruppe, die ein Textfeld für die Suchanfrage sowie Dropdown-Menüs zur Auswahl von Suchtyp und Ranking-Methode kombiniert.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/tapyre-paper-search.png}
+    \caption{Tapyre Paper Search Benutzeroberfläche}
+    \label{fig:tapyre_paper_search_ui}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \fbox{Placeholder für Mobile-Ansicht}
+    \caption{Tapyre Paper Search auf einem mobilen Endgerät (Platzhalter)}
+    \label{fig:tapyre_paper_search_mobile}
+\end{figure}
+
+Nach dem Absenden der Suche werden die Ergebnisse unterhalb des Eingabebereichs als übersichtliche Liste dargestellt, die jeweils direkt auf die Publikation bei arXiv verlinkt.
