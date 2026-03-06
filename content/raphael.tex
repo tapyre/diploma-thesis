@@ -86,7 +86,7 @@ Die Konfiguration erfolgt durch gezielte Aufrufe nach der Initialisierung des Fe
 	\item \texttt{GtkLayerShell.set\_layer(self, GtkLayerShell.Layer.OVERLAY)}: Hiermit wird das Fenster auf der Overlay-Ebene platziert. Diese Ebene befindet sich über den normalen Anwendungsfenstern, aber unterhalb von systemeigenen Overlays wie z.B. dem Sperrbildschirm. Dies stellt sicher, dass Tapyre über anderen Anwendungen schwebt, wenn es sichtbar ist.
 	\item \texttt{GtkLayerShell.set\_keyboard\_mode(self, \\ GtkLayerShell.KeyboardMode.EXCLUSIVE)}: Dieser Modus gewährt dem Tapyre-Fenster den exklusiven Fokus auf die Tastatureingaben, solange es sichtbar ist. Dies ist entscheidend, damit Benutzereingaben zuverlässig erfasst werden und nicht versehentlich an das darunterliegende Fenster gesendet werden.
 \end{itemize}
-test
+
 Infolge dieser tiefen Integration in das Linux-Ökosystem und der direkten Abhängigkeit vom Wayland-Protokoll ergibt sich eine wesentliche technische Einschränkung: Die Tapyre-Desktop-Anwendung ist \textbf{exklusiv für Linux-Systeme} konzipiert. Eine Ausführung unter Microsoft Windows oder macOS ist aufgrund der Verwendung von \texttt{GtkLayerShell} nicht möglich, da diese Betriebssysteme das Layer-Shell-Protokoll nativ nicht unterstützen. Diese Entscheidung wurde bewusst getroffen, um eine maximale Systemintegration unter Linux zu erreichen.
 
 Durch den Einsatz von GtkLayerShell wird das Anwendungsfenster tief in die Desktop-Shell integriert und erhält den Charakter eines nativen System-Widgets, was maßgeblich zur angestrebten nahtlosen Benutzererfahrung beiträgt.
@@ -220,10 +220,10 @@ Diese \texttt{PaperSearch}-Komponente wiederum komponiert ihre Oberfläche aus k
 
 Die Struktur der Benutzeroberfläche lässt sich wie folgt unterteilen:
 \begin{itemize}
-    \item \textbf{\texttt{InputGroup}}: Dient als Container für das zentrale Eingabefeld. Innerhalb dieser Gruppe wird ein \texttt{InputGroupTextarea} verwendet, das über das \texttt{value}-Attribut an den \texttt{searchText}-Zustand gebunden ist.
-    \item \textbf{\texttt{DropdownMenu}}: Zwei separate Dropdown-Menüs ermöglichen dem Benutzer die Konfiguration der Suche. Das erste Menü erlaubt den Wechsel zwischen einer Suche auf Dokumentebene (\textit{Paper}) oder auf Abschnittsebene (\textit{Chunk}). Das zweite Menü dient der Auswahl der Re-ranking-Methode (z.\,B. rein semantisch oder mittels BM25).
-    \item \textbf{Such-Button}: Ein kreisförmiger Button mit einem Pfeil-Icon löst die \texttt{handleSearch}-Funktion aus. Er wird automatisch deaktiviert (\textit{disabled}), wenn eine Suche läuft oder das Textfeld leer ist.
-    \item \textbf{Conditionals Rendering}: Die Anzeige der Ergebnisse erfolgt dynamisch. Solange \texttt{isLoading} wahr ist, wird ein \texttt{Skeleton}-Platzhalter angezeigt. Sobald Daten verfügbar sind (\texttt{searchResults}), wird die Hilfsfunktion \texttt{renderResults()} aufgerufen, um die Liste der gefundenen Publikationen darzustellen.
+	\item \textbf{\texttt{InputGroup}}: Dient als Container für das zentrale Eingabefeld. Innerhalb dieser Gruppe wird ein \texttt{InputGroupTextarea} verwendet, das über das \texttt{value}-Attribut an den \texttt{searchText}-Zustand gebunden ist.
+	\item \textbf{\texttt{DropdownMenu}}: Zwei separate Dropdown-Menüs ermöglichen dem Benutzer die Konfiguration der Suche. Das erste Menü erlaubt den Wechsel zwischen einer Suche auf Dokumentebene (\textit{Paper}) oder auf Abschnittsebene (\textit{Chunk}). Das zweite Menü dient der Auswahl der Re-ranking-Methode (z.\,B. rein semantisch oder mittels BM25).
+	\item \textbf{Such-Button}: Ein kreisförmiger Button mit einem Pfeil-Icon löst die \texttt{handleSearch}-Funktion aus. Er wird automatisch deaktiviert (\textit{disabled}), wenn eine Suche läuft oder das Textfeld leer ist.
+	\item \textbf{Conditionals Rendering}: Die Anzeige der Ergebnisse erfolgt dynamisch. Solange \texttt{isLoading} wahr ist, wird ein \texttt{Skeleton}-Platzhalter angezeigt. Sobald Daten verfügbar sind (\texttt{searchResults}), wird die Hilfsfunktion \texttt{renderResults()} aufgerufen, um die Liste der gefundenen Publikationen darzustellen.
 \end{itemize}
 
 \subsubsection{Zustandsverwaltung (State Management)}
