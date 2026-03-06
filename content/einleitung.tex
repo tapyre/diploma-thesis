@@ -1,32 +1,57 @@
 
 \chapter{Einleitung}
 
-In der Einleitung wird erklärt, wieso man sich für dieses Thema entschieden hat. (Zielsetzung und Aufgabenstellung des Gesamtprojekts, fachliches und wirtschaftliches Umfeld)
+Die rasante Entwicklung im Bereich der künstlichen Intelligenz (KI), insbesondere der \textit{Large Language Models} (LLMs), hat die Art und Weise, wie Informationen verarbeitet und generiert werden, grundlegend transformiert. Während klassische Systeme primär auf starren Algorithmen und Schlagwortsuchen basierten, ermöglichen moderne Sprachmodelle ein tieferes semantisches Verständnis von Inhalten. Ein aktueller Trend in der Forschung und Entwicklung ist der Übergang von rein reaktiven Chatbots hin zu sogenannten \textit{Agentic AI}-Systemen. Diese Agenten sind in der Lage, eigenständig zu planen, externe Werkzeuge (\textit{Tools}) zu nutzen und komplexe Aufgaben in einem iterativen Prozess zu lösen (vgl. \cite{yao2022react, wang2024surveyagentic}).
+
+In diesem Kontext befasst sich die vorliegende Diplomarbeit mit der Konzeption und Implementierung von \textbf{Tapyre}, einem modularen, agentenbasierten Produktivitätstool. Das Ziel ist es, ein System zu schaffen, das nicht nur als Schnittstelle zu einem LLM fungiert, sondern durch ein flexibles Plugin-System aktiv in die Arbeitsumgebung des Benutzers integriert werden kann. Ein besonderer Fokus liegt dabei auf der Anwendung im Bereich der wissenschaftlichen Recherche: Mit \textbf{Tapyre Paper Search} wird eine spezialisierte Pipeline entwickelt, die mithilfe von Vektordatenbanken und modernen Embedding-Modellen eine semantische Suche in wissenschaftlichen Publikationen ermöglicht.
+
+\section{Zielsetzung und Aufgabenstellung}
+
+Das Hauptziel dieses Projekts ist die Entwicklung eines erweiterbaren Frameworks für agentische KI. Tapyre soll als lokale Steuerungsinstanz dienen, die durch den Einsatz von \textit{Open-Source}-Modellen (über Ollama) die Privatsphäre der Nutzer schützt und gleichzeitig eine hohe Flexibilität bietet. Die Aufgabenstellung gliedert sich in zwei zentrale Teilbereiche:
+
+\begin{enumerate}
+    \item \textbf{Kernsystem und Agentik}: Entwicklung einer modularen Architektur, die auf dem ReAct-Paradigma basiert. Dies umfasst die Abstraktion der LLM-Interaktion, die Implementierung eines dynamischen Plugin-Systems sowie die Entwicklung einer spezialisierten Such-Pipeline für wissenschaftliche Arbeiten unter Verwendung von SPECTER2-Embeddings und der Qdrant-Vektordatenbank.
+    \item \textbf{Benutzeroberflächen und Integration}: Schaffung intuitiver Schnittstellen für unterschiedliche Nutzungsszenarien. Dies beinhaltet eine native Desktop-Anwendung zur direkten Systemsteuerung sowie eine moderne Webanwendung zur Exploration der Suchergebnisse der Paper-Search-Pipeline.
+\end{enumerate}
+
+\section{Wirtschaftliches und fachliches Umfeld}
+
+Das fachliche Umfeld der Arbeit ist in den Bereichen \textit{Natural Language Processing} (NLP), \textit{Information Retrieval} und Softwarearchitektur angesiedelt. Die Notwendigkeit für solche Systeme ergibt sich aus der stetig wachsenden Flut an Informationen, insbesondere in der Wissenschaft. Jährlich werden Millionen neuer Publikationen veröffentlicht, was eine effiziente Literaturrecherche mit klassischen Mitteln zunehmend erschwert. Semantische Suchsysteme, die den Kontext und die Bedeutung einer Anfrage verstehen, bieten hier einen entscheidenden Vorteil gegenüber der herkömmlichen Keyword-Suche (vgl. \cite{nandakumar2023specter2}).
+
+Wirtschaftlich betrachtet gewinnen KI-Assistenten, die lokal betrieben werden können, an Bedeutung, da sie Unternehmen und Forschern ermöglichen, sensible Daten zu verarbeiten, ohne auf Cloud-Anbieter angewiesen zu sein. Tapyre adressiert diesen Bedarf durch eine modulare, quelloffene Architektur.
 
 \section{Vertiefende Aufgabenstellung}
 
-\subsection{Schüler*innen Name 1}
+Die Arbeit wurde von den Projektmitgliedern wie folgt aufgeteilt:
 
-\subsection{Schüler*innen Name 2}
+\subsection{Christian Vorhofer}
+
+Der Schwerpunkt von Christian Vorhofer liegt auf der Konzeption und Implementierung der Backend-Architektur sowie der Agenten-Logik. Zu seinen Aufgaben gehören:
+\begin{itemize}
+    \item Design der modularen Agentic-AI-Architektur auf Basis von LangChain.
+    \item Entwicklung der abstrakten LLM-Schnittstellen und des dynamischen Plugin-Systems.
+    \item Implementierung der \textit{Tapyre Paper Search} Pipeline (Data Provider, PDF-Konvertierung, Embedding-Prozess und Vektordatenbank-Anbindung).
+    \item Konfiguration und Optimierung der lokalen LLM-Infrastruktur.
+\end{itemize}
+
+\subsection{Raphael Ladinig}
+
+Raphael Ladinig ist für die Entwicklung der Benutzeroberflächen und die Integration der Agentenlogik in die Frontends verantwortlich. Sein Aufgabenbereich umfasst:
+\begin{itemize}
+    \item Entwicklung der nativen Tapyre Desktop-Anwendung unter Verwendung von Python und GTK 3 (inkl. GtkLayerShell für System-Integration).
+    \item Gestaltung des UI-Designs mittels CSS und Implementierung asynchroner Interaktionsmuster.
+    \item Entwicklung der Tapyre Paper Search Webanwendung auf Basis von Next.js, React und TypeScript.
+    \item Containerisierung der Frontend-Anwendungen mittels Docker.
+\end{itemize}
 
 \section{Dokumentation der Arbeit}
 
-Es werden die Projektergebnisse dokumentiert
+Die vorliegende Dokumentation ist so strukturiert, dass sie den gesamten Entwicklungsprozess von den theoretischen Grundlagen bis zur praktischen Umsetzung abbildet:
 
 \begin{itemize}
-	\item Grundkonzept
-	\item Theoretische Grundlagen
-	\item Praktische Umsetzung
-	\item Lösungsweg
-	\item Alternativer Lösungsweg
-	\item Ergebnisse inkl. Interpretation
-\end{itemize}
-
-Weitere Anregungen:
-
-\begin{itemize}
-	\item Fertigungsunterlagen
-	\item Testfälle (Messergebnisse…)
-	\item Benutzerdokumentation
-	\item Verwendete Technologien und Entwicklungswerkzeuge
+	\item \textbf{Theoretische Grundlagen}: In den Kapiteln 2 bis 4 werden die Grundlagen von neuronalen Netzwerken, NLP und Agentic AI erläutert.
+	\item \textbf{Technologien}: Kapitel 5 gibt einen Überblick über die verwendeten Werkzeuge und Frameworks.
+	\item \textbf{Praktische Umsetzung}: Die Kapitel 6 und 7 dokumentieren die Entwicklung des Kernsystems und der Such-Pipeline (Christian Vorhofer).
+	\item \textbf{Benutzeroberflächen}: In Kapitel 8 wird die Implementierung der Desktop- und Web-Frontends detailliert beschrieben (Raphael Ladinig).
+	\item \textbf{Zusammenfassung}: Kapitel 9 reflektiert die Projektergebnisse und gibt einen Ausblick auf zukünftige Erweiterungsmöglichkeiten.
 \end{itemize}

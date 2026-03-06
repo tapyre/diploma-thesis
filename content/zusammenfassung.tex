@@ -1,0 +1,48 @@
+\chapter{Zusammenfassung und Ausblick}
+
+\section{Zusammenfassung}
+Die vorliegende Diplomarbeit befasste sich mit der Konzeption und Implementierung von "Tapyre", einem KI-integrierten Produktivitätssystem, das aus zwei zentralen Komponenten besteht: einem Agentic-AI-Framework für die Desktop-Automatisierung und einer semantischen Suchplattform für wissenschaftliche Publikationen. Ziel war es, moderne Ansätze der künstlichen Intelligenz, insbesondere Große Sprachmodelle (LLMs), in praxisnahe Werkzeuge zu überführen, die den alltäglichen Arbeitsablauf von Entwicklern und Forschern unterstützen.
+
+Die Entwicklung des Agentic-AI-Frameworks basierte auf einer Plugin-Architektur, die es dem System ermöglicht, dynamisch um neue Fähigkeiten erweitert zu werden. Es wurde ein Agent entwickelt, der in der Lage ist, Anweisungen in natürlicher Sprache zu interpretieren und diese mithilfe der zur Verfügung stehenden Plugins in konkrete Aktionen umzusetzen. Die technische Umsetzung erfolgte in Python, um eine enge Anbindung an gängige KI-Bibliotheken zu gewährleisten.
+
+Parallel dazu wurde das System Tapyre Paper Search als Backend für die Verarbeitung und semantische Suche von Forschungsarbeiten implementiert. Die Architektur setzt auf einen modularen Aufbau, der die Datenakquise (z.B. von arXiv), die PDF-Verarbeitung, die Erzeugung von Vektor-Embeddings mit dem domänenspezifischen Modell Specter2 sowie die Speicherung in einer relationalen Datenbank (MySQL) für Metadaten und einer Vektordatenbank (Qdrant) für die semantische Suche klar voneinander trennt. Diese Pipeline bildet das Fundament für die effiziente und skalierbare Erschließung großer Mengen wissenschaftlicher Literatur.
+
+Ein wesentlicher Fokus der Arbeit lag auf der Implementierung von zwei unterschiedlichen Benutzeroberflächen, die auf die jeweiligen Anwendungsfälle zugeschnitten sind:
+\begin{itemize}
+	\item Die \textbf{Tapyre Desktop-Anwendung}, eine native GTK-Anwendung in Python, die als schlankes Overlay fungiert und eine schnelle, kommandozeilenähnliche Interaktion mit dem KI-Agenten ermöglicht. Der Architekturansatz legte Wert auf eine tiefe Systemintegration und eine performante, non-blocking Ausführung von Agenten-Aufgaben durch den Einsatz von Threading.
+	\item Die \textbf{Tapyre Paper Search Webanwendung}, eine moderne Web-App auf Basis von Next.js, React und TypeScript. Sie bietet eine zugängliche, browserbasierte Schnittstelle für die semantische Suche. Die Architektur folgt etablierten Mustern wie der komponenten-basierten Entwicklung und dem unidirektionalen Datenfluss, um eine wartbare und erweiterbare Codebasis zu schaffen.
+\end{itemize}
+Im Zuge der Implementierung wurden umfassende architektonische Entscheidungen getroffen, alternative Technologien evaluiert und die gewählten Stacks detailliert umgesetzt, von der Backend-Logik bis hin zum responsiven Frontend-Design.
+
+\section{Reflexion und Ergebnisse}
+Das Projekt hat erfolgreich demonstriert, dass es möglich ist, mit modernen KI-Technologien und durchdachten Softwarearchitekturen leistungsfähige und zugleich ressourceneffiziente Werkzeuge zu entwickeln.
+\begin{itemize}
+	\item Es wurde ein funktionsfähiges Agentic-AI-Framework mit einem erweiterbaren Plugin-System geschaffen.
+	\item Die Paper-Search-Pipeline ist in der Lage, wissenschaftliche Publikationen zu verarbeiten, zu indexieren und sowohl semantisch als auch über Metadaten durchsuchbar zu machen.
+	\item Die beiden entwickelten Benutzeroberflächen bieten jeweils eine intuitive und auf den Anwendungsfall optimierte Interaktionsmöglichkeit mit dem System.
+\end{itemize}
+Die Evaluation alternativer Technologien sowie die detaillierte Ausarbeitung der Systemarchitekturen haben zudem wertvolle Erkenntnisse über die jeweiligen Vor- und Nachteile der verschiedenen Ansätze (z.B. native Desktop-Entwicklung vs. Web-Frontend) geliefert. Die Analyse des Betriebs hat gezeigt, dass die Systeme grundsätzlich stabil laufen, aber auch Limitationen aufweisen, insbesondere im Bereich der Skalierbarkeit der semantischen Suche unter begrenzten Hardwareressourcen.
+
+\section{Ausblick}
+Das Tapyre-System bietet eine solide Grundlage für zahlreiche zukünftige Erweiterungen und Forschungsrichtungen. Die modulare Architektur beider Teilsysteme erleichtert die Weiterentwicklung in verschiedenen Bereichen.
+
+\paragraph{Erweiterung des Tapyre-Agenten}
+Das Plugin-System des Desktop-Agenten ist die offensichtlichste Anlaufstelle für Erweiterungen. Zukünftige Arbeiten könnten sich auf die Entwicklung und Integration weiterer Plugins konzentrieren, wie zum Beispiel:
+\begin{itemize}
+	\item Ein \textbf{Kalender-Plugin} zur Verwaltung von Terminen.
+	\item Ein \textbf{E-Mail-Plugin} zum Lesen und Verfassen von E-Mails.
+	\item Ein \textbf{Dateisystem-Plugin} für komplexe Dateioperationen.
+	\item Eine tiefere Integration mit der Tapyre Paper Search API, sodass der Agent selbstständig Literaturrecherchen durchführen kann.
+\end{itemize}
+Darüber hinaus könnte die Intelligenz des Agenten selbst verbessert werden, z.B. durch den Einsatz von "Program of Thought"- oder "ReAct"-Techniken, um komplexere, mehrstufige Aufgaben autonom zu planen und auszuführen.
+
+\paragraph{Verbesserungen für Tapyre Paper Search}
+Auch die Paper-Search-Plattform bietet zahlreiche Möglichkeiten für zukünftige Verbesserungen:
+\begin{itemize}
+	\item \textbf{Integration weiterer Datenquellen:} Neben arXiv könnten weitere Plattformen wie PubMed, ACM Digital Library oder Google Scholar angebunden werden, um den durchsuchbaren Datenbestand zu vergrößern.
+	\item \textbf{Verbesserte UI/UX:} Die Benutzeroberfläche könnte um weitere Features wie eine Suchhistorie, das Speichern von Suchen, personalisierte Empfehlungen oder die Visualisierung von Autorennetzwerken erweitert werden.
+	\item \textbf{Hybride Suchansätze:} Die Kombination aus semantischer Suche und BM25-Keyword-Suche könnte weiter verfeinert werden, um die Suchrelevanz zu maximieren.
+\end{itemize}
+
+\paragraph{Langfristige Vision}
+Langfristig könnten die beiden Teilsysteme zu einer einzigen, kohärenten Plattform verschmelzen. Der Tapyre-Agent könnte die Web-Oberfläche als eine seiner "Tools" nutzen, um komplexe Rechercheaufgaben für den Benutzer im Hintergrund auszuführen. Ein Benutzer könnte dem Desktop-Agenten eine Anweisung wie "Finde mir die fünf wichtigsten Paper zum Thema X aus dem letzten Jahr und fasse sie zusammen" geben. Der Agent würde daraufhin die Paper Search API nutzen, die relevanten Dokumente finden, deren Inhalte verarbeiten und dem Benutzer eine aufbereitete Zusammenfassung präsentieren. Eine solche Integration würde das volle Potenzial eines KI-gestützten Produktivitätstools ausschöpfen.

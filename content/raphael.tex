@@ -1,11 +1,11 @@
 \chapter{Implementierung der Benutzeroberflächen}
 
-Nachdem in den vorangegangenen Kapiteln die Entwicklung der Backend-Logik, der Agentic-AI-Architektur sowie der Datenverarbeitungspipeline detailliert beschrieben wurde, widmet sich dieses Kapitel der Implementierung der Benutzeroberflächen. 
+Nachdem in den vorangegangenen Kapiteln die Entwicklung der Backend-Logik, der Agentic-AI-Architektur sowie der Datenverarbeitungspipeline detailliert beschrieben wurde, widmet sich dieses Kapitel der Implementierung der Benutzeroberflächen.
 
 Es werden zwei unterschiedliche Frontends vorgestellt, die auf die spezifischen Anforderungen der jeweiligen Anwendungsfälle zugeschnitten sind:
 \begin{itemize}
-    \item Die \textbf{Tapyre Desktop-Anwendung}, die als native Schnittstelle für den AI-Agenten dient und eine tiefe Integration in die Arbeitsumgebung ermöglicht.
-    \item Die \textbf{Tapyre Paper Search Webanwendung}, die eine intuitive Suche und Exploration wissenschaftlicher Publikationen im Browser bietet.
+	\item Die \textbf{Tapyre Desktop-Anwendung}, die als native Schnittstelle für den AI-Agenten dient und eine tiefe Integration in die Arbeitsumgebung ermöglicht.
+	\item Die \textbf{Tapyre Paper Search Webanwendung}, die eine intuitive Suche und Exploration wissenschaftlicher Publikationen im Browser bietet.
 \end{itemize}
 
 Das Kapitel beleuchtet dabei die Auswahl der Technologien, die Designentscheidungen sowie die technische Umsetzung der grafischen Oberflächen.
@@ -14,7 +14,7 @@ Das Kapitel beleuchtet dabei die Auswahl der Technologien, die Designentscheidun
 
 Tapyre ist eine Desktop-Anwendung, die als grafische Benutzeroberfläche (GUI) für das im vorherigen Kapitel beschriebene Agentic-AI-System dient. Während die Kernlogik des Agenten auf textbasierten Interaktionen aufbaut, stellt diese Anwendung eine intuitive und visuelle Schnittstelle bereit, um die Nutzung des KI-Assistenten im alltäglichen Arbeitsablauf zu erleichtern.
 
-Ein zentrales Ziel bei der Entwicklung war die nahtlose Integration in die bestehende Desktop-Umgebung, um eine konsistente und reibungslose Benutzererfahrung zu gewährleisten. 
+Ein zentrales Ziel bei der Entwicklung war die nahtlose Integration in die bestehende Desktop-Umgebung, um eine konsistente und reibungslose Benutzererfahrung zu gewährleisten.
 
 \subsection{Auswahl des Technologie-Stacks}
 
@@ -33,21 +33,40 @@ Vor der Festlegung auf GTK 3 und Python wurden mehrere alternative Technologien 
 \subsubsection{Tauri}
 Tauri ist ein modernes Framework, das es ermöglicht, Desktop-Anwendungen mit Web-Technologien (HTML, CSS, JavaScript/TypeScript) für das Frontend und Rust für das Backend zu erstellen (vgl. \cite{tauri}).
 \begin{itemize}
-    \item \textbf{Vorteile:} Tauri zeichnet sich durch extrem kleine Dateigrößen und hohe Performance aus, da es auf den nativen Webview des Betriebssystems zurückgreift. Das Sicherheitsmodell ist robust, und die Trennung von Frontend und Backend ist strikt.
-    \item \textbf{Nachteile:} Die Nutzung von Tauri hätte die Einführung von zwei neuen Technologie-Stacks erfordert: Rust für die Core-Logik und JavaScript/TypeScript für das UI. Da der bestehende Agenten-Kern in Python geschrieben ist, hätte eine komplexe Inter-Process Communication (IPC) oder eine komplette Neuentwicklung in Rust stattfinden müssen. Dies hätte die Komplexität des Projekts unnötig erhöht.
+	\item \textbf{Vorteile:} Tauri zeichnet sich durch extrem kleine Dateigrößen und hohe Performance aus, da es auf den nativen Webview des Betriebssystems zurückgreift. Das Sicherheitsmodell ist robust, und die Trennung von Frontend und Backend ist strikt.
+	\item \textbf{Nachteile:} Die Nutzung von Tauri hätte die Einführung von zwei neuen Technologie-Stacks erfordert: Rust für die Core-Logik und JavaScript/TypeScript für das UI. Da der bestehende Agenten-Kern in Python geschrieben ist, hätte eine komplexe Inter-Process Communication (IPC) oder eine komplette Neuentwicklung in Rust stattfinden müssen. Dies hätte die Komplexität des Projekts unnötig erhöht.
 \end{itemize}
 
 \subsubsection{Astal}
 Astal ist eine spezialisierte Bibliothek, die es ermöglicht, GTK-Widgets mittels JavaScript oder TypeScript (GJS) zu definieren und zu steuern (vgl. \cite{astal}).
 \begin{itemize}
-    \item \textbf{Vorteile:} Dieses Tool erlaubt eine extrem schnelle und deklarative Entwicklung von Shell-Komponenten (wie Bars, Panels oder Widgets) und bietet eine sehr tiefe Integration in das GTK-Ökosystem.
-    \item \textbf{Nachteile:} Obwohl Astal auf GTK basiert, erzwingt es die Nutzung von JavaScript/TypeScript als "Klebstoffsprache". Dies bricht die Homogenität der Codebasis, da der Backend-Code in Python vorliegt. Eine direkte Interaktion zwischen Python-Objekten und dem UI wäre erschwert. Zudem ist dieses Tool primär für Shell-Erweiterungen und weniger für eigenständige Anwendungsfenster konzipiert.
+	\item \textbf{Vorteile:} Dieses Tool erlaubt eine extrem schnelle und deklarative Entwicklung von Shell-Komponenten (wie Bars, Panels oder Widgets) und bietet eine sehr tiefe Integration in das GTK-Ökosystem.
+	\item \textbf{Nachteile:} Obwohl Astal auf GTK basiert, erzwingt es die Nutzung von JavaScript/TypeScript als "Klebstoffsprache". Dies bricht die Homogenität der Codebasis, da der Backend-Code in Python vorliegt. Eine direkte Interaktion zwischen Python-Objekten und dem UI wäre erschwert. Zudem ist dieses Tool primär für Shell-Erweiterungen und weniger für eigenständige Anwendungsfenster konzipiert.
 \end{itemize}
 
 \subsubsection{Fazit} Die Entscheidung fiel auf GTK 3 mit Python, da es den besten Kompromiss aus nativer Integration, einheitlicher Sprachbasis (Python) und modernen Gestaltungsmöglichkeiten (CSS) bot.
 
-\subsection{Architektur der GTK-Anwendung}
-Die Architektur der Tapyre-Desktopanwendung ist darauf ausgelegt, eine schlanke, performante und nahtlos in die Desktop-Umgebung integrierte Benutzeroberfläche zu schaffen. Der zentrale Einstiegspunkt ist die Klasse \texttt{MyWindow}, die von \texttt{Gtk.Window} erbt. Diese Klasse ist für den gesamten Lebenszyklus des Fensters verantwortlich, von der Initialisierung der Widgets über die Konfiguration des Fensterverhaltens bis hin zur Behandlung von Benutzerinteraktionen.
+\subsection{Integration des KI-Agenten und Backend-Anbindung}
+Ein entscheidender Aspekt der Architektur von Tapyre ist die strikte Trennung zwischen der Benutzeroberfläche und der zugrunde liegenden Agenten-Logik. Das GTK-Frontend fungiert dabei als eine austauschbare Schale, die erst durch die Injektion des Backend-Agenten funktionsfähig wird. Diese lose Kopplung wird durch das Prinzip der \textit{Dependency Injection} realisiert.
+
+Die zentrale Schaltstelle für diese Verbindung ist die Datei \texttt{main.py}. Hier wird der gesamte System-Stack initialisiert, bevor die grafische Oberfläche gestartet wird.
+
+\lstinputlisting[
+	style=python,
+	caption={Initialisierung und Verbindung von Backend und Frontend in main.py},
+	captionpos=b,
+	firstline=13,
+	lastline=42
+]{sourcecode/tapyre/tapyre/src/main.py}
+
+Der Ablauf der Anbindung lässt sich in drei Schritten zusammenfassen:
+\begin{enumerate}
+	\item \textbf{Backend-Initialisierung}: Zunächst werden die Konfigurationen geladen, die LLM-Schnittstelle (\texttt{OllamaLLM}) instanziiert und alle verfügbaren Plugins dynamisch geladen.
+	\item \textbf{Agenten-Instanziierung}: Aus dem LLM und den Plugin-Tools wird der \texttt{PluginAgent} erzeugt. Dieser Agent kapselt die gesamte Intelligenz und Entscheidungslogik des Systems.
+	\item \textbf{Frontend-Start}: Die fertige \texttt{agent}-Instanz wird als Argument an die Funktion \texttt{start\_gtk(agent)} übergeben. Innerhalb des GTK-Frontends wird diese Instanz im Konstruktor des Hauptfensters (\texttt{MyWindow}) gespeichert und steht dort für die asynchrone Verarbeitung von Benutzeranfragen zur Verfügung.
+\end{enumerate}
+
+Durch diesen architektonischen Aufbau bleibt das System extrem flexibel. Da das Frontend lediglich ein Objekt erwartet, das die \texttt{ask()}-Methode implementiert, könnte der grafische Teil der Anwendung jederzeit durch eine andere Technologie (z.\,B. eine Kommandozeile oder eine Web-Oberfläche) ersetzt werden, ohne dass die Backend-Logik angepasst werden müsste. Die Verbindung zum Backend ist somit nicht fest im UI-Code verdrahtet, sondern wird dynamisch beim Programmstart hergestellt.
 
 \subsubsection{Fenster-Management mit GtkLayerShell}
 Eine Kernanforderung an die Tapyre-Anwendung war es, nicht als herkömmliches Anwendungsfenster, sondern als eine Art Overlay oder Desktop-Widget zu fungieren, das bei Bedarf schnell aufgerufen werden kann. Um dieses Verhalten zu realisieren, wurde die Bibliothek \textbf{GtkLayerShell} eingesetzt. Diese Bibliothek ermöglicht es GTK-Anwendungen, das Layer-Shell-Protokoll des Wayland-Compositors zu nutzen, das für die Erstellung von Komponenten der Desktop-Umgebung (wie Panels, Hintergrundbilder oder eben Overlays) vorgesehen ist.
@@ -55,70 +74,74 @@ Eine Kernanforderung an die Tapyre-Anwendung war es, nicht als herkömmliches An
 Die Konfiguration erfolgt durch gezielte Aufrufe nach der Initialisierung des Fensters:
 
 \lstinputlisting[
-style=python,
-caption={GtkLayerShell Aufrufe},
-captionpos=b,
-firstline=29,
-lastline=31
+	style=python,
+	caption={GtkLayerShell Aufrufe},
+	captionpos=b,
+	firstline=29,
+	lastline=31
 ]{sourcecode/tapyre/tapyre/src/frontend/gtk.py}
 
 \begin{itemize}
-    \item \texttt{GtkLayerShell.init\_for\_window(self)}: Dieser Aufruf registriert das GTK-Fenster bei der Layer Shell und signalisiert dem Compositor, dass es als Teil der Desktop-Shell und nicht als normale Anwendung behandelt werden soll.
-    \item \texttt{GtkLayerShell.set\_layer(self, GtkLayerShell.Layer.OVERLAY)}: Hiermit wird das Fenster auf der Overlay-Ebene platziert. Diese Ebene befindet sich über den normalen Anwendungsfenstern, aber unterhalb von systemeigenen Overlays wie z.B. dem Sperrbildschirm. Dies stellt sicher, dass Tapyre über anderen Anwendungen schwebt, wenn es sichtbar ist.
-    \item \texttt{GtkLayerShell.set\_keyboard\_mode(self, GtkLayerShell.KeyboardMode.EXCLUSIVE)}: Dieser Modus gewährt dem Tapyre-Fenster den exklusiven Fokus auf die Tastatureingaben, solange es sichtbar ist. Dies ist entscheidend, damit Benutzereingaben zuverlässig erfasst werden und nicht versehentlich an das darunterliegende Fenster gesendet werden.
+	\item \texttt{GtkLayerShell.init\_for\_window(self)}: Dieser Aufruf registriert das GTK-Fenster bei der Layer Shell und signalisiert dem Compositor, dass es als Teil der Desktop-Shell und nicht als normale Anwendung behandelt werden soll.
+	\item \texttt{GtkLayerShell.set\_layer(self, GtkLayerShell.Layer.OVERLAY)}: Hiermit wird das Fenster auf der Overlay-Ebene platziert. Diese Ebene befindet sich über den normalen Anwendungsfenstern, aber unterhalb von systemeigenen Overlays wie z.B. dem Sperrbildschirm. Dies stellt sicher, dass Tapyre über anderen Anwendungen schwebt, wenn es sichtbar ist.
+	\item \texttt{GtkLayerShell.set\_keyboard\_mode(self, \\ GtkLayerShell.KeyboardMode.EXCLUSIVE)}: Dieser Modus gewährt dem Tapyre-Fenster den exklusiven Fokus auf die Tastatureingaben, solange es sichtbar ist. Dies ist entscheidend, damit Benutzereingaben zuverlässig erfasst werden und nicht versehentlich an das darunterliegende Fenster gesendet werden.
 \end{itemize}
-Durch den Einsatz von GtkLayerShell wird das Anwendungsfenster tief in die Desktop-Shell integriert und erhält den Charakter eines nativen System-Widgets, was maßgeblich zur angestrebten nahtlosen Benutzererfahrung beiträgt.
 
+Infolge dieser tiefen Integration in das Linux-Ökosystem und der direkten Abhängigkeit vom Wayland-Protokoll ergibt sich eine wesentliche technische Einschränkung: Die Tapyre-Desktop-Anwendung ist \textbf{exklusiv für Linux-Systeme} konzipiert. Eine Ausführung unter Microsoft Windows oder macOS ist aufgrund der Verwendung von \texttt{GtkLayerShell} nicht möglich, da diese Betriebssysteme das Layer-Shell-Protokoll nativ nicht unterstützen. Diese Entscheidung wurde bewusst getroffen, um eine maximale Systemintegration unter Linux zu erreichen.
+
+Durch den Einsatz von GtkLayerShell wird das Anwendungsfenster tief in die Desktop-Shell integriert und erhält den Charakter eines nativen System-Widgets, was maßgeblich zur angestrebten nahtlosen Benutzererfahrung beiträgt.
 \subsubsection{Widget-Hierarchie und Layout}
 Das Layout der Anwendung ist bewusst minimalistisch gehalten, um den Fokus des Benutzers auf die zentrale Eingabeaufforderung zu lenken. Die Struktur wird durch eine Hierarchie von GTK-Widgets realisiert, die ineinander verschachtelt sind.
 
 \lstinputlisting[
-style=python,
-caption={Initialisierung der Widget-Hierarchie},
-captionpos=b,
-firstline=33,
-lastline=47
+	style=python,
+	caption={Initialisierung der Widget-Hierarchie},
+	captionpos=b,
+	firstline=33,
+	lastline=47
 ]{sourcecode/tapyre/tapyre/src/frontend/gtk.py}
 
 Die Hierarchie lässt sich wie folgt beschreiben:
 \begin{enumerate}
-    \item \textbf{\texttt{Gtk.Window}:} Das Hauptfenster (\texttt{MyWindow}) dient als Wurzelcontainer für alle anderen Elemente.
-    \item \textbf{\texttt{Gtk.Box (vertikal)}:} Direkt im Fenster platziert ist eine vertikale Box (\texttt{self.box}), die als Hauptcontainer für das Layout dient. Sie hat die ID \texttt{\#main-box} für das CSS-Styling und sorgt dafür, dass die darin enthaltenen Elemente untereinander angeordnet werden.
-    \item \textbf{\texttt{Gtk.Box (horizontal)}:} Innerhalb der vertikalen Box befindet sich eine horizontale Box (\texttt{input\_box}), die das Label und das Eingabefeld nebeneinander anordnet. Sie wird mit der Methode \texttt{pack\_start} in die vertikale Box gepackt, wobei die Parameter \texttt{False, False, 10} dafür sorgen, dass sie sich nicht ausdehnt und einen inneren Abstand von 10 Pixeln hat.
-    \item \textbf{\texttt{Gtk.Label}:} Ein einfaches Label (\texttt{self.prompt\_label}) mit dem Text " > " dient als visueller Indikator für die Eingabeaufforderung, ähnlich einer Kommandozeile.
-    \item \textbf{\texttt{Gtk.Entry}:} Das zentrale Element der Benutzeroberfläche ist das Eingabefeld (\texttt{self.entry}). Es erhält die ID \texttt{\#user-input} für das Styling. Durch den Aufruf \texttt{input\_box.pack\_start(self.entry, True, True, 0)} wird das Eingabefeld so konfiguriert, dass es den gesamten verfügbaren horizontalen Platz innerhalb der \texttt{input\_box} ausfüllt.
+	\item \textbf{\texttt{Gtk.Window}:} Das Hauptfenster (\texttt{MyWindow}) dient als Wurzelcontainer für alle anderen Elemente.
+	\item \textbf{\texttt{Gtk.Box (vertikal)}:} Direkt im Fenster platziert ist eine vertikale Box (\texttt{self.box}), die als Hauptcontainer für das Layout dient. Sie hat die ID \texttt{\#main-box} für das CSS-Styling und sorgt dafür, dass die darin enthaltenen Elemente untereinander angeordnet werden.
+	\item \textbf{\texttt{Gtk.Box (horizontal)}:} Innerhalb der vertikalen Box befindet sich eine horizontale Box (\texttt{input\_box}), die das Label und das Eingabefeld nebeneinander anordnet. Sie wird mit der Methode \texttt{pack\_start} in die vertikale Box gepackt, wobei die Parameter \texttt{False, False, 10} dafür sorgen, dass sie sich nicht ausdehnt und einen inneren Abstand von 10 Pixeln hat.
+	\item \textbf{\texttt{Gtk.Label}:} Ein einfaches Label (\texttt{self.prompt\_label}) mit dem Text " > " dient als visueller Indikator für die Eingabeaufforderung, ähnlich einer Kommandozeile.
+	\item \textbf{\texttt{Gtk.Entry}:} Das zentrale Element der Benutzeroberfläche ist das Eingabefeld (\texttt{self.entry}). Es erhält die ID \texttt{\#user-input} für das Styling. Durch den Aufruf \texttt{input\_box.pack\_start(self.entry, True, True, 0)} wird das Eingabefeld so konfiguriert, dass es den gesamten verfügbaren horizontalen Platz innerhalb der \texttt{input\_box} ausfüllt.
 \end{enumerate}
 Diese klare, hierarchische Anordnung von Containern und Widgets ist ein typisches Merkmal von GTK-Anwendungen und ermöglicht ein präzises und flexibles Layout-Management.
 
 \subsubsection{Ereignisbehandlung und asynchrone Prozessausführung}
 Die Interaktivität der Anwendung wird durch das Signal-System von GTK realisiert. Jede Benutzeraktion, wie eine Tastatureingabe oder das Drücken der Enter-Taste, löst ein Signal aus, mit dem eine Callback-Funktion verbunden werden kann.
 
-\lstinputlisting[
-style=python,
-caption={Ereignisbehandlung und Threading},
-captionpos=b,
-firstline=49,
-lastline=61
-]{sourcecode/tapyre/tapyre/src/frontend/gtk.py}
-
 Zwei zentrale Ereignisse werden in der Anwendung behandelt:
 \begin{itemize}
-    \item \textbf{Das \texttt{activate}-Signal:} Dieses Signal wird vom \texttt{Gtk.Entry}-Widget ausgelöst, wenn der Benutzer die Enter-Taste drückt. Es ist mit der Methode \texttt{on\_entry\_activate} verbunden. Diese Methode liest den Text aus dem Eingabefeld, leert es, und startet dann die Verarbeitung der Anfrage.
-    \item \textbf{Das \texttt{key-press-event}:} Das Hauptfenster lauscht auf dieses Ereignis, um auf das Drücken der Escape-Taste zu reagieren und die Anwendung durch den Aufruf von \texttt{Gtk.main\_quit()} zu beenden.
+	\item \textbf{Das \texttt{activate}-Signal:} Dieses Signal wird vom \texttt{Gtk.Entry}-Widget ausgelöst, wenn der Benutzer die Enter-Taste drückt. Es ist mit der Methode \texttt{on\_entry\_activate} verbunden. Diese Methode liest den Text aus dem Eingabefeld, leert es, und startet dann die Verarbeitung der Anfrage.
+	\item \textbf{Das \texttt{key-press-event}:} Das Hauptfenster lauscht auf dieses Ereignis, um auf das Drücken der Escape-Taste zu reagieren und die Anwendung durch den Aufruf von \texttt{Gtk.main\_quit()} zu beenden.
 \end{itemize}
 
-Eine besondere Herausforderung bei der Anbindung an ein KI-System ist die potenziell lange Latenz der Agenten-Antworten. Würde die \texttt{agent.ask()}-Methode direkt im GTK-Main-Loop (dem Haupt-Thread der GUI) ausgeführt, würde die gesamte Benutzeroberfläche für die Dauer der Anfrage einfrieren.
+Eine besondere Herausforderung bei der Anbindung an ein KI-System ist die potenziell hohe Latenz der Agenten-Antworten. Da das Sprachmodell und die Plugin-Ausführung mehrere Sekunden in Anspruch nehmen können, würde eine synchrone Ausführung im Haupt-Thread (dem sogenannten \textit{UI-Thread}) dazu führen, dass die gesamte Benutzeroberfläche für diesen Zeitraum einfriert. Der Benutzer könnte das Fenster weder schließen noch würde es auf weitere Eingaben reagieren, was die \textit{User Experience} (UX) erheblich verschlechtert.
 
-Um dies zu verhindern, wird die Anfrage in einem separaten Thread ausgeführt. In \texttt{on\_entry\_activate} wird eine neue Instanz von \texttt{threading.Thread} erstellt, der die \texttt{self.agent.ask}-Methode als Ziel übergeben wird. Mit \texttt{thread.start()} beginnt die Ausführung im Hintergrund. Unmittelbar danach wird die GUI mit \texttt{self.hide()} ausgeblendet und der GTK-Main-Loop mit \texttt{Gtk.main\_quit()} beendet, um Ressourcen freizugeben. Der Agent kann seine Arbeit im Hintergrund-Thread beenden, ohne die Benutzererfahrung zu blockieren.
+Um dies zu verhindern, wird die Anfrage asynchron in einem separaten Thread ausgeführt. Python bietet hierfür das \texttt{threading}-Modul. In der Methode \texttt{on\_entry\_activate} wird eine neue Instanz von \texttt{threading.Thread} erstellt, der die blockierende Methode \texttt{self.agent.ask} als Ziel übergeben wird.
+
+\lstinputlisting[
+	style=python,
+	caption={Implementierung der asynchronen Thread-Ausführung},
+	captionpos=b,
+	firstline=49,
+	lastline=55
+]{sourcecode/tapyre/tapyre/src/frontend/gtk.py}
+
+Mit \texttt{thread.start()} beginnt die Ausführung im Hintergrund, wodurch der Haupt-Thread unmittelbar entlastet wird. In dieser spezifischen Implementierung von Tapyre wird die GUI direkt nach dem Start des Threads mit \texttt{self.hide()} ausgeblendet und der GTK-Main-Loop mit \texttt{Gtk.main\_quit()} beendet. Der Agent setzt seine Arbeit im Hintergrund fort, führt die entsprechenden Aktionen aus (z.\,B. das Starten einer App oder die Suche nach Papern) und beendet den Prozess eigenständig, sobald die Aufgabe abgeschlossen ist. Durch dieses asynchrone Muster bleibt das System jederzeit reaktionsfähig und bietet eine flüssige Benutzererfahrung.
 
 \subsection{Integration des CSS-Stylings}
 Um das visuelle Design der Anwendung flexibel und unabhängig von der Anwendungslogik zu gestalten, nutzt Tapyre die integrierte CSS-Engine von GTK. Anstatt Farben, Abstände oder Schriftarten fest im Python-Code zu definieren, werden diese in einer externen CSS-Datei (\texttt{src/style/main.css}) deklariert.
 
 \lstinputlisting[
-language=css,
-style=python,
-caption={Ausschnitt aus der CSS-Datei für das Anwendungs-Styling},
-captionpos=b
+	language=css,
+	style=python,
+	caption={Ausschnitt aus der CSS-Datei für das Anwendungs-Styling},
+	captionpos=b
 ]{sourcecode/tapyre/tapyre/src/style/main.css}
 
 Die Einbindung geschieht über einen \texttt{Gtk.CssProvider}, der die CSS-Datei lädt und für den gesamten Bildschirm (\texttt{Gdk.Screen}) bereitstellt. Im Code werden den GTK-Widgets über die Methode \texttt{set\_name()} eindeutige IDs zugewiesen (z.B. \texttt{\#main-box}, \texttt{\#user-input}). Diese IDs fungieren als CSS-Selektoren und erlauben es, die Widgets gezielt zu gestalten.
@@ -150,22 +173,22 @@ Vor der Festlegung auf Next.js und React wurden weitere führende Frontend-Frame
 \subsubsection{Angular}
 Angular ist ein umfassendes, von Google entwickeltes Framework (vgl. \cite{angular}), das auf TypeScript basiert und einem strikten Model-View-Controller (MVC)-Ansatz folgt.
 \begin{itemize}
-    \item \textbf{Vorteile:} Es bietet eine voll ausgestattete, meinungsstarke (opinionated) Architektur, die viele Entscheidungen vorgibt und sich gut für große Enterprise-Anwendungen eignet. Das integrierte Dependency-Injection-System und die umfangreichen Werkzeuge (Angular CLI) sind mächtig.
-    \item \textbf{Nachteile:} Die steile Lernkurve und die hohe Komplexität wurden für ein schnelles Prototyping im Rahmen dieser Arbeit als hinderlich bewertet. Die strikte Struktur von Angular bietet weniger Flexibilität als React.
+	\item \textbf{Vorteile:} Es bietet eine voll ausgestattete, meinungsstarke (opinionated) Architektur, die viele Entscheidungen vorgibt und sich gut für große Enterprise-Anwendungen eignet. Das integrierte Dependency-Injection-System und die umfangreichen Werkzeuge (Angular CLI) sind mächtig.
+	\item \textbf{Nachteile:} Die steile Lernkurve und die hohe Komplexität wurden für ein schnelles Prototyping im Rahmen dieser Arbeit als hinderlich bewertet. Die strikte Struktur von Angular bietet weniger Flexibilität als React.
 \end{itemize}
 
 \subsubsection{Vue.js}
 Vue.js (vgl. \cite{vuejs}) ist bekannt für seine einfache Erlernbarkeit und seine progressive Natur, die es erlaubt, es schrittweise in Projekte zu integrieren.
 \begin{itemize}
-    \item \textbf{Vorteile:} Die saubere Trennung von HTML-Templates, JavaScript-Logik und CSS-Styling (Single-File Components) ist sehr entwicklerfreundlich.
-    \item \textbf{Nachteile:} Obwohl das Ökosystem von Vue.js stark wächst, ist es immer noch kleiner als das von React. Für serverseitiges Rendering bietet Vue.js mit Nuxt.js eine Lösung, die jedoch zum Zeitpunkt der Entscheidung nicht die gleiche Reife und Verbreitung wie Next.js aufwies.
+	\item \textbf{Vorteile:} Die saubere Trennung von HTML-Templates, JavaScript-Logik und CSS-Styling (Single-File Components) ist sehr entwicklerfreundlich.
+	\item \textbf{Nachteile:} Obwohl das Ökosystem von Vue.js stark wächst, ist es immer noch kleiner als das von React. Für serverseitiges Rendering bietet Vue.js mit Nuxt.js eine Lösung, die jedoch zum Zeitpunkt der Entscheidung nicht die gleiche Reife und Verbreitung wie Next.js aufwies.
 \end{itemize}
 
 \subsubsection{Svelte}
 Svelte (vgl. \cite{svelte}) verfolgt einen radikal anderen Ansatz: Anstatt die Arbeit zur Laufzeit im Browser durch ein virtuelles DOM zu erledigen, verschiebt Svelte diese Arbeit in einen Kompilierungsschritt.
 \begin{itemize}
-    \item \textbf{Vorteile:} Dies führt zu extrem performantem, Vanilla-JavaScript-Code ohne Framework-Overhead zur Laufzeit, was in sehr kleinen Bundle-Größen resultiert. Der Code ist oft kürzer und leichter verständlich.
-    \item \textbf{Nachteile:} Svelte ist ein jüngeres Framework mit einem entsprechend kleineren Ökosystem und weniger verfügbaren Bibliotheken und Werkzeugen im Vergleich zu React.
+	\item \textbf{Vorteile:} Dies führt zu extrem performantem, Vanilla-JavaScript-Code ohne Framework-Overhead zur Laufzeit, was in sehr kleinen Bundle-Größen resultiert. Der Code ist oft kürzer und leichter verständlich.
+	\item \textbf{Nachteile:} Svelte ist ein jüngeres Framework mit einem entsprechend kleineren Ökosystem und weniger verfügbaren Bibliotheken und Werkzeugen im Vergleich zu React.
 \end{itemize}
 
 \subsubsection{Fazit}
@@ -178,33 +201,33 @@ Die Webanwendung folgt einer komponentenorientierten Architektur, einem zentrale
 Die Anwendung ist hierarchisch aus Komponenten aufgebaut. An der Spitze steht die \texttt{app/page.tsx}, die als zentrale \texttt{PaperSearch}-Komponente rendert.
 
 \lstinputlisting[
-language=tsx,
-style=Python,
-caption={Einstiegspunkt der Anwendung in page.tsx},
-captionpos=b
+	language=tsx,
+	style=Python,
+	caption={Einstiegspunkt der Anwendung in page.tsx},
+	captionpos=b
 ]{sourcecode/website/app/page.tsx}
 
 Diese \texttt{PaperSearch}-Komponente wiederum komponiert ihre Oberfläche aus kleineren, spezialisierten Bausteinen wie der \texttt{InputGroup}, die das Eingabefeld und die Buttons enthält, und den \texttt{DropdownMenu}-Komponenten zur Auswahl der Suchoptionen. Dieses Prinzip der Komposition, bei dem komplexe Funktionalität durch das Zusammensetzen einfacher, testbarer Teile entsteht, ist ein Eckpfeiler der React-Entwicklung, wie im folgenden Code-Ausschnitt ersichtlich ist.
 
 \lstinputlisting[
-language=tsx,
-style=Python,
-caption={Komposition der UI in der PaperSearch-Komponente},
-captionpos=b,
-firstline=261,
-lastline=330
+	language=tsx,
+	style=Python,
+	caption={Komposition der UI in der PaperSearch-Komponente},
+	captionpos=b,
+	firstline=261,
+	lastline=330
 ]{sourcecode/website/components/paper-search.tsx}
 
 \subsubsection{Zustandsverwaltung (State Management)}
 Der Zustand der Anwendung wird lokal in der \texttt{PaperSearch}-Komponente mit dem \texttt{useState}-Hook von React verwaltet. Wichtige Zustandsvariablen sind \texttt{searchText} (Benutzereingabe), \texttt{searchType} und \texttt{rerankingMethod} (Suchoptionen), \texttt{searchResults} (API-Ergebnisse oder Fehler), und \texttt{isLoading} (zur Steuerung von Ladeindikatoren).
 
 \lstinputlisting[
-language=tsx,
-style=Python,
-caption={Zustandsverwaltung mit useState-Hooks},
-captionpos=b,
-firstline=96,
-lastline=102
+	language=tsx,
+	style=Python,
+	caption={Zustandsverwaltung mit useState-Hooks},
+	captionpos=b,
+	firstline=96,
+	lastline=102
 ]{sourcecode/website/components/paper-search.tsx}
 
 \subsection{Fehlerbehandlung und User Experience}
@@ -214,42 +237,42 @@ Eine robuste Anwendung muss auch Fehlerzustände und Ladezeiten adäquat behande
 Da die Suche im Backend dauern kann, wird dem Benutzer mit einem \texttt{Skeleton}-Loader visuelles Feedback gegeben. Während die \texttt{isLoading}-Variable auf \texttt{true} gesetzt ist, werden graue, pulsierende Platzhalter angezeigt, die die Struktur der zukünftigen Ergebnisse nachahmen (siehe Abbildung \ref{fig:skeleton_loader}). Dies verbessert die wahrgenommene Performance und reduziert die Unsicherheit des Benutzers. Der folgende Code-Ausschnitt zeigt die bedingte Einbindung der \texttt{Skeleton}-Komponente im JSX-Code.
 
 \lstinputlisting[
-language=tsx,
-style=Python,
-caption={Bedingtes Rendern des Skeleton-Loaders},
-captionpos=b,
-firstline=323,
-lastline=327
+	language=tsx,
+	style=Python,
+	caption={Bedingtes Rendern des Skeleton-Loaders},
+	captionpos=b,
+	firstline=323,
+	lastline=327
 ]{sourcecode/website/components/paper-search.tsx}
 
 \begin{figure}[h]
-    \centering
-    \includegraphics[width=1\textwidth]{figures/tapyre-skeleton.png}
-    \caption{Skeleton Loader als visuelles Feedback während des Ladens}
-    \label{fig:skeleton_loader}
+	\centering
+	\includegraphics[width=1\textwidth]{figures/tapyre-skeleton.png}
+	\caption{Skeleton Loader als visuelles Feedback während des Ladens}
+	\label{fig:skeleton_loader}
 \end{figure}
 
 \subsubsection{Umgang mit API-Fehlern}
 Netzwerk- oder Serverfehler werden im \texttt{catch}-Block der \texttt{handleSearch}-Funktion abgefangen. Anstatt die Anwendung abstürzen zu lassen, wird ein Fehlerobjekt im \texttt{searchResults}-Zustand gespeichert.
 
 \lstinputlisting[
-language=tsx,
-style=Python,
-caption={Fehlerbehandlung im catch-Block der Suchfunktion},
-captionpos=b,
-firstline=153,
-lastline=155
+	language=tsx,
+	style=Python,
+	caption={Fehlerbehandlung im catch-Block der Suchfunktion},
+	captionpos=b,
+	firstline=153,
+	lastline=155
 ]{sourcecode/website/components/paper-search.tsx}
 
 Die UI, repräsentiert durch die \texttt{renderResults}-Funktion, erkennt diesen Fehlerzustand und zeigt eine verständliche Meldung an, anstatt zu versuchen, nicht vorhandene Daten zu rendern.
 
 \lstinputlisting[
-language=tsx,
-style=Python,
-caption={Anzeige von Fehlermeldungen in der UI},
-captionpos=b,
-firstline=163,
-lastline=165
+	language=tsx,
+	style=Python,
+	caption={Anzeige von Fehlermeldungen in der UI},
+	captionpos=b,
+	firstline=163,
+	lastline=165
 ]{sourcecode/website/components/paper-search.tsx}
 
 Dies stellt sicher, dass die Anwendung auch im Fehlerfall benutzbar bleibt und der Benutzer über das Problem informiert wird.
@@ -267,34 +290,34 @@ Aufbauend auf Tailwind CSS wird \texttt{shadcn/ui} verwendet. Anstatt eine Bibli
 Für die Bereitstellung wird ein containerisierter Ansatz mit Docker und einer Multi-Stage-Build-Strategie verwendet, um ein schlankes und sicheres Produktions-Image zu erzeugen.
 
 \lstinputlisting[
-language=bash,
-style=python,
-caption={Multi-Stage-Build im Dockerfile der Webanwendung},
-captionpos=b
+	language=bash,
+	style=python,
+	caption={Multi-Stage-Build im Dockerfile der Webanwendung},
+	captionpos=b
 ]{sourcecode/website/Dockerfile}
 
 \subsection{Benutzeroberfläche und Suche}
 Die Benutzeroberfläche (siehe Abbildung \ref{fig:tapyre_paper_search_ui}) ist bewusst minimalistisch gehalten. Durch den Einsatz responsiver Designprinzipien passt sich die Darstellung zudem flexibel an unterschiedliche Bildschirmgrößen an und ist somit auch auf mobilen Endgeräten optimal nutzbar (siehel Abbildung \ref{fig:tapyre_paper_search_mobile}). Das zentrale Element ist eine Eingabegruppe, die ein Textfeld für die Suchanfrage sowie Dropdown-Menüs zur Auswahl von Suchtyp und Ranking-Methode kombiniert.
 
 \begin{figure}[h]
-    \centering
-    \includegraphics[width=0.9\textwidth]{figures/tapyre-paper-search.png}
-    \caption{Tapyre Paper Search Benutzeroberfläche}
-    \label{fig:tapyre_paper_search_ui}
+	\centering
+	\includegraphics[width=0.9\textwidth]{figures/tapyre-paper-search.png}
+	\caption{Tapyre Paper Search Benutzeroberfläche}
+	\label{fig:tapyre_paper_search_ui}
 \end{figure}
 
 \begin{figure}[h]
-    \centering
-    \includegraphics[height=0.6\textwidth]{figures/tapyre-paper-search-mobile.png}
-    \caption{Tapyre Paper Search auf einem mobilen Endgerät}
-    \label{fig:tapyre_paper_search_mobile}
+	\centering
+	\includegraphics[height=0.6\textwidth]{figures/tapyre-paper-search-mobile.png}
+	\caption{Tapyre Paper Search auf einem mobilen Endgerät}
+	\label{fig:tapyre_paper_search_mobile}
 \end{figure}
 
 Nach dem Absenden der Suche werden die Ergebnisse, wie in Abbildung \ref{fig:tapyre_paper_search_results} ersichtlich, unterhalb des Eingabebereichs als übersichtliche Liste dargestellt, die jeweils direkt auf die Publikation bei arXiv verlinkt.
 
 \begin{figure}[h]
-    \centering
-    \includegraphics[width=0.9\textwidth]{figures/tapyr-paper-searc-results.png}
-    \caption{Tapyre Paper Search Benutzeroberfläche mit Suchergebnissen}
-    \label{fig:tapyre_paper_search_results}
+	\centering
+	\includegraphics[width=0.9\textwidth]{figures/tapyr-paper-searc-results.png}
+	\caption{Tapyre Paper Search Benutzeroberfläche mit Suchergebnissen}
+	\label{fig:tapyre_paper_search_results}
 \end{figure}

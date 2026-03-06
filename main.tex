@@ -103,7 +103,7 @@
 %%%% begin{document}
 %% ========================================================================
 
-\begin{document} 
+\begin{document}
 \frontmatter                    %% KOMA: roman page numbers and such; only available in scrbook
 
 %% \input{colophon}                %% defines information about editor, LaTeX, font, ...
@@ -122,7 +122,7 @@
 %%\let\cleardoublepage\clearpage
 \phantomsection
 \addcontentsline{toc}{chapter}{Abstract}
-   
+
 \include{content/abstract}              %% Abstract
 \input{template/affirmation} %%EIDESSTATTLICHE ERKLÄRUNG  
 
@@ -132,24 +132,21 @@
 
 %% if myaddlistoftodos is set to "true", the current list of open todos is added:
 \ifthenelse{\boolean{myaddlistoftodos}}{
-  \newpage\listoftodos          %% handy if you are using todonotes with \todo{}
+	\newpage\listoftodos          %% handy if you are using todonotes with \todo{}
 }{}                             %% with todonotes-package option "disable" you can get rid of any todo in the output
 
 \mainmatter                     %% KOMA: marks main part using arabic page numbers and such; only available in scrbook
 
 
-%% HIER DIE EIGENEN KAPITEL EINFÜGEN
-%\input{content/einleitung}  
-%\input{content/latex_beispiele} % Einfach auskommentieren für die tatsächliche Arbeit
-%\input{content/mathematik}
-
-% \input{content/einfuehrung_neuronale_netzwerke}
-% \input{content/einfuehrung_nlp}
-% \input{content/einfuerung_agentic_ai}
-% \input{content/verwendeten_technologien}
-% \input{content/entwicklung_tapyre}
-% \input{content/entwicklung_tapyre_paper_search}
+\input{content/einleitung}
+\input{content/einfuehrung_neuronale_netzwerke}
+\input{content/einfuehrung_nlp}
+\input{content/einfuerung_agentic_ai}
+\input{content/verwendeten_technologien}
+\input{content/entwicklung_tapyre}
+\input{content/entwicklung_tapyre_paper_search}
 \input{content/raphael.tex}
+\input{content/zusammenfassung.tex}
 
 \appendix                       %% closes main document, appendix follows until end; only available in book-classes
 

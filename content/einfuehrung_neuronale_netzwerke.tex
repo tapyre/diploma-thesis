@@ -38,9 +38,9 @@ Rekurrente Neuronale Netze (RNNs) wurden entwickelt, um sequenzielle Daten wie T
 
 Ein einfaches RNN kombiniert zu jedem Zeitschritt den aktuellen Eingabewert mit dem vorherigen internen Zustand. Dieses Verfahren eignet sich gut für kurze Sequenzen, stößt jedoch bei längeren Abhängigkeiten an seine Grenzen. Ursache hierfür ist das sogenannte \textit{Vanishing Gradient Problem}, bei dem Gradienten während des Trainings stark abnehmen und relevante Informationen verloren gehen.
 
-Zur Lösung dieses Problems wurden Long Short-Term Memory Netze (LSTMs) entwickelt. LSTMs verfügen über spezielle Schaltelemente, sogenannte \textit{Gates}, die steuern, welche Informationen gespeichert, weitergegeben oder verworfen werden. Dadurch sind LSTMs in der Lage, relevante Informationen über längere Zeiträume hinweg zu behalten und stabiler zu trainieren als klassische RNNs (vgl. \cite{long-short-term-memory}).
+Zur Lösung dieses Problems wurden Long Short-Term Memory Netze (LSTMs) entwickelt. LSTMs verfügen über spezielle Schaltelemente, sogenannte \textit{Gates}, die steuern, welche Informationen gespeichert, weitergegeben oder verworfen werden. Dadurch sind LSTMs in der Lage, relevante Informationen über längere Zeiträume hinweg zu behalten und stabiler zu trainieren als klassische RNNs (vgl. \cite{hochreiter1997long}).
 
-LSTMs wurden über viele Jahre erfolgreich in der Sprachverarbeitung eingesetzt, etwa für maschinelle Übersetzung oder Textklassifikation. In modernen NLP-Systemen werden sie jedoch zunehmend durch Transformer-Modelle ersetzt, da diese effizienter trainierbar sind und besser mit sehr langen Texten umgehen können. Für diese Arbeit sind RNNs und LSTMs daher insbesondere im historischen Kontext relevant (vgl. \cite{long-short-term-memory}).
+LSTMs wurden über viele Jahre erfolgreich in der Sprachverarbeitung eingesetzt, etwa für maschinelle Übersetzung oder Textklassifikation. In modernen NLP-Systemen werden sie jedoch zunehmend durch Transformer-Modelle ersetzt, da diese effizienter trainierbar sind und besser mit sehr langen Texten umgehen können. Für diese Arbeit sind RNNs und LSTMs daher insbesondere im historischen Kontext relevant (vgl. \cite{hochreiter1997long}).
 
 \section{Die Transformer-Architektur}
 

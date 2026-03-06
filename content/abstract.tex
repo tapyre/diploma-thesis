@@ -1,20 +1,37 @@
-%%%% Time-stamp: <2013-02-25 10:31:01 vk>
-
-
-\chapter*{Kurzfassung /Abstract }
+\chapter*{Kurzfassung / Abstract}
 \label{cha:abstract}
 
-Eine Kurzfassung ist in deutscher sowie ein Abstract in englischer Sprache mit je maximal einer A4-Seite zu erstellen. Die Beschreibung sollte wesentliche Aspekte des Projektes in technischer Hinsicht beschreiben. Die Zielgruppe der Kurzbeschreibung sind auch Nicht-Techniker! Viele Leser lesen oft nur diese Seite. \\ \\
+\section*{Kurzfassung}
 
-Beispiel für ein Abstract (DE und EN) \\ \\
-Die vorliegende Diplomarbeit beschäftigt sich mit verschiedenen Fragen des Lernens Erwachsener – mit dem Ziel, Lernkulturen zu beschreiben, die die Umsetzung des Konzeptes des Lebensbegleitenden Lernens (LBL) unterstützen. Die Lernfähigkeit Erwachsener und die unterschiedlichen Motive, die Erwachsene zum Lernen veranlassen, bilden den Ausgangspunkt dieser Arbeit. Die anschließende Auseinandersetzung mit Selbstgesteuertem Lernen, sowie den daraus resultierenden neuen Rollenzuschreibungen und Aufgaben, die sich bei dieser Form des Lernens für Lernende, Lehrende und Institutionen der Erwachsenenbildung ergeben, soll eine erste Möglichkeit aufzeigen, die zur Umsetzung dieses Konzeptes des LBL beiträgt. Darüber hinaus wird im Zusammenhang mit selbstgesteuerten Lernprozessen Erwachsener die Rolle der Informations- und Kommunikationstechnologien im Rahmen des LBL näher erläutert, denn die Eröffnung neuer Wege zur orts- und zeitunabhängiger Kommunikation und Kooperation der Lernenden untereinander sowie zwischen Lernenden und Lernberatern gewinnt immer mehr an Bedeutung. Abschließend wird das Thema der Sichtbarmachung, Bewertung und Anerkennung des informellen und nicht-formalen Lernens aufgegriffen und deren Beitrag zum LBL erörtert. Diese Arbeit soll einerseits einen Beitrag zur besseren Verbreitung der verschiedenen Lernkulturen leisten und andererseits einen Reflexionsprozess bei Erwachsenen, die sich lebensbegleitend weiterbilden, in Gang setzen und sie somit dabei unterstützen, eine für sie geeignete Lernkultur zu finden. \\ \\
+Die vorliegende Diplomarbeit mit dem Titel \textbf{„Tapyre – Entwicklung eines KI-integrierten Produktivitätstools mit Plugin-System“} adressiert die Herausforderungen der modernen Informationsflut im wissenschaftlichen und beruflichen Alltag. Während die Menge an digital verfügbarem Wissen stetig wächst, stoßen herkömmliche, keyword-basierte Suchsysteme und starre Softwareanwendungen zunehmend an ihre Grenzen.
 
+Ausgangspunkt der Arbeit ist die Nutzung von \textit{Large Language Models} (LLMs) zur Schaffung eines intelligenten, handelnden Systems (\textit{Agentic AI}). Im Zentrum steht die Entwicklung von \textbf{Tapyre}, einem modularen Assistenten, der nicht nur auf Benutzeranfragen reagiert, sondern durch ein flexibles Plugin-System aktiv Aufgaben in der Desktop-Umgebung übernehmen kann. Durch den Einsatz lokaler KI-Modelle (via Ollama) wird dabei ein besonderer Fokus auf den Datenschutz und die Souveränität des Benutzers gelegt.
 
-This thesis deals with the various questions concerning learning for adults – with the aim to describe learning cultures which support the concept of live-long learning (LLL). The learning ability of adults and the various motives which lead to adults learning are the starting point of this thesis. The following analysis on self-directed learning as well as the resulting new attribution of roles and tasks which arise for learners, trainers and institutions in adult education, shall demonstrate first possibilities to contribute to the implementation of the concept of LLL. In addition, the role of information and communication technologies in the framework of LLL will be closer described in context of self-directed learning processes of adults as the opening of new forms of communication and co-operation independent of location and time between learners as well as between learners and tutors gains more importance. Finally the topic of visualisation, validation and recognition of informal and non-formal learning and their contribution to LLL is discussed. \\
+Ein wesentlicher Teilaspekt des Projekts ist die \textbf{Tapyre Paper Search}. Hierbei handelt es sich um eine spezialisierte Pipeline zur semantischen Suche in wissenschaftlichen Publikationen. Mithilfe moderner Embedding-Verfahren (SPECTER2) und Vektordatenbanken (Qdrant) ermöglicht das System eine Recherche, die auf der inhaltlichen Bedeutung von Texten basiert und somit präzisere Ergebnisse liefert als klassische Verfahren.
 
-Gliederung des Abstract in \textbf{Thema}, \textbf{Ausgangspunk}, \textbf{Kurzbeschreibung}, \textbf{Zielsetzung}.  
+Das Ziel der Arbeit war die Konzeption und praktische Umsetzung einer erweiterbaren Architektur, die sowohl als lokales Produktivitätstool als auch als webbasierte Suchplattform fungiert. Das Projektergebnis umfasst ein funktionsfähiges Gesamtsystem: Ein modulares Python-Backend steuert den Agenten-Loop, während eine native GTK-Desktop-Anwendung sowie eine moderne Next.js-Webanwendung als intuitive Benutzerschnittstellen dienen.
 
-\subparagraph{Projektergebnis}
+\section*{Abstract}
 
-Allgemeine Beschreibung, was vom Projektziel umgesetzt wurde, in einigen kurzen Sätzen. Optional Hinweise auf Erweiterungen. Gut machen sich in diesem Kapitel auch Bilder vom Gerät (HW) bzw. Screenshots (SW).
-Liste aller im Pflichtenheft aufgeführten Anforderungen, die nur teilweise oder gar nicht umgesetzt wurden (mit Begründungen).
+This diploma thesis, titled \textbf{"Tapyre – Development of an AI-Integrated Productivity Tool with a Plugin System,"} addresses the challenges posed by the modern information explosion in both scientific and professional contexts. As the volume of digitally available knowledge continues to grow, traditional keyword-based search systems and rigid software applications are increasingly reaching their limits.
+
+The starting point of this work is the utilization of \textit{Large Language Models} (LLMs) to create an intelligent, acting system (\textit{Agentic AI}). At its core lies the development of \textbf{Tapyre}, a modular assistant that does more than just respond to user queries; through a flexible plugin system, it can actively perform tasks within the desktop environment. By employing local AI models (via Ollama), a strong emphasis is placed on data privacy and user sovereignty.
+
+A significant sub-aspect of the project is \textbf{Tapyre Paper Search}. This is a specialized pipeline for the semantic search of scientific publications. Using modern embedding techniques (SPECTER2) and vector databases (Qdrant), the system enables research based on the conceptual meaning of texts, thereby delivering more precise results than traditional methods.
+
+The objective of this thesis was the design and practical implementation of an extensible architecture that functions both as a local productivity tool and a web-based search platform. The project result encompasses a fully operational system: a modular Python backend controls the agent loop, while a native GTK desktop application and a modern Next.js web application serve as intuitive user interfaces.
+
+\newpage
+
+\section*{Projektergebnis}
+
+Im Rahmen des Projekts wurden alle zentralen Anforderungen erfolgreich umgesetzt. Das Gesamtsystem \textbf{Tapyre} ist als funktionsfähiger Prototyp verfügbar und gliedert sich in folgende Ergebnisse:
+
+\begin{itemize}
+    \item \textbf{Agentic AI Kern}: Ein modulares Framework auf Basis von LangChain, das den ReAct-Loop (Reasoning + Acting) implementiert und dynamisch Plugins laden kann.
+    \item \textbf{Tapyre Paper Search Pipeline}: Eine vollständige Datenverarbeitungskette, die Paper von arXiv bezieht, verarbeitet, mittels SPECTER2-Embeddings vektorisiert und in einer Qdrant-Datenbank für die semantische Suche indiziert.
+    \item \textbf{Tapyre Desktop-Anwendung}: Eine in Python und GTK 3 entwickelte GUI, die sich als Overlay nahtlos in Linux-Desktop-Umgebungen (via Wayland Layer Shell) integriert.
+    \item \textbf{Web-Interface}: Eine reaktive Webanwendung auf Basis von Next.js und React, die eine benutzerfreundliche Oberfläche für die semantische Literatursuche bietet.
+\end{itemize}
+
+Alle im Pflichtenheft definierten Kernfunktionen wurden realisiert. Zukünftige Erweiterungen könnten die Integration weiterer Datenquellen (z.\,B. PubMed) sowie die Entwicklung zusätzlicher Plugins zur tieferen Systemautomatisierung umfassen.
