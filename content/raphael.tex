@@ -207,7 +207,7 @@ Die Anwendung ist hierarchisch aus Komponenten aufgebaut. An der Spitze steht di
 	captionpos=b
 ]{sourcecode/website/app/page.tsx}
 
-Diese \texttt{PaperSearch}-Komponente wiederum komponiert ihre Oberfläche aus kleineren, spezialisierten Bausteinen wie der \texttt{InputGroup}, die das Eingabefeld und die Buttons enthält, und den \texttt{DropdownMenu}-Komponenten zur Auswahl der Suchoptionen. Dieses Prinzip der Komposition, bei dem komplexe Funktionalität durch das Zusammensetzen einfacher, testbarer Teile entsteht, ist ein Eckpfeiler der React-Entwicklung, wie im folgenden Code-Ausschnitt ersichtlich ist.
+Diese \texttt{PaperSearch}-Komponente wiederum komponiert ihre Oberfläche aus kleineren, spezialisierten Bausteinen. Dieses Prinzip der Komposition, bei dem komplexe Funktionalität durch das Zusammensetzen einfacher, testbarer Teile entsteht, ist ein Eckpfeiler der React-Entwicklung, wie im folgenden Code-Ausschnitt ersichtlich ist.
 
 \lstinputlisting[
 	language=tsx,
@@ -217,6 +217,14 @@ Diese \texttt{PaperSearch}-Komponente wiederum komponiert ihre Oberfläche aus k
 	firstline=261,
 	lastline=330
 ]{sourcecode/website/components/paper-search.tsx}
+
+Die Struktur der Benutzeroberfläche lässt sich wie folgt unterteilen:
+\begin{itemize}
+    \item \textbf{\texttt{InputGroup}}: Dient als Container für das zentrale Eingabefeld. Innerhalb dieser Gruppe wird ein \texttt{InputGroupTextarea} verwendet, das über das \texttt{value}-Attribut an den \texttt{searchText}-Zustand gebunden ist.
+    \item \textbf{\texttt{DropdownMenu}}: Zwei separate Dropdown-Menüs ermöglichen dem Benutzer die Konfiguration der Suche. Das erste Menü erlaubt den Wechsel zwischen einer Suche auf Dokumentebene (\textit{Paper}) oder auf Abschnittsebene (\textit{Chunk}). Das zweite Menü dient der Auswahl der Re-ranking-Methode (z.\,B. rein semantisch oder mittels BM25).
+    \item \textbf{Such-Button}: Ein kreisförmiger Button mit einem Pfeil-Icon löst die \texttt{handleSearch}-Funktion aus. Er wird automatisch deaktiviert (\textit{disabled}), wenn eine Suche läuft oder das Textfeld leer ist.
+    \item \textbf{Conditionals Rendering}: Die Anzeige der Ergebnisse erfolgt dynamisch. Solange \texttt{isLoading} wahr ist, wird ein \texttt{Skeleton}-Platzhalter angezeigt. Sobald Daten verfügbar sind (\texttt{searchResults}), wird die Hilfsfunktion \texttt{renderResults()} aufgerufen, um die Liste der gefundenen Publikationen darzustellen.
+\end{itemize}
 
 \subsubsection{Zustandsverwaltung (State Management)}
 Der Zustand der Anwendung wird lokal in der \texttt{PaperSearch}-Komponente mit dem \texttt{useState}-Hook von React verwaltet. Wichtige Zustandsvariablen sind \texttt{searchText} (Benutzereingabe), \texttt{searchType} und \texttt{rerankingMethod} (Suchoptionen), \texttt{searchResults} (API-Ergebnisse oder Fehler), und \texttt{isLoading} (zur Steuerung von Ladeindikatoren).

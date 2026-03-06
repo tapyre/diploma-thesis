@@ -45,10 +45,10 @@
 %% header settings
 \usepackage{lastpage}
 
-\ohead{\headmark }
+\ohead*{\headmark }
 \ihead*{\includegraphics[width=3cm]{figures/htl-logo}}
-\ifoot{\thepage}  %Will man Anzahl Seiten: /\pageref{LastPage}
-\ofoot{\myauthor}
+\ifoot*{\thepage}  %Will man Anzahl Seiten: /\pageref{LastPage}
+\ofoot*{\myauthor}
 
 
 %% ========================================================================
@@ -130,6 +130,8 @@
 \input{template/affirmation} %%EIDESSTATTLICHE ERKLÄRUNG  
 
 \tableofcontents                %% this produces the table of contents - you might have guessed :-)
+
+\include{content/glossar}       %% Glossar
 
 
 
