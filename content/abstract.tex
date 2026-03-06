@@ -3,35 +3,10 @@
 
 \section*{Kurzfassung}
 
-Die vorliegende Diplomarbeit mit dem Titel \textbf{„Tapyre – Entwicklung eines KI-integrierten Produktivitätstools mit Plugin-System“} adressiert die Herausforderungen der modernen Informationsflut im wissenschaftlichen und beruflichen Alltag. Während die Menge an digital verfügbarem Wissen stetig wächst, stoßen herkömmliche, keyword-basierte Suchsysteme und starre Softwareanwendungen zunehmend an ihre Grenzen.
+Die vorliegende Diplomarbeit mit dem Titel „Tapyre – Entwicklung eines KI-integrierten Produktivitätstools mit Plugin-System“ befasst sich mit den Herausforderungen der zunehmenden Informationsflut im wissenschaftlichen Alltag. Um eine effiziente Literaturrecherche und Systemautomatisierung zu ermöglichen, die über klassische, keyword-basierte Ansätze hinausgeht, wurde im Rahmen dieser Arbeit das agentenbasierte System „Tapyre“ entwickelt. Dieses nutzt lokale Sprachmodelle, um Aufgaben eigenständig zu planen und auszuführen, wobei durch die lokale Ausführung ein besonderer Fokus auf den Datenschutz gelegt wird. Ein zentraler Bestandteil ist die „Tapyre Paper Search“, eine spezialisierte Pipeline zur semantischen Suche in wissenschaftlichen Publikationen mittels SPECTER2-Embeddings und der Qdrant-Vektordatenbank. Das Projektergebnis umfasst einen funktionsfähigen Prototyp, bestehend aus einem Python-Backend mit LangChain-Integration, einer nativen GTK-Desktop-Anwendung sowie einer modernen Next.js-Weboberfläche, wodurch eine präzise und kontextbezogene Literaturrecherche ermöglicht wird.
 
-Ausgangspunkt der Arbeit ist die Nutzung von \textit{Large Language Models} (LLMs) zur Schaffung eines intelligenten, handelnden Systems (\textit{Agentic AI}). Im Zentrum steht die Entwicklung von \textbf{Tapyre}, einem modularen Assistenten, der nicht nur auf Benutzeranfragen reagiert, sondern durch ein flexibles Plugin-System aktiv Aufgaben in der Desktop-Umgebung übernehmen kann. Durch den Einsatz lokaler KI-Modelle (via Ollama) wird dabei ein besonderer Fokus auf den Datenschutz und die Souveränität des Benutzers gelegt.
-
-Ein wesentlicher Teilaspekt des Projekts ist die \textbf{Tapyre Paper Search}. Hierbei handelt es sich um eine spezialisierte Pipeline zur semantischen Suche in wissenschaftlichen Publikationen. Mithilfe moderner Embedding-Verfahren (SPECTER2) und Vektordatenbanken (Qdrant) ermöglicht das System eine Recherche, die auf der inhaltlichen Bedeutung von Texten basiert und somit präzisere Ergebnisse liefert als klassische Verfahren.
-
-Das Ziel der Arbeit war die Konzeption und praktische Umsetzung einer erweiterbaren Architektur, die sowohl als lokales Produktivitätstool als auch als webbasierte Suchplattform fungiert. Das Projektergebnis umfasst ein funktionsfähiges Gesamtsystem: Ein modulares Python-Backend steuert den Agenten-Loop, während eine native GTK-Desktop-Anwendung sowie eine moderne Next.js-Webanwendung als intuitive Benutzerschnittstellen dienen.
+\vspace{1cm}
 
 \section*{Abstract}
 
-This diploma thesis, titled \textbf{"Tapyre – Development of an AI-Integrated Productivity Tool with a Plugin System,"} addresses the challenges posed by the modern information explosion in both scientific and professional contexts. As the volume of digitally available knowledge continues to grow, traditional keyword-based search systems and rigid software applications are increasingly reaching their limits.
-
-The starting point of this work is the utilization of \textit{Large Language Models} (LLMs) to create an intelligent, acting system (\textit{Agentic AI}). At its core lies the development of \textbf{Tapyre}, a modular assistant that does more than just respond to user queries; through a flexible plugin system, it can actively perform tasks within the desktop environment. By employing local AI models (via Ollama), a strong emphasis is placed on data privacy and user sovereignty.
-
-A significant sub-aspect of the project is \textbf{Tapyre Paper Search}. This is a specialized pipeline for the semantic search of scientific publications. Using modern embedding techniques (SPECTER2) and vector databases (Qdrant), the system enables research based on the conceptual meaning of texts, thereby delivering more precise results than traditional methods.
-
-The objective of this thesis was the design and practical implementation of an extensible architecture that functions both as a local productivity tool and a web-based search platform. The project result encompasses a fully operational system: a modular Python backend controls the agent loop, while a native GTK desktop application and a modern Next.js web application serve as intuitive user interfaces.
-
-\newpage
-
-\section*{Projektergebnis}
-
-Im Rahmen des Projekts wurden alle zentralen Anforderungen erfolgreich umgesetzt. Das Gesamtsystem \textbf{Tapyre} ist als funktionsfähiger Prototyp verfügbar und gliedert sich in folgende Ergebnisse:
-
-\begin{itemize}
-    \item \textbf{Agentic AI Kern}: Ein modulares Framework auf Basis von LangChain, das den ReAct-Loop (Reasoning + Acting) implementiert und dynamisch Plugins laden kann.
-    \item \textbf{Tapyre Paper Search Pipeline}: Eine vollständige Datenverarbeitungskette, die Paper von arXiv bezieht, verarbeitet, mittels SPECTER2-Embeddings vektorisiert und in einer Qdrant-Datenbank für die semantische Suche indiziert.
-    \item \textbf{Tapyre Desktop-Anwendung}: Eine in Python und GTK 3 entwickelte GUI, die sich als Overlay nahtlos in Linux-Desktop-Umgebungen (via Wayland Layer Shell) integriert.
-    \item \textbf{Web-Interface}: Eine reaktive Webanwendung auf Basis von Next.js und React, die eine benutzerfreundliche Oberfläche für die semantische Literatursuche bietet.
-\end{itemize}
-
-Alle im Pflichtenheft definierten Kernfunktionen wurden realisiert. Zukünftige Erweiterungen könnten die Integration weiterer Datenquellen (z.\,B. PubMed) sowie die Entwicklung zusätzlicher Plugins zur tieferen Systemautomatisierung umfassen.
+This diploma thesis, titled "Tapyre – Development of an AI-integrated productivity tool with a plugin system," addresses the challenges of the increasing flood of information in daily scientific work. To enable efficient literature research and system automation that goes beyond traditional keyword-based approaches, an agent-based system called "Tapyre" was developed. It utilizes local language models to autonomously plan and execute tasks, with a strong focus on data privacy through local execution. A key component of the system is "Tapyre Paper Search," a specialized pipeline for the semantic search of scientific publications using SPECTER2 embeddings and the Qdrant vector database. The project results in a functional prototype comprising a Python backend with LangChain integration, a native GTK desktop application, and a modern Next.js web interface, allowing for precise and context-aware literature research.

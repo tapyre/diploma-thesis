@@ -2,7 +2,13 @@
 
 In diesem Kapitel wird die Architektur und Implementierung von Tapyre Paper Search beschrieben. Das System dient der automatisierten Verarbeitung, Indexierung und semantischen Durchsuchung wissenschaftlicher Publikationen. Ziel ist es, große Mengen an Forschungsarbeiten aus unterschiedlichen Quellen strukturiert aufzubereiten und sowohl klassisch über Metadaten als auch semantisch über Vektorrepräsentationen durchsuchbar zu machen.
 
-Die Architektur folgt einem modularen Ansatz mit klar getrennten Verantwortlichkeiten für Datenbeschaffung, Textverarbeitung, Embedding-Erzeugung, Speicherung und Orchestrierung. Dieses Design orientiert sich an etablierten Softwarearchitekturprinzipien und ermöglicht eine hohe Wartbarkeit, Erweiterbarkeit sowie den einfachen Austausch einzelner Komponenten.
+Die Architektur folgt einem modularen Ansatz mit klar getrennten Verantwortlichkeiten für Datenbeschaffung, Textverarbeitung, Embedding-Erzeugung, Speicherung und Orchestrierung (siehe Abbildung \ref{fig:paper_search_architecture}). Dieses Design orientiert sich an etablierten Softwarearchitekturprinzipien und ermöglicht eine hohe Wartbarkeit, Erweiterbarkeit sowie den einfachen Austausch einzelner Komponenten.
+
+\begin{figure}[h]
+	\includegraphics[width=1\textwidth]{sourcecode/tapyre/tapyre-paper-search/docs/architecture/architecture.png}
+	\caption{Architektur von Tapyre Paper Search}
+	\label{fig:paper_search_architecture}
+\end{figure}
 
 \paragraph{Abgrenzung zu klassischen Big-Data-Architekturen}
 Im Rahmen dieser Diplomarbeit wurde bewusst auf den Einsatz klassischer Big-Data-Technologien wie Hadoop, Spark oder verteilte Data-Lake-Architekturen verzichtet. Der Grund dafür liegt in den begrenzten zeitlichen, personellen und infrastrukturellen Ressourcen, die im Rahmen einer Diplomarbeit realistisch zur Verfügung stehen.
@@ -14,11 +20,11 @@ Dieser bewusste Verzicht auf umfangreiche Big-Data-Frameworks reduziert die Komp
 Im Folgenden werden die zentralen Bausteine der Architektur erläutert:
 
 \begin{itemize}
-\item abstrakte Kernschnittstellen für Datenquellen, Embedding-Modelle und Datenbanken,
-\item konkrete Implementierungen für arXiv, Specter2, Qdrant und MySQL,
-\item die PDF-Verarbeitung als zentrale technische Herausforderung,
-\item die Pipeline zur Orchestrierung des Gesamtprozesses,
-\item das Zusammenspiel von strukturierter und semantischer Suche.
+	\item abstrakte Kernschnittstellen für Datenquellen, Embedding-Modelle und Datenbanken,
+	\item konkrete Implementierungen für arXiv, Specter2, Qdrant und MySQL,
+	\item die PDF-Verarbeitung als zentrale technische Herausforderung,
+	\item die Pipeline zur Orchestrierung des Gesamtprozesses,
+	\item das Zusammenspiel von strukturierter und semantischer Suche.
 \end{itemize}
 
 \section{Abstraktion der Datenquellen}
@@ -26,9 +32,9 @@ Im Folgenden werden die zentralen Bausteine der Architektur erläutert:
 Um unterschiedliche wissenschaftliche Datenquellen flexibel integrieren zu können, wird eine abstrakte Schnittstelle für Datenprovider definiert. Diese legt fest, wie neue Dokumente geladen und bereitgestellt werden, ohne dass der restliche Verarbeitungsprozess von der konkreten Quelle abhängig ist.
 
 \lstinputlisting[
-style=python,
-caption={Abstrakte Schnittstelle für Datenquellen},
-captionpos=b
+	style=python,
+	caption={Abstrakte Schnittstelle für Datenquellen},
+	captionpos=b
 ]{sourcecode/tapyre/tapyre-paper-search/src/core/data_provider.py}
 
 Die Schnittstelle definiert ein einheitliches Vertragsmodell für den Zugriff auf Papers und deren Metadaten. Dadurch können neue Quellen, etwa PubMed oder lokale Archive, ergänzt werden, ohne bestehende Komponenten anpassen zu müssen. Dieses Vorgehen entspricht dem Open-Closed-Prinzip, bei dem Software für Erweiterungen offen, für Änderungen jedoch geschlossen bleibt.
@@ -38,9 +44,9 @@ Die Schnittstelle definiert ein einheitliches Vertragsmodell für den Zugriff au
 Eine konkrete Implementierung dieser Schnittstelle stellt der Datenprovider für arXiv dar. Dieser ist für das Abrufen von Metadaten sowie das Herunterladen der zugehörigen PDF-Dokumente verantwortlich.
 
 \lstinputlisting[
-style=python,
-caption={arXivDataProvider zur Anbindung der arXiv-API},
-captionpos=b
+	style=python,
+	caption={arXivDataProvider zur Anbindung der arXiv-API},
+	captionpos=b
 ]{sourcecode/tapyre/tapyre-paper-search/src/impl/arxiv_data_provider.py}
 
 Der Provider verarbeitet unter anderem Titel, Autoren, Abstracts, Kategorien sowie die URL des PDF-Dokuments. Durch die klare Trennung zwischen Datenbeschaffung und nachgelagerter Verarbeitung bleibt das System robust gegenüber API-Änderungen und leicht auf weitere Quellen übertragbar.
@@ -50,9 +56,9 @@ Der Provider verarbeitet unter anderem Titel, Autoren, Abstracts, Kategorien sow
 Die Umwandlung wissenschaftlicher PDF-Dokumente in maschinenlesbaren Text stellt eine der größten technischen Herausforderungen dar. PDFs enthalten häufig mehrspaltige Layouts, mathematische Formeln, Fußnoten sowie Seitenköpfe, die eine saubere Textextraktion erschweren.
 
 \lstinputlisting[
-style=python,
-caption={PDF-zu-Text-Konvertierung mit PyMuPDF},
-captionpos=b
+	style=python,
+	caption={PDF-zu-Text-Konvertierung mit PyMuPDF},
+	captionpos=b
 ]{sourcecode/tapyre/tapyre-paper-search/src/impl/fitz_pdf_converter.py}
 
 Die Implementierung basiert auf der Bibliothek PyMuPDF (fitz) und extrahiert den Text seitenweise. Dabei wird bewusst auf komplexe Layout-Rekonstruktionen verzichtet, um eine hohe Verarbeitungsgeschwindigkeit zu gewährleisten. Diese Lösung stellt einen praxisnahen Kompromiss zwischen Textqualität und Performance dar und eignet sich besonders für die Verarbeitung großer Paper-Sammlungen, wie sie in diesem Projekt anfallen.
@@ -62,9 +68,9 @@ Die Implementierung basiert auf der Bibliothek PyMuPDF (fitz) und extrahiert den
 Für die semantische Suche müssen Texte in hochdimensionale Vektoren überführt werden. Um unterschiedliche Embedding-Modelle flexibel einsetzen zu können, wird eine abstrakte Embedder-Schnittstelle definiert.
 
 \lstinputlisting[
-style=python,
-caption={Abstrakte Embedder-Schnittstelle},
-captionpos=b
+	style=python,
+	caption={Abstrakte Embedder-Schnittstelle},
+	captionpos=b
 ]{sourcecode/tapyre/tapyre-paper-search/src/core/embedder.py}
 
 Diese Schnittstelle kapselt die konkrete Modellimplementierung vollständig. Dadurch können verschiedene Modelle getestet, ausgetauscht oder parallel verwendet werden, ohne dass Änderungen an der Pipeline oder den Datenbankschichten notwendig sind. Diese Abstraktion ist insbesondere für experimentelle Evaluierungen von Vorteil.
@@ -74,9 +80,9 @@ Diese Schnittstelle kapselt die konkrete Modellimplementierung vollständig. Dad
 Als konkrete Implementierung kommt das Embedding-Modell Specter2 zum Einsatz. Dieses Transformer-basierte Modell wurde speziell für wissenschaftliche Texte trainiert und erzeugt Vektorrepräsentationen, die den inhaltlichen Kern eines Papers erfassen.
 
 \lstinputlisting[
-style=python,
-caption={Specter2Embedder zur Erzeugung semantischer Vektoren},
-captionpos=b
+	style=python,
+	caption={Specter2Embedder zur Erzeugung semantischer Vektoren},
+	captionpos=b
 ]{sourcecode/tapyre/tapyre-paper-search/src/impl/specter_2_embedder.py}
 
 Durch den Einsatz eines domänenspezifischen Modells wird eine deutlich bessere semantische Abbildung wissenschaftlicher Inhalte erreicht als mit generischen Sprachmodellen. Dies ist insbesondere für die thematische Suche und Ähnlichkeitsbewertung von Publikationen entscheidend.
@@ -86,9 +92,9 @@ Durch den Einsatz eines domänenspezifischen Modells wird eine deutlich bessere 
 Das System unterscheidet bewusst zwischen strukturierter Datenhaltung für Metadaten und vektorbasierten Repräsentationen für semantische Suche. Eine abstrakte Datenbankschnittstelle definiert die hierfür notwendigen Operationen.
 
 \lstinputlisting[
-style=python,
-caption={Abstrakte Datenbankschnittstelle},
-captionpos=b
+	style=python,
+	caption={Abstrakte Datenbankschnittstelle},
+	captionpos=b
 ]{sourcecode/tapyre/tapyre-paper-search/src/core/database.py}
 
 Diese Trennung erlaubt es, unterschiedliche Datenbanktypen gezielt für ihre jeweiligen Stärken einzusetzen und bei Bedarf auszutauschen.
@@ -98,9 +104,9 @@ Diese Trennung erlaubt es, unterschiedliche Datenbanktypen gezielt für ihre jew
 Metadaten wie Titel, Autoren, Kategorien oder Statusinformationen werden in einer relationalen Datenbank gespeichert.
 
 \lstinputlisting[
-style=python,
-caption={MySQL-Datenbankanbindung für Paper-Metadaten},
-captionpos=b
+	style=python,
+	caption={MySQL-Datenbankanbindung für Paper-Metadaten},
+	captionpos=b
 ]{sourcecode/tapyre/tapyre-paper-search/src/impl/mysql_database.py}
 
 Relationale Datenbanken eignen sich besonders für konsistente Speicherung, relationale Abfragen und Filteroperationen, wie sie bei Metadaten häufig erforderlich sind.
@@ -110,9 +116,9 @@ Relationale Datenbanken eignen sich besonders für konsistente Speicherung, rela
 Für die semantische Suche werden die erzeugten Embeddings in einer spezialisierten Vektordatenbank gespeichert. Hierfür kommt Qdrant zum Einsatz, das effiziente Approximate-Nearest-Neighbor-Suchen ermöglicht.
 
 \lstinputlisting[
-style=python,
-caption={Qdrant-Datenbank für semantische Suche},
-captionpos=b
+	style=python,
+	caption={Qdrant-Datenbank für semantische Suche},
+	captionpos=b
 ]{sourcecode/tapyre/tapyre-paper-search/src/impl/qdrant_database.py}
 
 Durch den Einsatz HNSW-basierter Indexstrukturen können auch sehr große Paper-Sammlungen performant durchsucht werden, was eine zentrale Voraussetzung für semantische Suchanwendungen darstellt.
@@ -122,18 +128,18 @@ Durch den Einsatz HNSW-basierter Indexstrukturen können auch sehr große Paper-
 Die Pipeline bildet das zentrale Orchestrierungselement des Systems. Sie verbindet Datenquelle, PDF-Verarbeitung, Embedding-Erzeugung und Speicherung zu einem konsistenten und reproduzierbaren Ablauf.
 
 \lstinputlisting[
-style=python,
-caption={Pipeline zur Verarbeitung und Indexierung von Papers},
-captionpos=b
+	style=python,
+	caption={Pipeline zur Verarbeitung und Indexierung von Papers},
+	captionpos=b
 ]{sourcecode/tapyre/tapyre-paper-search/src/impl/pipeline.py}
 
 Der Gesamtprozess gliedert sich in folgende Schritte:
 
 \begin{enumerate}
-\item Abruf neuer Papers aus der Datenquelle,
-\item Download und Textextraktion aus PDF-Dokumenten,
-\item Aufteilung des Textes in Chunks und Erzeugung von Embeddings,
-\item Speicherung von Metadaten und Vektorrepräsentationen.
+	\item Abruf neuer Papers aus der Datenquelle,
+	\item Download und Textextraktion aus PDF-Dokumenten,
+	\item Aufteilung des Textes in Chunks und Erzeugung von Embeddings,
+	\item Speicherung von Metadaten und Vektorrepräsentationen.
 \end{enumerate}
 
 Durch die klare Trennung dieser Schritte bleibt die Pipeline leicht erweiterbar, testbar und für agentische Erweiterungen geeignet.
@@ -156,10 +162,10 @@ Die Ursache lag primär in den begrenzten verfügbaren Arbeitsspeicherressourcen
 \subsection{Anfängliche Implementierungsineffizienzen und Optimierungen}
 
 \begin{figure}[h]
-    \centering
-    \includegraphics[width=0.85\textwidth]{figures/papers_per_day.png}
-    \caption{Anzahl der pro Tag verarbeiteten wissenschaftlichen Publikationen im Testbetrieb}
-    \label{fig:papers_per_day}
+	\centering
+	\includegraphics[width=0.85\textwidth]{figures/papers_per_day.png}
+	\caption{Anzahl der pro Tag verarbeiteten wissenschaftlichen Publikationen im Testbetrieb}
+	\label{fig:papers_per_day}
 \end{figure}
 
 Abbildung~\ref{fig:papers_per_day} zeigt die Anzahl der täglich verarbeiteten wissenschaftlichen Publikationen während des Testbetriebs. Zu Beginn des Beobachtungszeitraums ist eine vergleichsweise geringe Verarbeitungsrate erkennbar. Diese anfängliche Phase ist primär auf noch ineffiziente Implementierungen innerhalb der Pipeline zurückzuführen.
@@ -175,10 +181,10 @@ Aufgrund der gemeinsamen Nutzung der Serverinfrastruktur musste die Pipeline an 
 \subsection{Kumulative Verarbeitung und Gesamtstabilität des Systems}
 
 \begin{figure}[h]
-    \centering
-    \includegraphics[width=0.85\textwidth]{figures/papers_cumulative.png}
-    \caption{Kumulative Anzahl der verarbeiteten wissenschaftlichen Publikationen}
-    \label{fig:cumulative_papers}
+	\centering
+	\includegraphics[width=0.85\textwidth]{figures/papers_cumulative.png}
+	\caption{Kumulative Anzahl der verarbeiteten wissenschaftlichen Publikationen}
+	\label{fig:cumulative_papers}
 \end{figure}
 
 Abbildung~\ref{fig:cumulative_papers} zeigt die kumulative Anzahl der verarbeiteten Publikationen über die Zeit. Der nahezu monotone und annähernd lineare Anstieg bestätigt, dass der Import- und Indexierungsprozess zuverlässig und kontinuierlich durchgeführt werden konnte. Es traten keine systematischen Abbrüche oder Datenverluste auf.
