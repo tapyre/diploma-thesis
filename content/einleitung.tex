@@ -2,23 +2,23 @@
 \chapter{Einleitung}
 
 \begin{figure}[h]
-    \centering
-    \includegraphics[width=0.4\textwidth]{figures/tapyre-logo.png}
-    \caption{Logo des Systems Tapyre}
-    \label{fig:tapyre-logo}
+	\centering
+	\includegraphics[width=0.4\textwidth]{figures/tapyre-logo.png}
+	\caption{Logo des Systems Tapyre}
+	\label{fig:tapyre-logo}
 \end{figure}
 
 Die rasante Entwicklung im Bereich der künstlichen Intelligenz (KI), insbesondere der \textit{Large Language Models} (LLMs), hat die Art und Weise, wie Informationen verarbeitet und generiert werden, grundlegend transformiert. Während klassische Systeme primär auf starren Algorithmen und Schlagwortsuchen basierten, ermöglichen moderne Sprachmodelle ein tieferes semantisches Verständnis von Inhalten. Ein aktueller Trend in der Forschung und Entwicklung ist der Übergang von rein reaktiven Chatbots hin zu sogenannten \textit{Agentic AI}-Systemen. Diese Agenten sind in der Lage, eigenständig zu planen, externe Werkzeuge (\textit{Tools}) zu nutzen und komplexe Aufgaben in einem iterativen Prozess zu lösen (vgl. \cite{yao2022react, wang2024surveyagentic}).
 
-In diesem Kontext befasst sich die vorliegende Diplomarbeit mit der Konzeption und Implementierung von \textbf{Tapyre}, einem modularen, agentenbasierten Produktivitätstool. Das Ziel ist es, ein System zu schaffen, das nicht nur als Schnittstelle zu einem LLM fungiert, sondern durch ein flexibles Plugin-System aktiv in die Arbeitsumgebung des Benutzers integriert werden kann. Ein besonderer Fokus liegt dabei auf der Anwendung im Bereich der wissenschaftlichen Recherche: Mit \textbf{Tapyre Paper Search} wird eine spezialisierte Pipeline entwickelt, die mithilfe von Vektordatenbanken und modernen Embedding-Modellen eine semantische Suche in wissenschaftlichen Publikationen ermöglicht.
+In diesem Kontext befasst sich die vorliegende Diplomarbeit mit der Konzeption und Implementierung von \textit{Tapyre}, einem modularen, agentenbasierten Produktivitätstool. Das Ziel ist es, ein System zu schaffen, das nicht nur als Schnittstelle zu einem LLM fungiert, sondern durch ein flexibles Plugin-System aktiv in die Arbeitsumgebung des Benutzers integriert werden kann. Ein besonderer Fokus liegt dabei auf der Anwendung im Bereich der wissenschaftlichen Recherche: Mit \textit{Tapyre Paper Search} wird eine spezialisierte Pipeline entwickelt, die mithilfe von Vektordatenbanken und modernen Embedding-Modellen eine semantische Suche in wissenschaftlichen Publikationen ermöglicht.
 
 \section{Zielsetzung und Aufgabenstellung}
 
 Das Hauptziel dieses Projekts ist die Entwicklung eines erweiterbaren Frameworks für agentische KI. Tapyre soll als lokale Steuerungsinstanz dienen, die durch den Einsatz von \textit{Open-Source}-Modellen (über Ollama) die Privatsphäre der Nutzer schützt und gleichzeitig eine hohe Flexibilität bietet. Die Aufgabenstellung gliedert sich in zwei zentrale Teilbereiche:
 
 \begin{enumerate}
-    \item \textbf{Kernsystem und Agentik}: Entwicklung einer modularen Architektur, die auf dem ReAct-Paradigma basiert. Dies umfasst die Abstraktion der LLM-Interaktion, die Implementierung eines dynamischen Plugin-Systems sowie die Entwicklung einer spezialisierten Such-Pipeline für wissenschaftliche Arbeiten unter Verwendung von SPECTER2-Embeddings und der Qdrant-Vektordatenbank.
-    \item \textbf{Benutzeroberflächen und Integration}: Schaffung intuitiver Schnittstellen für unterschiedliche Nutzungsszenarien. Dies beinhaltet eine native Desktop-Anwendung zur direkten Systemsteuerung sowie eine moderne Webanwendung zur Exploration der Suchergebnisse der Paper-Search-Pipeline.
+	\item \textbf{Kernsystem und Agentik}: Entwicklung einer modularen Architektur, die auf dem ReAct-Paradigma basiert. Dies umfasst die Abstraktion der LLM-Interaktion, die Implementierung eines dynamischen Plugin-Systems sowie die Entwicklung einer spezialisierten Such-Pipeline für wissenschaftliche Arbeiten unter Verwendung von SPECTER2-Embeddings und der Qdrant-Vektordatenbank.
+	\item \textbf{Benutzeroberflächen und Integration}: Schaffung intuitiver Schnittstellen für unterschiedliche Nutzungsszenarien. Dies beinhaltet eine native Desktop-Anwendung zur direkten Systemsteuerung sowie eine moderne Webanwendung zur Exploration der Suchergebnisse der Paper-Search-Pipeline.
 \end{enumerate}
 
 \section{Wirtschaftliches und fachliches Umfeld}
@@ -35,20 +35,20 @@ Die Arbeit wurde von den Projektmitgliedern wie folgt aufgeteilt:
 
 Der Schwerpunkt von Christian Vorhofer liegt auf der Konzeption und Implementierung der Backend-Architektur sowie der Agenten-Logik. Zu seinen Aufgaben gehören:
 \begin{itemize}
-    \item Design der modularen Agentic-AI-Architektur auf Basis von LangChain.
-    \item Entwicklung der abstrakten LLM-Schnittstellen und des dynamischen Plugin-Systems.
-    \item Implementierung der \textit{Tapyre Paper Search} Pipeline (Data Provider, PDF-Konvertierung, Embedding-Prozess und Vektordatenbank-Anbindung).
-    \item Konfiguration und Optimierung der lokalen LLM-Infrastruktur.
+	\item Design der modularen Agentic-AI-Architektur auf Basis von LangChain.
+	\item Entwicklung der abstrakten LLM-Schnittstellen und des dynamischen Plugin-Systems.
+	\item Implementierung der \textit{Tapyre Paper Search} Pipeline (Data Provider, PDF-Konvertierung, Embedding-Prozess und Vektordatenbank-Anbindung).
+	\item Konfiguration und Optimierung der lokalen LLM-Infrastruktur.
 \end{itemize}
 
 \subsection{Raphael Ladinig}
 
 Raphael Ladinig ist für die Entwicklung der Benutzeroberflächen und die Integration der Agentenlogik in die Frontends verantwortlich. Sein Aufgabenbereich umfasst:
 \begin{itemize}
-    \item Entwicklung der nativen Tapyre Desktop-Anwendung unter Verwendung von Python und GTK 3 (inkl. GtkLayerShell für System-Integration).
-    \item Gestaltung des UI-Designs mittels CSS und Implementierung asynchroner Interaktionsmuster.
-    \item Entwicklung der Tapyre Paper Search Webanwendung auf Basis von Next.js, React und TypeScript.
-    \item Containerisierung der Frontend-Anwendungen mittels Docker.
+	\item Entwicklung der nativen Tapyre Desktop-Anwendung unter Verwendung von Python und GTK 3 (inkl. GtkLayerShell für System-Integration).
+	\item Gestaltung des UI-Designs mittels CSS und Implementierung asynchroner Interaktionsmuster.
+	\item Entwicklung der Tapyre Paper Search Webanwendung auf Basis von Next.js, React und TypeScript.
+	\item Containerisierung der Frontend-Anwendungen mittels Docker.
 \end{itemize}
 
 \section{Dokumentation der Arbeit}

@@ -1,7 +1,7 @@
 \chapter{Zusammenfassung und Ausblick}
 
 \section{Zusammenfassung}
-Die vorliegende Diplomarbeit befasste sich mit der Konzeption und Implementierung von "Tapyre", einem KI-integrierten Produktivitätssystem, das aus zwei zentralen Komponenten besteht: einem Agentic-AI-Framework für die Desktop-Automatisierung und einer semantischen Suchplattform für wissenschaftliche Publikationen. Ziel war es, moderne Ansätze der künstlichen Intelligenz, insbesondere Große Sprachmodelle (LLMs), in praxisnahe Werkzeuge zu überführen, die den alltäglichen Arbeitsablauf von Entwicklern und Forschern unterstützen.
+Die vorliegende Diplomarbeit befasste sich mit der Konzeption und Implementierung von Tapyre, einem KI-integrierten Produktivitätssystem, das aus zwei zentralen Komponenten besteht: einem Agentic-AI-Framework für die Desktop-Automatisierung und einer semantischen Suchplattform für wissenschaftliche Publikationen. Ziel war es, moderne Ansätze der künstlichen Intelligenz, insbesondere Große Sprachmodelle (LLMs), in praxisnahe Werkzeuge zu überführen, die den alltäglichen Arbeitsablauf von Entwicklern und Forschern unterstützen.
 
 Die Entwicklung des Agentic-AI-Frameworks basierte auf einer Plugin-Architektur, die es dem System ermöglicht, dynamisch um neue Fähigkeiten erweitert zu werden. Es wurde ein Agent entwickelt, der in der Lage ist, Anweisungen in natürlicher Sprache zu interpretieren und diese mithilfe der zur Verfügung stehenden Plugins in konkrete Aktionen umzusetzen. Die technische Umsetzung erfolgte in Python, um eine enge Anbindung an gängige KI-Bibliotheken zu gewährleisten.
 
@@ -9,8 +9,8 @@ Parallel dazu wurde das System Tapyre Paper Search als Backend für die Verarbei
 
 Ein wesentlicher Fokus der Arbeit lag auf der Implementierung von zwei unterschiedlichen Benutzeroberflächen, die auf die jeweiligen Anwendungsfälle zugeschnitten sind:
 \begin{itemize}
-	\item Die \textbf{Tapyre Desktop-Anwendung}, eine native GTK-Anwendung in Python, die als schlankes Overlay fungiert und eine schnelle, kommandozeilenähnliche Interaktion mit dem KI-Agenten ermöglicht. Der Architekturansatz legte Wert auf eine tiefe Systemintegration und eine performante, non-blocking Ausführung von Agenten-Aufgaben durch den Einsatz von Threading.
-	\item Die \textbf{Tapyre Paper Search Webanwendung}, eine moderne Web-App auf Basis von Next.js, React und TypeScript. Sie bietet eine zugängliche, browserbasierte Schnittstelle für die semantische Suche. Die Architektur folgt etablierten Mustern wie der komponenten-basierten Entwicklung und dem unidirektionalen Datenfluss, um eine wartbare und erweiterbare Codebasis zu schaffen.
+	\item Die Tapyre Desktop-Anwendung, eine native GTK-Anwendung in Python, die als schlankes Overlay fungiert und eine schnelle, kommandozeilenähnliche Interaktion mit dem KI-Agenten ermöglicht. Der Architekturansatz legte Wert auf eine tiefe Systemintegration und eine performante, non-blocking Ausführung von Agenten-Aufgaben durch den Einsatz von Threading.
+	\item Die Tapyre Paper Search Webanwendung, eine moderne Web-App auf Basis von Next.js, React und TypeScript. Sie bietet eine zugängliche, browserbasierte Schnittstelle für die semantische Suche. Die Architektur folgt etablierten Mustern wie der komponenten-basierten Entwicklung und dem unidirektionalen Datenfluss, um eine wartbare und erweiterbare Codebasis zu schaffen.
 \end{itemize}
 Im Zuge der Implementierung wurden umfassende architektonische Entscheidungen getroffen, alternative Technologien evaluiert und die gewählten Stacks detailliert umgesetzt, von der Backend-Logik bis hin zum responsiven Frontend-Design.
 
@@ -29,9 +29,9 @@ Das Tapyre-System bietet eine solide Grundlage für zahlreiche zukünftige Erwei
 \paragraph{Erweiterung des Tapyre-Agenten}
 Das Plugin-System des Desktop-Agenten ist die offensichtlichste Anlaufstelle für Erweiterungen. Zukünftige Arbeiten könnten sich auf die Entwicklung und Integration weiterer Plugins konzentrieren, wie zum Beispiel:
 \begin{itemize}
-	\item Ein \textbf{Kalender-Plugin} zur Verwaltung von Terminen.
-	\item Ein \textbf{E-Mail-Plugin} zum Lesen und Verfassen von E-Mails.
-	\item Ein \textbf{Dateisystem-Plugin} für komplexe Dateioperationen.
+	\item Ein Kalender-Plugin zur Verwaltung von Terminen.
+	\item Ein E-Mail-Plugin zum Lesen und Verfassen von E-Mails.
+	\item Ein Dateisystem-Plugin für komplexe Dateioperationen.
 	\item Eine tiefere Integration mit der Tapyre Paper Search API, sodass der Agent selbstständig Literaturrecherchen durchführen kann.
 \end{itemize}
 

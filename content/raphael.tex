@@ -4,8 +4,8 @@ Nachdem in den vorangegangenen Kapiteln die Entwicklung der Backend-Logik, der A
 
 Es werden zwei unterschiedliche Frontends vorgestellt, die auf die spezifischen Anforderungen der jeweiligen Anwendungsfälle zugeschnitten sind:
 \begin{itemize}
-	\item Die \textbf{Tapyre Desktop-Anwendung}, die als native Schnittstelle für den AI-Agenten dient und eine tiefe Integration in die Arbeitsumgebung ermöglicht.
-	\item Die \textbf{Tapyre Paper Search Webanwendung}, die eine intuitive Suche und Exploration wissenschaftlicher Publikationen im Browser bietet.
+	\item Die Tapyre Desktop-Anwendung, die als native Schnittstelle für den AI-Agenten dient und eine tiefe Integration in die Arbeitsumgebung ermöglicht.
+	\item Die Tapyre Paper Search Webanwendung, die eine intuitive Suche und Exploration wissenschaftlicher Publikationen im Browser bietet.
 \end{itemize}
 
 Das Kapitel beleuchtet dabei die Auswahl der Technologien, die Designentscheidungen sowie die technische Umsetzung der grafischen Oberflächen.
@@ -20,11 +20,11 @@ Ein zentrales Ziel bei der Entwicklung war die nahtlose Integration in die beste
 
 Die Auswahl der geeigneten Technologien für die Tapyre-Desktop-Anwendung basierte auf mehreren zentralen Anforderungen: der nahtlosen Integration der im Backend entwickelten Python-Logik, einer hohen Performance der Benutzeroberfläche sowie einer effizienten und reproduzierbaren Entwicklungsumgebung.
 
-Als Programmiersprache wurde \textbf{Python} gewählt (vgl. \cite{python}). Da der Kern des Agentic-AI-Systems und die genutzten Frameworks bereits in Python implementiert sind, entfällt durch die Verwendung derselben Sprache für das Frontend der Overhead einer sprachübergreifenden Schnittstelle (z.\,B. REST-API oder IPC). Dies ermöglicht eine direkte und performante Kommunikation zwischen GUI und Agentenlogik.
+Als Programmiersprache wurde Python gewählt (vgl. \cite{python}). Da der Kern des Agentic-AI-Systems und die genutzten Frameworks bereits in Python implementiert sind, entfällt durch die Verwendung derselben Sprache für das Frontend der Overhead einer sprachübergreifenden Schnittstelle (z.\,B. REST-API oder IPC). Dies ermöglicht eine direkte und performante Kommunikation zwischen GUI und Agentenlogik.
 
-Für die grafische Benutzeroberfläche fiel die Entscheidung auf GTK 3 (vgl. \cite{gtk3}). GTK ist eines der führenden Toolkits für Linux-Desktop-Umgebungen und bietet durch \textbf{PyGObject} exzellente Python-Bindings (vgl. \cite{pygobject}). Es erlaubt die Entwicklung nativer Anwendungen, die sich optisch und funktional in den Linux-Desktop einfügen. Ein weiterer entscheidender Vorteil ist die Möglichkeit, das Design der Anwendung mittels \textbf{CSS} (Cascading Style Sheets) anzupassen, was eine flexible und moderne Gestaltung der Oberfläche ermöglicht (vgl. \cite{w3c_css}).
+Für die grafische Benutzeroberfläche fiel die Entscheidung auf GTK 3 (vgl. \cite{gtk3}). GTK ist eines der führenden Toolkits für Linux-Desktop-Umgebungen und bietet durch PyGObject exzellente Python-Bindings (vgl. \cite{pygobject}). Es erlaubt die Entwicklung nativer Anwendungen, die sich optisch und funktional in den Linux-Desktop einfügen. Ein weiterer entscheidender Vorteil ist die Möglichkeit, das Design der Anwendung mittels CSS (Cascading Style Sheets) anzupassen, was eine flexible und moderne Gestaltung der Oberfläche ermöglicht (vgl. \cite{w3c_css}).
 
-Um die Herausforderungen des Abhängigkeitsmanagements und der Reproduzierbarkeit zu lösen, kommen \textbf{Nix} (vgl. \cite{nixos}) und \textbf{uv} (vgl. \cite{astral_uv}) zum Einsatz. Nix garantiert eine deterministische Systemumgebung, in der auch binäre Abhängigkeiten (wie die GTK-Bibliotheken) zuverlässig bereitgestellt werden. Ergänzend dazu wird uv als extrem schneller Paketmanager für Python verwendet, um Installationszeiten zu minimieren und eine strikte Versionierung der Python-Bibliotheken sicherzustellen.
+Um die Herausforderungen des Abhängigkeitsmanagements und der Reproduzierbarkeit zu lösen, kommen Nix (vgl. \cite{nixos}) und uv (vgl. \cite{astral_uv}) zum Einsatz. Nix garantiert eine deterministische Systemumgebung, in der auch binäre Abhängigkeiten (wie die GTK-Bibliotheken) zuverlässig bereitgestellt werden. Ergänzend dazu wird uv als extrem schneller Paketmanager für Python verwendet, um Installationszeiten zu minimieren und eine strikte Versionierung der Python-Bibliotheken sicherzustellen.
 
 \subsection{Evaluierung alternativer UI-Toolkits}
 
@@ -69,7 +69,7 @@ Der Ablauf der Anbindung lässt sich in drei Schritten zusammenfassen:
 Durch diesen architektonischen Aufbau bleibt das System extrem flexibel. Da das Frontend lediglich ein Objekt erwartet, das die \texttt{ask()}-Methode implementiert, könnte der grafische Teil der Anwendung jederzeit durch eine andere Technologie (z.\,B. eine Kommandozeile oder eine Web-Oberfläche) ersetzt werden, ohne dass die Backend-Logik angepasst werden müsste. Die Verbindung zum Backend ist somit nicht fest im UI-Code verdrahtet, sondern wird dynamisch beim Programmstart hergestellt.
 
 \subsubsection{Fenster-Management mit GtkLayerShell}
-Eine Kernanforderung an die Tapyre-Anwendung war es, nicht als herkömmliches Anwendungsfenster, sondern als eine Art Overlay oder Desktop-Widget zu fungieren, das bei Bedarf schnell aufgerufen werden kann. Um dieses Verhalten zu realisieren, wurde die Bibliothek \textbf{GtkLayerShell} eingesetzt. Diese Bibliothek ermöglicht es GTK-Anwendungen, das Layer-Shell-Protokoll des Wayland-Compositors zu nutzen, das für die Erstellung von Komponenten der Desktop-Umgebung (wie Panels, Hintergrundbilder oder eben Overlays) vorgesehen ist.
+Eine Kernanforderung an die Tapyre-Anwendung war es, nicht als herkömmliches Anwendungsfenster, sondern als eine Art Overlay oder Desktop-Widget zu fungieren, das bei Bedarf schnell aufgerufen werden kann. Um dieses Verhalten zu realisieren, wurde die Bibliothek GtkLayerShell eingesetzt. Diese Bibliothek ermöglicht es GTK-Anwendungen, das Layer-Shell-Protokoll des Wayland-Compositors zu nutzen, das für die Erstellung von Komponenten der Desktop-Umgebung (wie Panels, Hintergrundbilder oder eben Overlays) vorgesehen ist.
 
 Die Konfiguration erfolgt durch gezielte Aufrufe nach der Initialisierung des Fensters:
 
@@ -87,7 +87,7 @@ Die Konfiguration erfolgt durch gezielte Aufrufe nach der Initialisierung des Fe
 	\item \texttt{GtkLayerShell.set\_keyboard\_mode(self, \\ GtkLayerShell.KeyboardMode.EXCLUSIVE)}: Dieser Modus gewährt dem Tapyre-Fenster den exklusiven Fokus auf die Tastatureingaben, solange es sichtbar ist. Dies ist entscheidend, damit Benutzereingaben zuverlässig erfasst werden und nicht versehentlich an das darunterliegende Fenster gesendet werden.
 \end{itemize}
 
-Infolge dieser tiefen Integration in das Linux-Ökosystem und der direkten Abhängigkeit vom Wayland-Protokoll ergibt sich eine wesentliche technische Einschränkung: Die Tapyre-Desktop-Anwendung ist \textbf{exklusiv für Linux-Systeme} konzipiert. Eine Ausführung unter Microsoft Windows oder macOS ist aufgrund der Verwendung von \texttt{GtkLayerShell} nicht möglich, da diese Betriebssysteme das Layer-Shell-Protokoll nativ nicht unterstützen. Diese Entscheidung wurde bewusst getroffen, um eine maximale Systemintegration unter Linux zu erreichen.
+Infolge dieser tiefen Integration in das Linux-Ökosystem und der direkten Abhängigkeit vom Wayland-Protokoll ergibt sich eine wesentliche technische Einschränkung: Die Tapyre-Desktop-Anwendung ist exklusiv für Linux-Systeme konzipiert. Eine Ausführung unter Microsoft Windows oder macOS ist aufgrund der Verwendung von \texttt{GtkLayerShell} nicht möglich, da diese Betriebssysteme das Layer-Shell-Protokoll nativ nicht unterstützen. Diese Entscheidung wurde bewusst getroffen, um eine maximale Systemintegration unter Linux zu erreichen.
 
 Durch den Einsatz von GtkLayerShell wird das Anwendungsfenster tief in die Desktop-Shell integriert und erhält den Charakter eines nativen System-Widgets, was maßgeblich zur angestrebten nahtlosen Benutzererfahrung beiträgt.
 \subsubsection{Widget-Hierarchie und Layout}
@@ -150,21 +150,21 @@ So wird beispielsweise über \texttt{\#main-box} der Hintergrund der Anwendung a
 
 \section{Tapyre Paper Search}
 
-Parallel zur Desktop-Anwendung wurde die \textbf{Tapyre Paper Search} Webanwendung entwickelt. Sie dient als leicht zugängliche, browserbasierte Schnittstelle für die im Backend implementierte semantische Such- und Embedding-Pipeline.
+Parallel zur Desktop-Anwendung wurde die Tapyre Paper Search Webanwendung entwickelt. Sie dient als leicht zugängliche, browserbasierte Schnittstelle für die im Backend implementierte semantische Such- und Embedding-Pipeline.
 
 \subsection{Auswahl des Technologie-Stacks}
 
 Für das Frontend der Paper-Search-Anwendung wurde ein moderner Web-Technologie-Stack gewählt, der auf Skalierbarkeit, eine schnelle Entwicklungs-Erfahrung und eine reaktive Benutzeroberfläche ausgelegt ist.
 
-Als Framework wurde \textbf{Next.js} (vgl. \cite{nextjs}) gewählt, das auf der JavaScript-Bibliothek \textbf{React} (vgl. \cite{react}) aufbaut. Next.js bietet entscheidende Vorteile wie serverseitiges Rendern (SSR) und statische Seitengenerierung (SSG), die zu exzellenten Ladezeiten und einer besseren Suchmaschinenoptimierung führen. Die komponentenbasierte Architektur von React fördert zudem die Wiederverwendbarkeit von UI-Elementen und die Wartbarkeit des Codes.
+Als Framework wurde Next.js. \cite{nextjs}) gewählt, das auf der JavaScript-Bibliothek React (vgl. \cite{react}) aufbaut. Next.js bietet entscheidende Vorteile wie serverseitiges Rendern (SSR) und statische Seitengenerierung (SSG), die zu exzellenten Ladezeiten und einer besseren Suchmaschinenoptimierung führen. Die komponentenbasierte Architektur von React fördert zudem die Wiederverwendbarkeit von UI-Elementen und die Wartbarkeit des Codes.
 
-Als Programmiersprache kommt \textbf{TypeScript} (vgl. \cite{typescript}) zum Einsatz. Als typisierte Obermenge von JavaScript erhöht es die Codequalität und Entwicklerproduktivität, indem es Fehler bereits während der Entwicklung durch statische Typüberprüfung erkennt und eine robustere Code-Basis sowie eine bessere Werkzeugunterstützung ermöglicht.
+Als Programmiersprache kommt TypeScript (vgl. \cite{typescript}) zum Einsatz. Als typisierte Obermenge von JavaScript erhöht es die Codequalität und Entwicklerproduktivität, indem es Fehler bereits während der Entwicklung durch statische Typüberprüfung erkennt und eine robustere Code-Basis sowie eine bessere Werkzeugunterstützung ermöglicht.
 
-Die Ausführungsumgebung für die gesamte JavaScript/TypeScript-basierte Entwicklung und den Betrieb der Next.js-Anwendung bildet \textbf{Node.js} (vgl. \cite{nodejs}). Als effizienter Paketmanager für die Verwaltung der Projekt-Abhängigkeiten kommt \textbf{pnpm} (vgl. \cite{pnpm}) zum Einsatz. pnpm zeichnet sich durch seine schnelle Installation, effiziente Nutzung des Festplattenspeichers durch Hardlinks und seine deterministischen Lockfiles aus, was die Reproduzierbarkeit der Builds verbessert.
+Die Ausführungsumgebung für die gesamte JavaScript/TypeScript-basierte Entwicklung und den Betrieb der Next.js-Anwendung bildet Node.js (vgl. \cite{nodejs}). Als effizienter Paketmanager für die Verwaltung der Projekt-Abhängigkeiten kommt pnpm (vgl. \cite{pnpm}) zum Einsatz. pnpm zeichnet sich durch seine schnelle Installation, effiziente Nutzung des Festplattenspeichers durch Hardlinks und seine deterministischen Lockfiles aus, was die Reproduzierbarkeit der Builds verbessert.
 
-Für die Gestaltung der Benutzeroberfläche wurde auf \textbf{Tailwind CSS} (vgl. \cite{tailwindcss}) in Kombination mit der Komponentenbibliothek \textbf{shadcn/ui} (vgl. \cite{shadcnui}) gesetzt. Tailwind CSS ist ein Utility-First-Framework, das eine schnelle und flexible Gestaltung direkt im HTML-Markup erlaubt, ohne dass dedizierte CSS-Dateien pro Komponente notwendig sind. shadcn/ui ergänzt diesen Ansatz, indem es eine Sammlung barrierefreier und anpassbarer UI-Komponenten bereitstellt, die als hochwertige Grundlage für ein konsistentes und modernes Design dienen.
+Für die Gestaltung der Benutzeroberfläche wurde auf Tailwind CSS (vgl. \cite{tailwindcss}) in Kombination mit der Komponentenbibliothek shadcn/ui (vgl. \cite{shadcnui}) gesetzt. Tailwind CSS ist ein Utility-First-Framework, das eine schnelle und flexible Gestaltung direkt im HTML-Markup erlaubt, ohne dass dedizierte CSS-Dateien pro Komponente notwendig sind. shadcn/ui ergänzt diesen Ansatz, indem es eine Sammlung barrierefreier und anpassbarer UI-Komponenten bereitstellt, die als hochwertige Grundlage für ein konsistentes und modernes Design dienen.
 
-Um eine konsistente und isolierte Ausführungsumgebung zu gewährleisten und die Bereitstellung (Deployment) zu vereinfachen, ist die Anwendung für den Betrieb in einem \textbf{Docker-Container} konzipiert, wie durch das bereitgestellte \texttt{Dockerfile} ersichtlich ist.
+Um eine konsistente und isolierte Ausführungsumgebung zu gewährleisten und die Bereitstellung (Deployment) zu vereinfachen, ist die Anwendung für den Betrieb in einem Docker-Container konzipiert, wie durch das bereitgestellte \texttt{Dockerfile} ersichtlich ist.
 
 \subsection{Evaluierung alternativer Frontend-Frameworks}
 
@@ -192,7 +192,7 @@ Svelte (vgl. \cite{svelte}) verfolgt einen radikal anderen Ansatz: Anstatt die A
 \end{itemize}
 
 \subsubsection{Fazit}
-Die Entscheidung für \textbf{React} mit \textbf{Next.js} bot den besten Kompromiss aus Flexibilität, einem riesigen Ökosystem an Bibliotheken (einschließlich UI-Komponenten), exzellenter Community-Unterstützung und einer ausgereiften Lösung für serverseitiges Rendering. Dies ermöglichte eine schnelle und effiziente Entwicklung der Tapyre Paper Search Anwendung.
+Die Entscheidung für React mit Next.js bot den besten Kompromiss aus Flexibilität, einem riesigen Ökosystem an Bibliotheken (einschließlich UI-Komponenten), exzellenter Community-Unterstützung und einer ausgereiften Lösung für serverseitiges Rendering. Dies ermöglichte eine schnelle und effiziente Entwicklung der Tapyre Paper Search Anwendung.
 
 \subsection{Architektur der Frontend-Anwendung}
 Die Webanwendung folgt einer komponentenorientierten Architektur, einem zentralen Paradigma von React. Diese Architektur fördert die Wiederverwendbarkeit und Kapselung von UI-Logik und -Struktur.
