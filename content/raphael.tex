@@ -223,7 +223,7 @@ Die Struktur der Benutzeroberfläche lässt sich wie folgt unterteilen:
 	\item \textbf{\texttt{InputGroup}}: Dient als Container für das zentrale Eingabefeld. Innerhalb dieser Gruppe wird ein \texttt{InputGroupTextarea} verwendet, das über das \texttt{value}-Attribut an den \texttt{searchText}-Zustand gebunden ist.
 	\item \textbf{\texttt{DropdownMenu}}: Zwei separate Dropdown-Menüs ermöglichen dem Benutzer die Konfiguration der Suche. Das erste Menü erlaubt den Wechsel zwischen einer Suche auf Dokumentebene (\textit{Paper}) oder auf Abschnittsebene (\textit{Chunk}). Das zweite Menü dient der Auswahl der Re-ranking-Methode (z.\,B. rein semantisch oder mittels BM25).
 	\item \textbf{Such-Button}: Ein kreisförmiger Button mit einem Pfeil-Icon löst die \texttt{handleSearch}-Funktion aus. Er wird automatisch deaktiviert (\textit{disabled}), wenn eine Suche läuft oder das Textfeld leer ist.
-	\item \textbf{Conditionals Rendering}: Die Anzeige der Ergebnisse erfolgt dynamisch. Solange \texttt{isLoading} wahr ist, wird ein \texttt{Skeleton}-Platzhalter angezeigt. Sobald Daten verfügbar sind (\texttt{searchResults}), wird die Hilfsfunktion \texttt{renderResults()} aufgerufen, um die Liste der gefundenen Publikationen darzustellen.
+	\item \textbf{Conditional Rendering}: Die Anzeige der Ergebnisse erfolgt dynamisch. Solange \texttt{isLoading} wahr ist, wird ein \texttt{Skeleton}-Platzhalter angezeigt. Sobald Daten verfügbar sind (\texttt{searchResults}), wird die Hilfsfunktion \texttt{renderResults()} aufgerufen, um die Liste der gefundenen Publikationen darzustellen.
 \end{itemize}
 
 \subsubsection{Zustandsverwaltung (State Management)}
@@ -305,7 +305,7 @@ Für die Bereitstellung wird ein containerisierter Ansatz mit Docker und einer M
 ]{sourcecode/website/Dockerfile}
 
 \subsection{Benutzeroberfläche und Suche}
-Die Benutzeroberfläche (siehe Abbildung \ref{fig:tapyre_paper_search_ui}) ist bewusst minimalistisch gehalten. Durch den Einsatz responsiver Designprinzipien passt sich die Darstellung zudem flexibel an unterschiedliche Bildschirmgrößen an und ist somit auch auf mobilen Endgeräten optimal nutzbar (siehel Abbildung \ref{fig:tapyre_paper_search_mobile}). Das zentrale Element ist eine Eingabegruppe, die ein Textfeld für die Suchanfrage sowie Dropdown-Menüs zur Auswahl von Suchtyp und Ranking-Methode kombiniert.
+Die Benutzeroberfläche (siehe Abbildung \ref{fig:tapyre_paper_search_ui}) ist bewusst minimalistisch gehalten. Durch den Einsatz responsiver Designprinzipien passt sich die Darstellung zudem flexibel an unterschiedliche Bildschirmgrößen an und ist somit auch auf mobilen Endgeräten optimal nutzbar (siehe Abbildung \ref{fig:tapyre_paper_search_mobile}). Das zentrale Element ist eine Eingabegruppe, die ein Textfeld für die Suchanfrage sowie Dropdown-Menüs zur Auswahl von Suchtyp und Ranking-Methode kombiniert.
 
 \begin{figure}[h]
 	\centering
